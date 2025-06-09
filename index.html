@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toussaint Leo vitch | développeur front-end</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', 'Nunito', sans-serif;
+      scroll-behavior: smooth;}
+      
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+        .zoom:hover img {
+      transform: scale(1.1);
+    }
+    .zoom img {
+      transition: transform 0.5s ease;
+    }
+        .modal {
+      display: none;
+    }
+    .modal.active {
+      display: flex;
+    }
+  </style>
+    <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+</head>
+<body class="bg-white text-[#1E293B]">
+
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-blue-50 backdrop-blur-md shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <div class="text-lg font-semibold">Toussaint Léo Vitch</div>
+     <!-- ✅ Navigation -->
+<nav class="hidden md:flex space-x-6 relative z-20">
+ <!-- About -->
+<div class="relative">
+  <button onclick="toggleDropdown('aproposMenu')" class="hover:text-[#E26D5C] transition flex items-center">
+    About
+  </button>
+  <div id="aproposMenu" class="dropdown hidden absolute bg-white shadow-lg rounded mt-2 py-2 w-40">
+    <a href="#accueil" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+    <a href="#qui" class="block px-4 py-2 hover:bg-gray-100">Who I am</a>
+  </div>
+</div>
+
+<!-- Services -->
+<div class="relative">
+  <button onclick="toggleDropdown('servicesMenu')" class="hover:text-[#E26D5C] transition flex items-center">
+    Services
+  </button>
+  <div id="servicesMenu" class="dropdown hidden absolute bg-white shadow-lg rounded mt-2 py-2 w-40">
+    <a href="#offres" class="block px-4 py-2 hover:bg-gray-100">Offers</a>
+    <a href="#faq" class="block px-4 py-2 hover:bg-gray-100">FAQ</a>
+  </div>
+</div>
+
+<!-- Others -->
+<div class="relative">
+  <button onclick="toggleDropdown('autresMenu')" class="hover:text-[#E26D5C] transition flex items-center">
+    Others
+  </button>
+  <div id="autresMenu" class="dropdown hidden absolute right-0 bg-white shadow-lg rounded mt-2 py-2 w-40">
+    <a href="#portfolio" class="block px-4 py-2 hover:bg-gray-100">Portfolio</a>
+    <a href="#temoignages" class="block px-4 py-2 hover:bg-gray-100">Testimonials</a>
+    <a href="#contact" class="block px-4 py-2 hover:bg-gray-100">Contact</a>
+  </div>
+</div>
+</nav>
+
+
+<!-- ✅ Script -->
+<script>
+  function toggleDropdown(id) {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    const current = document.getElementById(id);
+
+    // Ferme tous les autres menus
+    dropdowns.forEach(menu => {
+      if (menu !== current) menu.classList.add('hidden');
+    });
+
+    // Bascule l’état du menu actuel
+    current.classList.toggle('hidden');
+  }
+
+  // Fermer les dropdowns si on clique ailleurs
+  document.addEventListener('click', function (e) {
+    const isDropdownBtn = e.target.closest('button');
+    const isDropdownContent = e.target.closest('.dropdown');
+
+    if (!isDropdownBtn && !isDropdownContent) {
+      document.querySelectorAll('.dropdown').forEach(menu => menu.classList.add('hidden'));
+    }
+  });
+</script>
+
+      <!-- Burger Menu -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="#1E293B" stroke-width="2" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden px-4 pt-2 pb-4 space-y-2 hidden bg-[#F3F4F6]/90 backdrop-blur-md transition-all">
+  <a href="#accueil" class="block hover:text-[#E26D5C]">Home</a>
+  <a href="#qui" class="block hover:text-[#E26D5C]">Who I am</a>
+  <a href="#offres" class="block hover:text-[#E26D5C]">Offers</a>
+  <a href="#portfolio" class="block hover:text-[#E26D5C]">Portfolio</a>
+  <a href="#temoignages" class="block hover:text-[#E26D5C]">Testimonials</a>
+  <a href="#faq" class="block hover:text-[#E26D5C]">FAQ</a>
+  <a href="#contact" class="block hover:text-[#E26D5C]">Contact</a>
+</div>
+
+  </header>
+
+  <!-- Sections -->
+  <main class="pt-20 space-y-24">
+      
+    <section id="accueil" class="min-h-screen bg-blue-50 flex items-center justify-center">  <!-- HERO SECTION -->
+  <section class="min-h-screen flex items-center px-6 md:px-20 py-16">
+    <div class="flex flex-col md:flex-row items-center w-full gap-10">
+
+      <!-- Left Content -->
+    <div class="md:w-1/2 space-y-6 fade-up">
+  <h1 class="text-blue-600 text-4xl md:text-5xl font-bold">
+    Your simple and professional website&nbsp;<br />without the hassle
+  </h1>
+  <p class="text-[#1E293B] text-lg md:text-xl">
+    For ambitious freelancers who want to showcase their expertise and gain credibility
+  </p>
+  <div class="flex gap-4">
+    <!-- Primary Button -->
+    <a href="#contact"
+       class="bg-[#E26D5C] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#B54E44] transition">
+      Contact me
+    </a>
+    <!-- Secondary Button -->
+    <a href="#offres"
+       class="border border-[#1E293B] text-[#1E293B] px-6 py-3 rounded-lg font-medium hover:bg-[#E26D5C] hover:text-white transition">
+      Discover offers
+    </a>
+  </div>
+</div>
+
+<!-- Right Visual -->
+<div class="md:w-1/2">
+  <div class="w-full" >
+    <img src="hero.jpg" alt="Visual illustration"
+         class="w-full rounded-xl shadow-lg object-cover fade-up" />
+  </div>
+</div>
+
+    </div>
+  </section></section>
+    <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script>
+  <script>
+    new Rellax('[data-rellax-speed]');
+  </script>
+
+      <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+    
+    <section id="qui" class="min-h-screen bg-blue-50 flex items-center justify-center">  <div class="max-w-5xl mx-auto px-6 py-12">
+    <div class="flex flex-col md:flex-row items-center gap-10">
+      
+      <!-- Colonne gauche : photo -->
+      <div class="w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden shadow-lg zoom">
+        <img src="leo.png" alt="Photo de profil" class="w-full h-full object-cover" />
+      </div>
+      
+      <!-- Right column: text -->
+      <div class="flex-1">
+        <h1 class="text-2xl font-semibold text-blue-600 mb-4">Hello, I’m Léo 👋</h1>
+        <p class="text-[#1E293B] text-[18px] md:text-[20px] leading-relaxed mb-6">
+          I am a professional passionate about creating simple and effective solutions.
+          I like understanding needs, focusing on essentials, and moving projects forward concretely.
+        </p>
+
+        <!-- Personality traits -->
+        <ul class="list-disc pl-5 text-[#1E293B] mb-8">
+          <li>Passionate</li>
+          <li>Pragmatic</li>
+          <li>Curious</li>
+        </ul>
+
+        <!-- Mini section "Why me?" -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-xl font-semibold text-blue-600 mb-4">Why me?</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+            <div>
+              <div class="text-3xl mb-2">👂</div>
+              <p class="font-medium text-[#1E293B]">Listening</p>
+            </div>
+            <div>
+              <div class="text-3xl mb-2">⚙️</div>
+              <p class="font-medium text-[#1E293B]">Simplicity</p>
+            </div>
+            <div>
+              <div class="text-3xl mb-2">⚡</div>
+              <p class="font-medium text-[#1E293B]">Speed</p>
+            </div>
+          </div>
+        </div>
+
+
+       <!-- Life context sentence -->
+<p class="italic text-[#1E293B] text-center md:text-left text-lg">
+  "After several years juggling between creation and technology, I now help build clear, efficient, and genuine projects."
+</p>
+
+      </div>
+    </div>
+  </div></section>
+    
+    <section id="offres" class="min-h-screen bg-blue-50 flex items-center justify-center p-8">  <section class="max-w-7xl mx-auto">
+    <!-- Titre -->
+   <h2 class="text-[32px] font-bold text-blue-600 mb-6">
+  My solutions Simple and modular offers
+</h2>
+
+<!-- Filters -->
+<div class="mb-6 flex flex-wrap gap-3" id="filter-buttons">
+  <button class="filter-btn border border-[#E26D5C] text-[#E26D5C] px-4 py-1 rounded-full hover:bg-[#E26D5C]/10" data-sector="all">All</button>
+  <button class="filter-btn border border-[#E26D5C] text-[#E26D5C] px-4 py-1 rounded-full hover:bg-[#E26D5C]/10" data-sector="web">Web</button>
+  <button class="filter-btn border border-[#E26D5C] text-[#E26D5C] px-4 py-1 rounded-full hover:bg-[#E26D5C]/10" data-sector="design">Design</button>
+  <button class="filter-btn border border-[#E26D5C] text-[#E26D5C] px-4 py-1 rounded-full hover:bg-[#E26D5C]/10" data-sector="seo">SEO</button>
+</div>
+
+    <!-- Cartes -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="offer-cards">
+
+      <!-- Offre 1 -->
+      <div class="offer-card bg-white border border-[#E5E7EB] rounded-lg shadow-md p-6" data-sector="web">
+        <div class="text-[#E26D5C] text-3xl mb-4">🌐</div>
+<h3 class="text-[18px] text-blue-600 font-semibold mb-2">Showcase Website Creation</h3>
+<p class="text-sm text-gray-600 mb-4">An elegant and fast website to showcase your business.</p>
+
+<a href="#portfolio" class="text-[#E26D5C] underline font-medium">
+  <button class="border border-[#E26D5C] text-[#E26D5C] px-4 py-2 rounded hover:bg-[#E26D5C]/10">View portfolio</button>
+</a>
+</div>
+
+<!-- Offer 2 -->
+<div class="offer-card bg-white border border-[#E5E7EB] rounded-lg shadow-md p-6" data-sector="design">
+  <div class="text-[#E26D5C] text-3xl mb-4">🎨</div>
+  <h3 class="text-[18px] font-semibold mb-2 text-blue-600">Visual Identity</h3>
+  <p class="text-sm text-gray-600 mb-4">Logo, colors, typography… everything for a strong brand.</p>
+  <a href="#portfolio" class="text-[#E26D5C] underline font-medium">
+    <button class="border border-[#E26D5C] text-[#E26D5C] px-4 py-2 rounded hover:bg-[#E26D5C]/10">View portfolio</button>
+  </a>
+</div>
+
+<!-- Offer 3 -->
+<div class="offer-card bg-white border border-[#E5E7EB] rounded-lg shadow-md p-6" data-sector="seo">
+  <div class="text-[#E26D5C] text-3xl mb-4">📈</div>
+  <h3 class="text-[18px] font-semibold mb-2 text-blue-600">SEO Optimization</h3>
+  <p class="text-sm text-gray-600 mb-4">Increase your visibility on search engines.</p>
+  <a href="#portfolio" class="text-[#E26D5C] underline font-medium">
+    <button class="border border-[#E26D5C] text-[#E26D5C] px-4 py-2 rounded hover:bg-[#E26D5C]/10">View portfolio</button>
+  </a>
+</div>
+
+      <!-- ➕ Ajoutez d'autres offres ici avec l'attribut `data-sector` correspondant -->
+
+    </div>
+  </section></section>
+    <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.offer-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const sector = button.getAttribute('data-sector');
+
+        cards.forEach(card => {
+          if (sector === 'all' || card.getAttribute('data-sector') === sector) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+    
+    
+    <section id="prrocesus" class="min-h-screen bg-blue-50 flex items-center justify-center">  <section class="max-w-5xl mx-auto px-4 py-12">
+    <!-- Titre principal -->
+  <h2 class="text-[30px] sm:text-[36px] text-blue-600 font-bold text-center mb-10">
+  Our process in 4 simple steps
+</h2>
+
+<!-- Steps -->
+<div class="space-y-12">
+  <!-- Step 1 -->
+  <div class="flex flex-col md:flex-row items-center md:items-start md:gap-8">
+    <div class="flex items-center gap-4 md:w-1/2">
+      <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="2">
+        <use href="#heroicon-outline-light-bulb" />
+      </svg>
+      <div>
+        <h3 class="text-xl text-blue-600 font-semibold">1. Understand your needs</h3>
+        <p class="text-gray-600">We discuss together to identify your expectations and goals.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="flex flex-col md:flex-row-reverse items-center md:items-start md:gap-8">
+    <div class="flex items-center gap-4 md:w-1/2 md:ml-auto">
+      <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" stroke-width="2">
+        <use href="#heroicon-outline-document-magnifying-glass" />
+      </svg>
+      <div>
+        <h3 class="text-xl text-blue-600 font-semibold">2. Plan development</h3>
+        <p class="text-gray-600">We define a clear, step-by-step plan together.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="flex flex-col md:flex-row items-center md:items-start md:gap-8">
+    <div class="flex items-center gap-4 md:w-1/2">
+      <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" stroke-width="2">
+        <use href="#heroicon-outline-cog" />
+      </svg>
+      <div>
+        <h3 class="text-xl text-blue-600 font-semibold">3. Implementation</h3>
+        <p class="text-gray-600">We take action with rigor and transparency.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="flex flex-col md:flex-row-reverse items-center md:items-start md:gap-8">
+    <div class="flex items-center gap-4 md:w-1/2 md:ml-auto">
+      <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" stroke-width="2">
+        <use href="#heroicon-outline-check-circle" />
+      </svg>
+      <div>
+        <h3 class="text-xl text-blue-600 font-semibold">4. Validation & Follow-up</h3>
+        <p class="text-gray-600">We validate with you and remain available for follow-up.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Reassuring message -->
+<div class="mt-12 bg-[#EDEDED] p-6 rounded-lg text-[16px] italic text-gray-700 text-center">
+  We support you at every step, with kindness and professionalism.
+</div>
+
+    <!-- Schéma explicatif SVG -->
+    <div class="mt-12 flex justify-center">
+      <svg width="320" height="120" viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#1E293B" stroke-width="2">
+          <circle cx="40" cy="60" r="20" fill="#BFDBFE"/>
+          <circle cx="120" cy="60" r="20" fill="#A7F3D0"/>
+          <circle cx="200" cy="60" r="20" fill="#DDD6FE"/>
+          <circle cx="280" cy="60" r="20" fill="#FEF3C7"/>
+          <line x1="60" y1="60" x2="100" y2="60" />
+          <line x1="140" y1="60" x2="180" y2="60" />
+          <line x1="220" y1="60" x2="260" y2="60" />
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Heroicons Outline (CDN icons) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="heroicon-outline-light-bulb" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3a6 6 0 00-3 11.3V17a1 1 0 001 1h4a1 1 0 001-1v-2.7A6 6 0 0012 3z" />
+    </symbol>
+    <symbol id="heroicon-outline-document-magnifying-glass" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M11 6h6m-6 4h6M4 6h.01M4 10h.01M4 14h.01M4 18h.01M21 21l-4.35-4.35" />
+    </symbol>
+    <symbol id="heroicon-outline-cog" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M11 13h2v2h-2zM4 13a9 9 0 0016 0" />
+    </symbol>
+    <symbol id="heroicon-outline-check-circle" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </symbol>
+  </svg></section>
+<section id="portfolio" class="bg-blue-50 px-4 py-8">
+  <div class="max-w-6xl mx-auto">
+    <!-- Titre -->
+   <h2 class="text-3xl text-blue-600 font-bold mb-6 text-center">My Portfolio</h2>
+
+<!-- Filters -->
+<div class="mb-6 flex flex-wrap justify-center gap-3">
+  <button onclick="filterProjects('all')" class="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400 transition">All</button>
+  <button onclick="filterProjects('web')" class="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400 transition">Web</button>
+  <button onclick="filterProjects('design')" class="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400 transition">Design</button>
+  <button onclick="filterProjects('marketing')" class="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400 transition">Marketing</button>
+</div>
+
+<!-- Projects Grid -->
+<div id="portfolio-grid" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+  <!-- Card 1 -->
+  <div class="project-card web bg-white rounded shadow overflow-hidden cursor-pointer transform transition hover:scale-105"
+    onclick="openModal('port1.png', 'E-commerce Site', 'Creation of a responsive online store', '35% revenue increase')">
+    <img src="port1.png" alt="Web Project" class="w-full h-48 object-cover">
+    <div class="p-4">
+      <h3 class="font-semibold text-blue-600 text-lg">E-commerce Site</h3>
+      <p class="text-sm italic text-gray-500">Creation of a responsive online store</p>
+      <p class="mt-1 font-semibold text-[#E26D5C]">+35% revenue increase</p>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="project-card design bg-white rounded shadow overflow-hidden cursor-pointer transform transition hover:scale-105"
+    onclick="openModal('part2.png', 'Visual Identity', 'Logo and color redesign', 'Stronger brand image')">
+    <img src="part2.png" alt="Design Project" class="w-full h-48 object-cover">
+    <div class="p-4">
+      <h3 class="text-blue-600 font-semibold text-lg">Visual Identity</h3>
+      <p class="text-sm italic text-gray-500">Logo and color redesign</p>
+      <p class="mt-1 font-semibold text-[#E26D5C]">Stronger brand image</p>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="project-card marketing bg-white rounded shadow overflow-hidden cursor-pointer transform transition hover:scale-105"
+    onclick="openModal('part3.png', 'Google Ads Campaign', 'Conversion optimization', '50% conversion rate')">
+    <img src="part3.png" alt="Marketing Project" class="w-full h-48 object-cover">
+    <div class="p-4">
+      <h3 class="text-blue-600 font-semibold text-lg">Google Ads Campaign</h3>
+      <p class="text-sm italic text-gray-500">Conversion optimization</p>
+      <p class="mt-1 font-semibold text-[#E26D5C]">+50% conversion rate</p>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal -->
+  <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+    <div class="bg-white p-4 rounded max-w-lg w-full mx-4 relative">
+      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 text-2xl font-bold">&times;</button>
+      <img id="modal-image" src="" alt="Image projet" class="w-full h-auto mb-4 rounded">
+      <h3 id="modal-title" class="text-xl font-bold mb-2"></h3>
+      <p id="modal-description" class="text-sm italic text-gray-600"></p>
+      <p id="modal-benefit" class="mt-2 font-semibold text-[#E26D5C]"></p>
+    </div>
+  </div>
+</section>
+
+<script>
+  function filterProjects(type) {
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+      card.style.display = (type === 'all' || card.classList.contains(type)) ? 'block' : 'none';
+    });
+  }
+
+  function openModal(imageSrc, title, description, benefit) {
+    const modal = document.getElementById('modal');
+    modal.classList.remove('hidden');
+    document.getElementById('modal-image').src = imageSrc;
+    document.getElementById('modal-title').innerText = title;
+    document.getElementById('modal-description').innerText = description;
+    document.getElementById('modal-benefit').innerText = benefit;
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.classList.add('hidden');
+  }
+
+  // Fermer la modal si clic à l'extérieur
+  window.addEventListener('click', function (e) {
+    const modal = document.getElementById('modal');
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+</script>
+
+<!-- Section Témoignages -->
+<section id="temoignages" class="bg-blue-50 py-12 px-4">
+  <div class="max-w-6xl mx-auto">
+  <h2 class="text-3xl text-blue-600 font-bold text-center mb-10">What Our Clients Say</h2>
+
+  <!-- Scroll indication -->
+  <p class="text-center text-sm text-gray-500 mb-4">Scroll horizontally to read more testimonials ⟶</p>
+
+  <!-- Swiper Container -->
+  <div class="swiper mySwiper w-full">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide bg-white p-6 rounded-lg shadow-md">
+        <div class="flex items-start gap-4">
+          <img src="https://i.pravatar.cc/48?img=1" alt="Client photo" class="w-12 h-12 rounded-full object-cover">
+          <div>
+            <p class="italic text-base sm:text-lg text-slate-800 mb-2">"Exceptional, responsive, and attentive service."</p>
+            <p class="font-bold text-slate-900">Claire Dupont <span class="font-normal">– Claire, architect</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide bg-white p-6 rounded-lg shadow-md">
+        <div class="flex items-start gap-4">
+          <img src="https://i.pravatar.cc/48?img=2" alt="Client photo" class="w-12 h-12 rounded-full object-cover">
+          <div>
+            <p class="italic text-base sm:text-lg text-slate-800 mb-2">"Thanks to them, I saved time and gained clients."</p>
+            <p class="font-bold text-slate-900">Lucas Martin <span class="font-normal">– Lucas, photographer</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide bg-white p-6 rounded-lg shadow-md">
+        <div class="flex items-start gap-4">
+          <img src="https://i.pravatar.cc/48?img=3" alt="Client photo" class="w-12 h-12 rounded-full object-cover">
+          <div>
+            <p class="italic text-base sm:text-lg text-slate-800 mb-2">"A very professional team, highly recommended."</p>
+            <p class="font-bold text-slate-900">Sophie Bernard <span class="font-normal">– Sophie, coach</span></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      <!-- Pagination -->
+      <div class="flex justify-center mt-6">
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Swiper Activation with Autoplay on Scroll -->
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    loop: true
+  });
+
+  // Autoplay contrôlé par l'intersection avec la section
+  const temoignageSection = document.querySelector('#temoignages');
+
+  const observerr = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        swiper.autoplay.start();
+      } else {
+        swiper.autoplay.stop();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observerr.observe(temoignageSection);
+</script>
+    
+    
+<section id="faq" class="min-h-screen bg-blue-50 flex items-center justify-center px-4">
+  <section class="max-w-3xl w-full mx-auto" itemscope itemtype="https://schema.org/FAQPage">
+
+    <!-- Titre -->
+    <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">Frequently Asked Questions</h2>
+
+<!-- Search field -->
+<input 
+  type="text" 
+  id="faq-search" 
+  placeholder="Search a question..." 
+  class="w-full mb-6 p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#E26D5C]" 
+  oninput="filterFaq()"
+  aria-label="Search in questions"
+/>
+
+<!-- FAQ Accordion -->
+<div id="faq-list" class="space-y-4">
+
+  <!-- Example questions suited for SMEs -->
+  <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="faq-item border rounded bg-white shadow">
+    <button 
+      class="w-full text-left p-4 flex justify-between items-center hover:text-[#E26D5C] transition"
+      onclick="toggleFaq(this)"
+      aria-expanded="false"
+    >
+      <span itemprop="name">How long does it take to create a website?</span>
+      <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </button>
+    <div 
+      itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" 
+      class="hidden px-4 pb-4 text-gray-700 text-[16px]"
+    >
+      <div itemprop="text">On average, a showcase website for SMEs takes between 2 to 4 weeks depending on complexity and client responsiveness.</div>
+    </div>
+  </div>
+
+  <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="faq-item border rounded bg-white shadow">
+    <button 
+      class="w-full text-left p-4 flex justify-between items-center hover:text-[#E26D5C] transition"
+      onclick="toggleFaq(this)"
+      aria-expanded="false"
+    >
+      <span itemprop="name">Can I manage my website content myself?</span>
+      <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </button>
+    <div 
+      itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" 
+      class="hidden px-4 pb-4 text-gray-700 text-[16px]"
+    >
+      <div itemprop="text">Yes! I use tools like WordPress or Webflow so you can easily update your content.</div>
+    </div>
+  </div>
+
+  <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="faq-item border rounded bg-white shadow">
+    <button 
+      class="w-full text-left p-4 flex justify-between items-center hover:text-[#E26D5C] transition"
+      onclick="toggleFaq(this)"
+      aria-expanded="false"
+    >
+      <span itemprop="name">Do you also offer SEO services?</span>
+      <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </button>
+    <div 
+      itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" 
+      class="hidden px-4 pb-4 text-gray-700 text-[16px]"
+    >
+      <div itemprop="text">Yes, all my websites are optimized for basic SEO, and I can offer more advanced support if needed.</div>
+    </div>
+  </div>
+
+  <!-- Contact question -->
+  <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="faq-item border rounded bg-white shadow">
+    <button 
+      class="w-full text-left p-4 flex justify-between items-center hover:text-[#E26D5C] transition"
+      onclick="toggleFaq(this)"
+      aria-expanded="false"
+    >
+      <span itemprop="name">I can’t find my answer, what should I do?</span>
+      <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </button>
+    <div 
+      itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" 
+      class="hidden px-4 pb-4 text-gray-700 text-[16px]"
+    >
+      <div itemprop="text">
+        No problem! <a href="#contact" class="text-[#E26D5C] underline font-medium">Contact me here</a> and I’ll get back to you quickly.
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </section>
+</section>
+
+<script>
+  function toggleFaq(button) {
+    const content = button.nextElementSibling;
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', !expanded);
+    content.classList.toggle('hidden');
+    button.querySelector('svg').classList.toggle('rotate-180');
+  }
+
+  function filterFaq() {
+    const query = document.getElementById("faq-search").value.toLowerCase();
+    document.querySelectorAll("#faq-list .faq-item").forEach(item => {
+      const question = item.querySelector("[itemprop='name']").textContent.toLowerCase();
+      item.style.display = question.includes(query) ? "block" : "none";
+    });
+  }
+</script>
+<!-- Technologies -->
+<section class="mt-20 bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-2xl p-10 shadow-md">
+  <h3 class="text-3xl font-bold text-blue-800 mb-10 text-center">Technologies Used</h3>
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
+    
+    <!-- Tech example -->
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/html5/EF652A" alt="HTML5" class="w-10 h-10 mx-auto mb-2">
+      <p class="text-blue-800 font-semibold">HTML</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3" class="w-10 h-10 mx-auto mb-2">
+      <p class="text-blue-800 font-semibold">CSS</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" class="w-10 h-10 mx-auto mb-2">
+      <p class="text-blue-800 font-semibold">JavaScript</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" class="w-10 h-10 mx-auto mb-2">
+      <p class="text-blue-800 font-semibold">React</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" class="w-10 h-10 mx-auto mb-2">
+      <p class="text-blue-800 font-semibold">Tailwind</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js" class="w-10 h-10 mx-auto mb-2">
+      <p class="text-blue-800 font-semibold">Node.js</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/firebase/FFCA28" alt="Firebase" class="w-10 h-10 mx-auto mb-2">
+      <p class="text-blue-800 font-semibold">Firebase</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL" class="w-10 h-10 mx-auto mb-2">
+      <p class="text-blue-800 font-semibold">SQL</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" class="w-10 h-10 mx-auto mb-2">
+      <p class="text-blue-800 font-semibold">Git</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="w-10 h-10 mx-auto mb-2">
+      <p class="text-blue-800 font-semibold">GitHub</p>
+    </div>
+
+  </div>
+</section>
+
+  <section id="contact" class="max-w-3xl mx-auto mt-16 p-6 bg-white rounded shadow">
+  <!-- Titre -->
+  <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">Contact Us Now</h2>
+
+<!-- Form -->
+<form action="https://formspree.io/f/xrbqvwaw" method="POST"
+  
+  class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md space-y-6"
+
+>
+  <!-- Honeypot anti-spam field -->
+  <div class="hidden">
+    <label>
+      Do not fill in:
+      <input type="text" name="website" tabindex="-1" autocomplete="off" />
+    </label>
+  </div>
+
+  <!-- Name -->
+  <div>
+    <label for="name" class="block text-sm font-medium mb-1">Name <span class="text-red-500">*</span></label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      aria-required="true"
+    />
+  </div>
+
+  <!-- Email -->
+  <div>
+    <label for="email" class="block text-sm font-medium mb-1">Email <span class="text-red-500">*</span></label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      aria-required="true"
+    />
+  </div>
+
+  <!-- Subject -->
+  <div>
+    <label for="subject" class="block text-sm font-medium mb-1">Subject <span class="text-red-500">*</span></label>
+    <select
+      id="subject"
+      name="subject"
+      required
+      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      aria-required="true"
+    >
+      <option value="">-- Choose a subject --</option>
+      <option value="devis">Quote</option>
+      <option value="question">Question</option>
+      <option value="autre">Other</option>
+    </select>
+  </div>
+
+  <!-- Message -->
+  <div>
+    <label for="message" class="block text-sm font-medium mb-1">Message <span class="text-red-500">*</span></label>
+    <textarea
+      id="message"
+      name="message"
+      rows="5"
+      required
+      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      aria-required="true"
+    ></textarea>
+  </div>
+
+  <!-- Submit Button -->
+  <div>
+    <button
+      type="submit"
+      id="submitBtn"
+      class="bg-[#E26D5C] hover:bg-[#d45b4b] text-white font-semibold py-3 px-6 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#E26D5C] transition duration-200"
+    >
+      Send
+    </button>
+  </div>
+
+  <!-- Confirmation Message -->
+  <p id="confirmationMsg" class="text-green-600 font-medium text-center hidden">Thank you! Your message has been sent.</p>
+</form>
+
+  <!-- Script JS -->
+
+  </section>
+    
+  </main>
+    <footer class="bg-blue-50 text-sm text-[#1E293B] p-6 relative">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <!-- Copyright -->
+      <div class="text-sm">&copy; 2025 Toussaint Léo Vitch. All rights reserved.</div>
+
+<!-- Mini-menu -->
+<div class="space-x-4 text-xs text-gray-600">
+  <a href="#" onclick="openLegalModal()" class="text-gray-500 font-semibold hover:underline cursor-pointer text-sm">Legal Notice</a>
+  <a href="#" onclick="openCGVModal()" class="text-gray-500 font-semibold hover:underline cursor-pointer ">Terms and Conditions</a>
+  <a href="#contact" class="hover:text-gray-500 transition">Contact</a>
+</div>
+
+<!-- Social networks -->
+
+</div>
+
+<!-- Slogan -->
+<p class="mt-6 text-center italic text-blue-600 text-sm">
+  “A professional and clear website, without jargon.”
+</p>
+
+<!-- Terms and Conditions Modal -->
+<div id="cgv-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-2xl mx-4 relative max-h-[80vh] overflow-y-auto">
+    <button
+      onclick="closeCGVModal()"
+      class="absolute top-3 right-4 text-gray-400 hover:text-black text-3xl font-bold"
+      aria-label="Close Terms and Conditions window"
+    >&times;</button>
+    <h2 class="text-2xl font-bold text-blue-600 mb-4">Terms and Conditions</h2>
+    <div class="text-sm text-gray-700 space-y-4">
+      <p><strong>1. Purpose:</strong> These Terms and Conditions define the applicable terms for the services provided.</p>
+      <p><strong>2. Pricing:</strong> Prices are quoted in dollars, excluding taxes. A quote is provided before each service.</p>
+      <p><strong>3. Payment:</strong> A 30% deposit is required upon signing. The balance is due upon delivery.</p>
+      <p><strong>4. Deadlines:</strong> Deadlines are indicative. The provider will inform in case of delay.</p>
+      <p><strong>5. Intellectual Property:</strong> Deliverables remain the property of the provider until full payment is made.</p>
+      <p><strong>6. Liability:</strong> The provider cannot be held responsible for errors due to misuse.</p>
+      <p><strong>7. Applicable Law:</strong> These Terms and Conditions are governed by American law.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Legal Notice Modal -->
+<div id="legal-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg mx-4 relative max-h-[80vh] overflow-y-auto">
+    <button
+      onclick="closeLegalModal()"
+      class="absolute top-3 right-4 text-gray-400 hover:text-black text-3xl font-bold"
+      aria-label="Close Legal Notice window"
+    >&times;</button>
+    <h2 class="text-2xl font-bold text-blue-600 mb-4">Legal Notice</h2>
+    <div class="text-sm text-gray-700 space-y-4">
+      <p><strong>Publisher:</strong> Toussaint Léo Vitch – Front-End Developer</p>
+      <p><strong>Address:</strong> 123, Port-au-Prince, Haiti</p>
+      <p><strong>Email:</strong> tleovitch@gmail.com</p>
+      <p><strong>Host:</strong> o2switch – 222 Bd Gustave Flaubert, 63000 Clermont-Ferrand</p>
+      <p><strong>SIRET:</strong> 123 456 789 00010</p>
+      <p class="text-sm text-gray-500 italic mt-4">Last updated: June 2025</p>
+    </div>
+  </div>
+</div>
+
+  <!-- Scripts pour gérer les modales -->
+  <script>
+    function openCGVModal() {
+      const modal = document.getElementById('cgv-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+    function closeCGVModal() {
+      const modal = document.getElementById('cgv-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+    function openLegalModal() {
+      const modal = document.getElementById('legal-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+    function closeLegalModal() {
+      const modal = document.getElementById('legal-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+    // Fermer modale si clic en dehors
+    window.addEventListener('click', function(e) {
+      const cgvModal = document.getElementById('cgv-modal');
+      const legalModal = document.getElementById('legal-modal');
+      if (e.target === cgvModal) closeCGVModal();
+      if (e.target === legalModal) closeLegalModal();
+    });
+  </script>
+    <!-- Back to top -->
+    <button onclick="scrollToTop()" 
+            class="absolute bottom-4 right-4 text-xs text-gray-400 hover:text-[#E26D5C] transition">
+      ↑ Back to top
+    </button>
+  </footer>
+  <script>
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+  <!-- JS Burger Menu -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      icon.setAttribute('d',
+        mobileMenu.classList.contains('hidden')
+          ? 'M4 6h16M4 12h16M4 18h16'
+          : 'M6 18L18 6M6 6l12 12'
+      );
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      });
+    });
+  </script>
+</body>
+</html>
