@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+<script src="https://cdn.counter.dev/script.js" data-id="31788de2-e291-439a-9a6e-f52a51e6eaff" data-utcoffset="-4"></script>
+  <!-- SEO Meta Tags -->
+  <title>Vitch Web Studio | Affordable Website Design for SMEs</title>
+  <meta name="description" content="Vitch Web Studio offers professional, affordable website design and development services for all types of businesses. Boost your online presence with our tailored solutions." />
+  <meta name="keywords" content="web design, affordable websites, SME websites, business websites, responsive websites" />
+  <meta name="author" content="Vitch Web Studio" />
+  <!-- Pour la barre de statut sur Android (Chrome, etc.) -->
+<meta name="theme-color" content="#005BBB"> <!-- un bleu , par exemple -->
+
+<!-- Pour iOS, tu peux aussi ajouter ça pour la couleur de la barre de navigation -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Vitch Web Studio",
+  "url": "https://www.votresite.com",
+  "logo": "https://www.votresite.com/logo.png",
+  "image": "https://www.votresite.com/studio.jpg",
+  "description": "Web agency specializing in affordable website creation for all types of businesses.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CA"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": ""
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support",
+    "email": "contact@votresite.com"
+  }
+}
+</script>
+
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .active-link {
+      font-weight: bold;
+      color: #2563eb;
+    }
+    .transition-max {
+      transition: max-height 0.4s ease-in-out;
+      overflow: hidden;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    html, body {
+  overflow-x: hidden;
+}
+  .scrollbar-hide {
+      scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .fade-ini {
+      animation: fadeIn 0.6s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+<body class="relative bg-white text-gray-900 font-sans">
+
+<!-- Navbar -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow z-50">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Main navigation">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0 text-xl font-bold text-blue-600">
+        <a href="#accueil" class="nav-link hover:text-blue-600 transition-colors">Vitch Web Studio</a>
+      </div>
+      <div class="hidden md:flex space-x-6 items-center">
+        <a href="#accueil" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+        <a href="#solution" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Solutions</a>
+        <a href="#realisations" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Portfolio</a>
+        <a href="#tarifs" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Pricing</a>
+        <div class="relative group" role="none">
+          <button aria-haspopup="true" aria-expanded="false" aria-controls="submenu-plus" class="text-gray-700 hover:text-blue-600 transition-colors" id="btn-plus">
+            More ▾
+          </button>
+          <div id="submenu-plus" class="absolute hidden group-hover:block bg-white shadow mt-2 p-2 rounded z-10 whitespace-nowrap" role="menu" aria-label="More menu">
+            <a href="#pourqui" class="block px-4 py-2 hover:bg-blue-50" role="menuitem">Who Benefits?</a>
+            <a href="#tarifs" class="block px-4 py-2 hover:bg-blue-50" role="menuitem">Pricing</a>
+            <a href="#avis" class="block px-4 py-2 hover:bg-blue-50" role="menuitem">Testimonials</a>
+            <a href="#methode" class="block px-4 py-2 hover:bg-blue-50" role="menuitem">How We Work</a>
+          </div>
+        </div>
+      <script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const btnPlus = document.getElementById('btn-plus');
+  const submenuPlus = document.getElementById('submenu-plus');
+
+  // Fonction pour ouvrir le sous-menu
+  function openSubmenu() {
+    submenuPlus.style.display = 'block';
+    btnPlus.setAttribute('aria-expanded', 'true');
+  }
+
+  // Fonction pour fermer le sous-menu
+  function closeSubmenu() {
+    submenuPlus.style.display = 'none';
+    btnPlus.setAttribute('aria-expanded', 'false');
+  }
+
+  // Ouvrir au clic
+  btnPlus.addEventListener('click', (e) => {
+    e.preventDefault();
+    const expanded = btnPlus.getAttribute('aria-expanded') === 'true';
+    if (expanded) {
+      closeSubmenu();
+    } else {
+      openSubmenu();
+    }
+  });
+
+  // Fermer le menu si clic en dehors
+  document.addEventListener('click', (e) => {
+    if (!btnPlus.contains(e.target) && !submenuPlus.contains(e.target)) {
+      closeSubmenu();
+    }
+  });
+
+  // Gestion clavier (Echap ferme le menu)
+  btnPlus.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+      closeSubmenu();
+      btnPlus.focus();
+    }
+  });
+});
+
+</script>
+
+     <a href="#contact" onclick="openModal()" class="ml-4 px-3 py-1.5 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-sm font-medium whitespace-nowrap">
+  15-Minute Free 
+</a>
+</div>
+
+<button id="mobile-menu-btn" aria-label="Open mobile menu" class="md:hidden text-gray-700 focus:outline-none">
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
+</div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden max-h-0 transition-max bg-white px-4 overflow-hidden" role="menu" aria-label="Mobile navigation">
+  <a href="#accueil" class="block py-2 text-gray-700" role="menuitem">Home</a>
+  <a href="#solution" class="block py-2 text-gray-700" role="menuitem">Solutions</a>
+  <a href="#realisations" class="block py-2 text-gray-700" role="menuitem">Projects</a>
+  <a href="#form" class="block py-2 text-gray-700" role="menuitem">Contact</a>
+  <a href="#pourqui" class="block py-2 text-gray-700" role="menuitem">Who Benefits?</a>
+  <a href="#tarifs" class="block py-2 text-gray-700" role="menuitem">Pricing</a>
+  <a href="#avis" class="block py-2 text-gray-700" role="menuitem">Reviews</a>
+  <a href="#methode" class="block py-2 text-gray-700" role="menuitem">How We Work</a>
+</div>
+
+
+</header>
+
+<!-- Sticky CTA Mobile -->
+<a href="#contact" onclick="openModal()" 
+   class="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 md:hidden bg-blue-600 text-white px-4 py-2 rounded shadow-lg hover:bg-blue-700 text-center w-[90%]"
+   title="Book a free 15-minute consultation"
+   aria-label="Book a free 15-minute consultation">
+  15 minutes free<br>
+  <span class="text-xs text-white/80">Free call</span>
+</a>
+
+<!-- Contenu principal -->
+<main class="pt-20 space-y-32">
+<!-- Accueil -->
+<section id="accueil" class="relative overflow-hidden" aria-labelledby="hero-heading">
+  <div class="max-w-7xl mx-auto px-6 py-16 md:flex md:items-center md:justify-between">
+    <div class="md:w-1/2 fade-in">
+      <h1 id="hero-heading" class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+        You run a business! No time? <br>
+        <span class="text-indigo-600">We create your website while you focus on your work.</span>
+      </h1>
+      <p class="text-lg text-gray-700 mb-8">
+        A turnkey, professional, Google-optimized website that attracts customers while you manage your business.
+      </p>
+      <a href="#methode" class="inline-block bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition"
+         title="Discover how our website creation method works"
+         aria-label="Learn more about our method">
+        Discover how
+      </a>
+    </div>
+    <div class="md:w-1/2 mt-10 md:mt-0 fade-in">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+           alt="Laptop showcasing a clean website mockup – professionnel et moderne"
+           class="rounded-lg shadow-lg w-full"
+           loading="lazy">
+    </div>
+  </div>
+
+  <div class="bg-blue-50 py-10">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div class="fade-in">
+        <div class="text-4xl font-bold text-indigo-600 counter" data-target="167" aria-label="167 satisfied businesses">0</div>
+        <p class="mt-2 text-gray-600">Satisfied businesses</p>
+      </div>
+      <div class="fade-in">
+        <div class="text-4xl font-bold text-indigo-600 counter" data-target="15" aria-label="15 days delivery time">0</div>
+        <p class="mt-2 text-gray-600">Days to deliver</p>
+      </div>
+      <div class="fade-in">
+        <div class="text-4xl font-bold text-indigo-600">100%</div>
+        <p class="mt-2 text-gray-600">Satisfaction guaranteed or your money back</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Pour qui -->
+ <!-- Pour qui -->
+<section id="pourqui" class="py-16 px-4" aria-labelledby="for-who-heading">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 id="for-who-heading" class="text-3xl md:text-4xl font-bold mb-4 text-blue-700">
+      Is this for you?
+    </h2>
+    <p class="text-lg md:text-xl text-gray-600 mb-12">
+      Do you recognize yourself in one of these situations? Then we're here for you.
+    </p>
+    <div class="grid gap-8 md:grid-cols-3">
+      
+      <div class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 text-center fade-in">
+        <img 
+          src="https://img.icons8.com/ios-filled/100/1E3A8A/business.png" 
+          alt="Business icon - just started" 
+          class="w-16 h-16 mx-auto mb-4"
+          loading="lazy"
+        />
+        <h3 class="text-xl font-semibold">
+          Have you just started your business?
+        </h3>
+      </div>
+      
+      <div class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 text-center fade-in">
+        <img 
+          src="https://img.icons8.com/ios-filled/100/1E3A8A/maintenance.png" 
+          alt="Outdated website icon" 
+          class="w-16 h-16 mx-auto mb-4"
+          loading="lazy"
+        />
+        <h3 class="text-xl font-semibold">
+          Is your website outdated or not effective?
+        </h3>
+      </div>
+      
+      <div class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 text-center fade-in">
+        <img 
+          src="https://img.icons8.com/ios-filled/100/1E3A8A/internet.png" 
+          alt="No website icon" 
+          class="w-16 h-16 mx-auto mb-4"
+          loading="lazy"
+        />
+        <h3 class="text-xl font-semibold">
+          Have you never had a website?
+        </h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Autres sections -->
+<section id="problem" class="max-w-6xl mx-auto px-6 py-20 bg-white" aria-labelledby="problem-heading">
+  <h2 id="problem-heading" class="text-4xl sm:text-5xl font-bold text-center text-blue-700 leading-tight mb-16">
+    What if we did things right, without the hassle?
+  </h2>
+
+  <!-- List of professional frustrations -->
+  <ul class="space-y-6 max-w-2xl mx-auto mb-20" aria-label="Common website frustrations for business owners">
+    <li class="flex items-start space-x-4">
+      <svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12" y2="16" />
+      </svg>
+      <span class="text-gray-700 text-lg">Your business is hard to find online</span>
+    </li>
+    <li class="flex items-start space-x-4">
+      <svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 4v16m8-8H4" />
+      </svg>
+      <span class="text-gray-700 text-lg">Your website doesn't bring customers</span>
+    </li>
+    <li class="flex items-start space-x-4">
+      <svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 4v16m8-8H4" />
+      </svg>
+      <span class="text-gray-700 text-lg">Your DIY site looks unprofessional</span>
+    </li>
+    <li class="flex items-start space-x-4">
+      <svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 4v16m8-8H4" />
+      </svg>
+      <span class="text-gray-700 text-lg">You've been postponing this project for months</span>
+    </li>
+    <li class="flex items-start space-x-4">
+      <svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 4v16m8-8H4" />
+      </svg>
+      <span class="text-gray-700 text-lg">You want a professional solution without the high cost</span>
+    </li>
+  </ul>
+
+  <!-- Professional comparison -->
+  <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 mb-20">
+    <div class="flex items-center p-6 bg-blue-50 rounded-lg border border-gray-200 shadow-sm" aria-label="Do-it-yourself approach">
+      <svg class="w-8 h-8 text-gray-400 flex-shrink-0 mr-4" fill="none" stroke="currentColor" stroke-width="2"
+        viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <p class="text-gray-700 font-medium">DIY: too much stress, zero results</p>
+    </div>
+    <div class="flex items-center p-6 bg-green-50 rounded-lg border border-green-200 shadow-sm" aria-label="Professional website creation service">
+      <svg class="w-8 h-8 text-green-600 flex-shrink-0 mr-4" fill="none" stroke="currentColor" stroke-width="2"
+        viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 13l4 4L19 7" />
+      </svg>
+      <p class="text-green-800 font-semibold">With us: professional, clear site, turnkey delivery</p>
+    </div>
+  </div>
+
+  <!-- Testimonial -->
+  <figure class="max-w-3xl mx-auto text-center" style="border-left: 2px solid rgb(29, 29, 221);" aria-label="Client testimonial">
+    <blockquote class="text-xl text-gray-700 font-medium italic">
+      "Our site has never generated so many leads. Simple, smooth, effective."
+    </blockquote>
+    <figcaption class="mt-4 text-blue-700 font-semibold not-italic">
+      Marc - Local Boutique Owner
+    </figcaption>
+  </figure>
+</section>
+
+
+ <section id="solution" class="max-w-5xl mx-auto px-6 py-16 text-center" aria-labelledby="solution-title">
+  <h2 id="solution-title" class="text-4xl font-extrabold mb-4 text-blue-700">We take care of your site from A to Z</h2>
+  <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+    Professional, fast, beautiful site, SEO optimized, connected to Google Maps & social networks.
+  </p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+    <div class="flex flex-col items-center space-y-4 px-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h10a4 4 0 004-4v-6a4 4 0 00-4-4H7a4 4 0 00-4 4v6z" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 9h18" />
+      </svg>
+      <h3 class="font-semibold text-xl text-blue-700">Responsive design & SSL security</h3>
+    </div>
+    <div class="flex flex-col items-center space-y-4 px-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+      </svg>
+      <h3 class="font-semibold text-xl text-blue-700">Easy content management</h3>
+    </div>
+    <div class="flex flex-col items-center space-y-4 px-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 14h10a2 2 0 002-2v-5H5v5a2 2 0 002 2z" />
+      </svg>
+      <h3 class="font-semibold text-xl text-blue-700">Contact forms & lead generation</h3>
+    </div>
+  </div>
+  <a href="#methode" class="mt-4 inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-md transition" aria-label="Discover how it works">
+    Discover how it works
+  </a>
+</section>
+
+<section class="max-w-5xl mx-auto px-6 py-16 text-center" aria-labelledby="business-site-title">
+  <h2 id="business-site-title" class="text-4xl font-extrabold mb-10 text-blue-700">A website designed for businesses.</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-4xl mx-auto mb-12">
+    <div class="flex flex-col items-center space-y-4 px-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+      </svg>
+      <p class="font-semibold text-lg text-blue-700">Easy content updates</p>
+    </div>
+    <div class="flex flex-col items-center space-y-4 px-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-3-3h-2v5zM2 9h5v2a3 3 0 003 3h2V9H2zM12 4v16" />
+      </svg>
+      <p class="font-semibold text-lg text-blue-700">Google Maps & social media integration</p>
+    </div>
+    <div class="flex flex-col items-center space-y-4 px-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 14h10a2 2 0 002-2v-5H5v5a2 2 0 002 2z" />
+      </svg>
+      <p class="font-semibold text-lg text-blue-700">Customer contact forms</p>
+    </div>
+    <div class="flex flex-col items-center space-y-4 px-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v-1a4 4 0 014-4h8a4 4 0 014 4v1M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 11a4 4 0 110-8 4 4 0 010 8z" />
+      </svg>
+      <p class="font-semibold text-lg text-blue-700">Service/product showcase</p>
+    </div>
+    <div class="flex flex-col items-center space-y-4 px-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <p class="font-semibold text-lg text-blue-700">Fast, secure, responsive site</p>
+    </div>
+  </div>
+
+  <a href="#methode" class="mt-6 inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-md transition" aria-label="Discover how it works">
+    Discover how it works
+  </a>
+</section>
+
+
+<section id="realisations" class="max-w-6xl mx-auto px-6 py-16" aria-label="Portfolio of website creations">
+  <h2 class="text-4xl font-extrabold mb-12 text-blue-700 text-center">Our Latest Website Creations</h2>
+
+  <!-- Carrousel horizontal mobile + grille desktop -->
+  <div
+    class="flex space-x-6 overflow-x-auto scroll-pl-6 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-3 md:gap-8 md:space-x-0 md:overflow-visible md:scroll-pl-0"
+    tabindex="0"
+    role="list"
+    aria-label="Gallery of latest website creations"
+  >
+    <!-- Item 1 -->
+    <article
+      class="relative snap-start flex-shrink-0 w-72 rounded-lg overflow-hidden shadow-lg cursor-pointer group md:flex md:flex-col md:w-auto"
+      role="listitem"
+      tabindex="0"
+      aria-describedby="desc-site1"
+    >
+      <img
+        src="template1.jpeg"
+        alt="Screenshot of website design with +30% bookings increase"
+        class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+        width="288"
+        height="224"
+      />
+      <div
+        class="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity md:group-hover:flex"
+        aria-hidden="true"
+      >
+        <button
+          type="button"
+          class="text-white font-semibold text-lg px-4 py-2 border border-white rounded select-none"
+          onclick="openFullscreen(this)"
+          aria-label="View fullscreen template of website 1"
+        >
+          View template
+        </button>
+      </div>
+      <p id="desc-site1" class="mt-3 text-center font-semibold text-blue-700 md:mt-4">
+        +30% bookings
+      </p>
+    </article>
+
+    <!-- Item 2 -->
+    <article
+      class="relative snap-start flex-shrink-0 w-72 rounded-lg overflow-hidden shadow-lg cursor-pointer group md:flex md:flex-col md:w-auto"
+      role="listitem"
+      tabindex="0"
+      aria-describedby="desc-site2"
+    >
+      <img
+        src="template2.jpeg"
+        alt="Screenshot of website design with +25% visits increase"
+        class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+        width="288"
+        height="224"
+      />
+      <div
+        class="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity md:group-hover:flex"
+        aria-hidden="true"
+      >
+        <button
+          type="button"
+          class="text-white font-semibold text-lg px-4 py-2 border border-white rounded select-none"
+          onclick="openFullscreen(this)"
+          aria-label="View fullscreen template of website 2"
+        >
+          View template
+        </button>
+      </div>
+      <p id="desc-site2" class="mt-3 text-center font-semibold text-blue-700 md:mt-4">
+        +25% visits
+      </p>
+    </article>
+
+    <!-- Item 3 -->
+    <article
+      class="relative snap-start flex-shrink-0 w-72 rounded-lg overflow-hidden shadow-lg cursor-pointer group md:flex md:flex-col md:w-auto"
+      role="listitem"
+      tabindex="0"
+      aria-describedby="desc-site3"
+    >
+      <img
+        src="template3.jpeg"
+        alt="Screenshot of website design with +40% online orders increase"
+        class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+        width="288"
+        height="224"
+      />
+      <div
+        class="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity md:group-hover:flex"
+        aria-hidden="true"
+      >
+        <button
+          type="button"
+          class="text-white font-semibold text-lg px-4 py-2 border border-white rounded select-none"
+          onclick="openFullscreen(this)"
+          aria-label="View fullscreen template of website 3"
+        >
+          View template
+        </button>
+      </div>
+      <p id="desc-site3" class="mt-3 text-center font-semibold text-blue-700 md:mt-4">
+        +40% online orders
+      </p>
+    </article>
+
+    <!-- Item 4 -->
+    <article
+      class="relative snap-start flex-shrink-0 w-72 rounded-lg overflow-hidden shadow-lg cursor-pointer group md:flex md:flex-col md:w-auto"
+      role="listitem"
+      tabindex="0"
+      aria-describedby="desc-site4"
+    >
+      <img
+        src="template4.jpeg"
+        alt="Screenshot of website design with +50% customer retention increase"
+        class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+        width="288"
+        height="224"
+      />
+      <div
+        class="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity md:group-hover:flex"
+        aria-hidden="true"
+      >
+        <button
+          type="button"
+          class="text-white font-semibold text-lg px-4 py-2 border border-white rounded select-none"
+          onclick="openFullscreen(this)"
+          aria-label="View fullscreen template of website 4"
+        >
+          View template
+        </button>
+      </div>
+      <p id="desc-site4" class="mt-3 text-center font-semibold text-blue-700 md:mt-4">
+        +50% customer retention
+      </p>
+    </article>
+
+    <!-- Item 5 -->
+    <article
+      class="relative snap-start flex-shrink-0 w-72 rounded-lg overflow-hidden shadow-lg cursor-pointer group md:flex md:flex-col md:w-auto"
+      role="listitem"
+      tabindex="0"
+      aria-describedby="desc-site5"
+    >
+      <img
+        src="template5.jpeg"
+        alt="Screenshot of website design with +35% mobile traffic increase"
+        class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+        width="288"
+        height="224"
+      />
+      <div
+        class="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity md:group-hover:flex"
+        aria-hidden="true"
+      >
+        <button
+          type="button"
+          class="text-white font-semibold text-lg px-4 py-2 border border-white rounded select-none"
+          onclick="openFullscreen(this)"
+          aria-label="View fullscreen template of website 5"
+        >
+          View template
+        </button>
+      </div>
+      <p id="desc-site5" class="mt-3 text-center font-semibold text-blue-700 md:mt-4">
+        +35% mobile traffic
+      </p>
+    </article>
+
+    <!-- Item 6 -->
+    <article
+      class="relative snap-start flex-shrink-0 w-72 rounded-lg overflow-hidden shadow-lg cursor-pointer group md:flex md:flex-col md:w-auto"
+      role="listitem"
+      tabindex="0"
+      aria-describedby="desc-site6"
+    >
+      <img
+        src="template6.jpeg"
+        alt="Screenshot of website design with +45% bookings increase"
+        class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+        width="288"
+        height="224"
+      />
+      <div
+        class="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity md:group-hover:flex"
+        aria-hidden="true"
+      >
+        <button
+          type="button"
+          class="text-white font-semibold text-lg px-4 py-2 border border-white rounded select-none"
+          onclick="openFullscreen(this)"
+          aria-label="View fullscreen template of website 6"
+        >
+          View template
+        </button>
+      </div>
+      <p id="desc-site6" class="mt-3 text-center font-semibold text-blue-700 md:mt-4">
+        +45% bookings
+      </p>
+    </article>
+  </div>
+</section>
+
+
+<section id="avis" class="max-w-6xl mx-auto px-6 py-16" aria-labelledby="reviews-title">
+  <h2 id="reviews-title" class="text-3xl sm:text-4xl font-extrabold text-center text-blue-700 mb-12">
+    Leave a comment here
+  </h2>
+
+  <!-- Form -->
+  <div class="bg-blue-50 p-6 rounded-lg shadow-md mb-10 max-w-3xl mx-auto">
+    <textarea id="commentInput" rows="3" placeholder="Write your comment here..."
+      class="w-full p-4 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 resize-none"></textarea>
+    <button type="button" onclick="submitComment()"
+      class="mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">
+      Submit comment
+    </button>
+    <div id="successMessage" role="alert" aria-live="polite"
+      class="hidden mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+      ✅ Your comment has been submitted successfully.
+    </div>
+  </div>
+
+  <!-- Comments: mobile carousel, desktop grid -->
+  <div id="commentsList"
+    class="flex space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-3 md:gap-8 md:space-x-0 md:overflow-visible"
+    aria-live="polite" aria-relevant="additions">
+    <!-- Dynamic comments will go here -->
+  </div>
+</section>
+
+<!-- Section 1: Steps + FAQ + CTA -->
+<section id="methode" class="max-w-6xl mx-auto px-6 py-16" aria-labelledby="method-title">
+  <h2 id="method-title" class="text-3xl sm:text-4xl font-extrabold text-center text-blue-800 mb-12">
+    Stress-free, 3 simple steps .
+  </h2>
+
+  <!-- Timeline -->
+  <div
+    class="flex overflow-x-auto space-x-6 snap-x snap-mandatory scrollbar-hide pb-6 md:flex md:justify-between md:space-x-0 md:overflow-visible"
+    role="list">
+    <article class="flex-shrink-0 w-72 snap-start bg-blue-50 p-6 rounded-lg shadow-md md:w-1/3 md:mx-2" role="listitem">
+      <h3 class="text-xl font-bold text-blue-800 mb-2">Discovery call (15 min)</h3>
+      <p class="text-gray-700">We understand your needs, your world, your expectations.</p>
+    </article>
+    <article class="flex-shrink-0 w-72 snap-start bg-blue-50 p-6 rounded-lg shadow-md md:w-1/3 md:mx-2" role="listitem">
+      <h3 class="text-xl font-bold text-blue-800 mb-2">Mockup & demo</h3>
+      <p class="text-gray-700">We create a test version. You validate or adjust.</p>
+    </article>
+    <article class="flex-shrink-0 w-72 snap-start bg-blue-50 p-6 rounded-lg shadow-md md:w-1/3 md:mx-2" role="listitem">
+      <h3 class="text-xl font-bold text-blue-800 mb-2">Launch</h3>
+      <p class="text-gray-700"> we take care of the rest. Quick online.</p>
+    </article>
+  </div>
+
+  <!-- FAQ -->
+  <section class="mt-16 max-w-3xl mx-auto space-y-8" aria-label="Frequently Asked Questions">
+    <div>
+      <h4 class="text-lg font-semibold text-blue-800 mb-2">How long does site creation take?</h4>
+      <p class="text-gray-700">Depending on the chosen plan, between 1 and 3 weeks. We guide you every step to keep things clear and efficient.</p>
+    </div>
+    <div>
+      <h4 class="text-lg font-semibold text-blue-800 mb-2">Can I easily modify my menu or hours?</h4>
+      <p class="text-gray-700">Yes, thanks to an intuitive interface, you can change your menu, hours, and info without any technical skills.</p>
+    </div>
+    <div>
+      <h4 class="text-lg font-semibold text-blue-800 mb-2">Are there hidden costs or subscriptions?</h4>
+      <p class="text-gray-700">Our prices are transparent, with no mandatory subscription. You can choose a plan that fits your budget, with or without support.</p>
+    </div>
+    <div>
+      <h4 class="text-lg font-semibold text-blue-800 mb-2">What happens after ?</h4>
+      <p class="text-gray-700">You benefit from an optimized and secure site. Depending on your plan, we offer ongoing support or occasional help.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="mt-16 text-center">
+    <button type="button" onclick="openModal()"
+      class="inline-block bg-blue-800 text-white font-semibold px-8 py-3 rounded-lg shadow hover:bg-blue-900 transition">
+      Book your free call
+    </button>
+  </div>
+</section>
+
+<!-- Section 2: Plans -->
+<section id="tarifs" class="max-w-7xl mx-auto px-6 py-20" aria-label="Pricing plans for website creation services">
+  <h2 class="text-4xl font-extrabold text-center text-blue-900 mb-14">
+    Choose the plan that fits your website needs.
+  </h2>
+
+  <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-3">
+    <!-- Essential Plan -->
+    <article class="bg-white rounded-xl shadow-lg p-8 flex flex-col justify-between hover:shadow-xl transition-shadow duration-300" role="region" aria-labelledby="essential-plan-title">
+      <div>
+        <h3 id="essential-plan-title" class="text-2xl font-semibold text-blue-900 mb-4">Essential</h3>
+        <p class="text-4xl font-extrabold text-blue-800 mb-6" aria-label="Price 119 Canadian dollars">119<span class="text-lg font-normal"> $ us</span></p>
+        <h4 class="text-lg font-semibold text-gray-700 mb-2">Includes</h4>
+        <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+          <li>Simple site with interactive menu</li>
+          <li>Google Maps integration</li>
+          <li>Optimized local SEO</li>
+        </ul>
+        <h4 class="text-lg font-semibold text-gray-700 mb-2">Bonus</h4>
+        <p class="text-gray-700 mb-6">Basic support: email help, online FAQ, practical tips.</p>
+        <h4 class="text-lg font-semibold text-gray-700 mb-4">Duration</h4>
+        <p class="text-gray-700 mb-8">1 week</p>
+      </div>
+      <button onclick="openPlanModal('Essential')" class="w-full bg-blue-800 text-white py-3 rounded-lg font-semibold hover:bg-blue-900 transition" aria-label="Choose Essential plan">Choose this plan</button>
+    </article>
+
+    <!-- Comfort Plan -->
+    <article class="bg-white rounded-xl shadow-lg p-8 flex flex-col justify-between border-4 border-blue-800 hover:shadow-xl transition-shadow duration-300" role="region" aria-labelledby="comfort-plan-title">
+      <div>
+        <h3 id="comfort-plan-title" class="text-2xl font-semibold text-blue-900 mb-4">Comfort</h3>
+        <p class="text-4xl font-extrabold text-blue-800 mb-6" aria-label="Price 599 Canadian dollars">219<span class="text-lg font-normal"> $ us</span></p>
+        <h4 class="text-lg font-semibold text-gray-700 mb-2">Includes</h4>
+        <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+          <li>All Essential features included</li>
+          <li>Online reservations</li>
+          <li>Social media integration</li>
+          <li>Advanced SEO</li>
+        </ul>
+        <h4 class="text-lg font-semibold text-gray-700 mb-2">Bonus</h4>
+        <p class="text-gray-700 mb-6">Priority support, updates included.</p>
+        <h4 class="text-lg font-semibold text-gray-700 mb-4">Duration</h4>
+        <p class="text-gray-700 mb-8">2 weeks</p>
+      </div>
+      <button onclick="openPlanModal('Comfort')" class="w-full bg-blue-800 text-white py-3 rounded-lg font-semibold hover:bg-blue-900 transition" aria-label="Choose Comfort plan">Choose this plan</button>
+    </article>
+
+    <!-- Premium Plan -->
+    <article class="bg-white rounded-xl shadow-lg p-8 flex flex-col justify-between hover:shadow-xl transition-shadow duration-300" role="region" aria-labelledby="premium-plan-title">
+      <div>
+        <h3 id="premium-plan-title" class="text-2xl font-semibold text-blue-900 mb-4">Premium</h3>
+        <p class="text-4xl font-extrabold text-blue-800 mb-6" aria-label="Price 1,799 Canadian dollars">309<span class="text-lg font-normal"> $ us</span></p>
+        <h4 class="text-lg font-semibold text-gray-700 mb-2">Includes</h4>
+        <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+          <li>All Comfort features included</li>
+          <li>Premium hosting</li>
+          <li>Enhanced security</li>
+          <li>Personalized follow-up</li>
+        </ul>
+        <h4 class="text-lg font-semibold text-gray-700 mb-2">Bonus</h4>
+        <p class="text-gray-700 mb-6">Continuous optimization and dedicated assistance.</p>
+        <h4 class="text-lg font-semibold text-gray-700 mb-4">Duration</h4>
+        <p class="text-gray-700 mb-8">3 weeks</p>
+      </div>
+      <button onclick="openPlanModal('Premium')" class="w-full bg-blue-800 text-white py-3 rounded-lg font-semibold hover:bg-blue-900 transition" aria-label="Choose Premium plan">Choose this plan</button>
+    </article>
+  </div>
+
+  <p class="mt-12 text-center text-gray-600 italic text-sm max-w-3xl mx-auto">
+    Payment in installments possible. No long-term commitment.
+  </p>
+</section>
+
+<!-- SECTION OFFRE SPÉCIALE -->
+<section id="offre-speciale" class="py-20 px-6 sm:px-10 bg-white relative overflow-hidden" aria-labelledby="offre-title" itemscope itemtype="https://schema.org/Product">
+  <div class="max-w-5xl mx-auto text-center">
+   <h2 id="offre-title" class="text-4xl sm:text-5xl font-extrabold text-blue-600">Special Offer:  Website for $49</h2>
+ <p class="mt-4 text-gray-600 text-lg">Only <strong>15 clients accepted per week</strong>. Enjoy a complete,optimized website.</p>
+
+    <!-- Barre de progression -->
+    <div class="mt-8 w-full bg-gray-200 rounded-full h-6 overflow-hidden relative max-w-2xl mx-auto" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="15" aria-label="Places restantes pour l'offre spéciale">
+      <div id="progress-bar" class="bg-blue-500 h-full rounded-full transition-all duration-700 ease-in-out" style="width: 33.33%"></div>
+      <div id="progress-text" class="absolute inset-0 flex items-center justify-center text-sm font-semibold text-gray-700">5 / 15 clients</div>
+    </div>
+
+    <!-- Détails de l'offre -->
+   <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-4xl mx-auto">
+  <meta itemprop="name" content="Restaurant Website at $299">
+  <meta itemprop="offers" content="https://example.com/acheter-site-restaurant">
+  <div class="bg-blue-50 p-6 rounded-lg shadow-md" itemprop="description">
+    <h3 class="text-xl font-semibold mb-4 text-blue-700">What is included:</h3>
+    <ul class="space-y-2 text-gray-700">
+      <li>✅ 100% responsive site</li>
+      <li>✅ Digital menu integration</li>
+      <li>✅ Online reservation</li>
+      <li>✅ Local SEO optimization</li>
+      <li>✅ Contact page & social media links</li>
+      <li>✅ Google Maps integration</li>
+      <li>✅ Delivery within 7 days</li>
+    </ul>
+  </div>
+  <div class="bg-blue-50 p-6 rounded-lg shadow-md flex flex-col justify-between">
+    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+      <h3 class="text-xl font-semibold mb-4 text-blue-700">One-time price:</h3>
+      <p class="text-4xl font-bold text-blue-600">
+        <span itemprop="priceCurrency" content="us">$</span><span itemprop="price">49</span>
+        <span class="text-lg text-gray-600">us</span>
+      </p>
+      <p class="mt-2 text-gray-500 text-sm">One-time payment, no hidden fees.</p>
+    </div>
+    <button id="cta-button" onclick="openModal()" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-blue-700 transition disabled:opacity-50" aria-label="Book the special offer">
+      Book now
+    </button>
+    <button id="late-interest-button" onclick="openModal()" class="mt-4 hidden bg-gray-600 text-white px-6 py-3 rounded-md text-base font-medium hover:bg-gray-700 transition" aria-label="I still want a spot">
+      I still want a spot
+    </button>
+  </div>
+</div>
+</div>
+
+</section>
+
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const section = document.getElementById("offre-speciale");
+      const progressBar = document.getElementById("progress-bar");
+      const progressText = document.getElementById("progress-text");
+      const ctaButton = document.getElementById("cta-button");
+      const lateButton = document.getElementById("late-interest-button");
+
+      const maxClients = 15;
+      let currentClients = parseInt(localStorage.getItem('fakeClientCount')) || 5;
+
+      function updateProgressBar() {
+        const percentage = (currentClients / maxClients) * 100;
+        progressBar.style.width = percentage + '%';
+
+        if (currentClients >= maxClients) {
+          progressText.textContent = `Offre complète pour cette semaine`;
+          progressBar.classList.remove("bg-blue-500");
+          progressBar.classList.add("bg-gray-400");
+          ctaButton.disabled = true;
+          ctaButton.textContent = "Offre complète";
+          if (lateButton) lateButton.classList.remove("hidden");
+        } else {
+          progressText.textContent = `${currentClients} / ${maxClients} clients`;
+        }
+      }
+
+      updateProgressBar();
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && currentClients < maxClients) {
+              currentClients++;
+              localStorage.setItem('fakeClientCount', currentClients);
+              updateProgressBar();
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      observer.observe(section);
+    });
+  </script>
+<!-- Section 3: Contact form -->
+<section class="max-w-4xl mx-auto px-6 py-16" id="form" aria-labelledby="contact-form-title">
+  <h2 id="contact-form-title" class="text-3xl sm:text-4xl font-extrabold text-center text-blue-700 mb-10">
+    Tell me about your project, no obligation.
+  </h2>
+
+  <form class="space-y-6 bg-blue-50 p-8 rounded-lg shadow-md" aria-describedby="form-description">
+    <p id="form-description" class="sr-only">
+      Contact form to request a callback for web design services in .
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <label for="prenom" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+        <input id="prenom" name="prenom" type="text" required autocomplete="given-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+      </div>
+      <div>
+        <label for="nom" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+        <input id="nom" name="nom" type="text" required autocomplete="family-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+      </div>
+      <div>
+        <label for="resto" class="block text-sm font-medium text-gray-700 mb-1"> Name</label>
+        <input id="resto" name="resto" type="text" autocomplete="organization" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <input id="email" name="email" type="email" required autocomplete="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+      </div>
+      <div>
+        <label for="telephone" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+        <input id="telephone" name="telephone" type="tel" autocomplete="tel" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+      </div>
+    </div>
+
+    <div>
+      <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+      <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none"></textarea>
+    </div>
+
+    <div class="pt-4">
+      <button type="submit" class="w-full md:w-auto bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-800 transition">
+        Request a callback
+      </button>
+    </div>
+
+    <p class="text-sm text-center text-gray-500 mt-4">
+      Your data is secure and will never be shared.
+    </p>
+  </form>
+</section>
+<!-- Toggle Button About Us -->
+<div class="flex justify-center mb-8">
+  <button id="toggleAboutBtn" aria-expanded="false" aria-controls="aboutSection" 
+    class="inline-flex items-center gap-2 text-blue-900 font-semibold text-xl border border-blue-900 rounded-md px-5 py-3 hover:bg-blue-50 transition focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2">
+    About Us
+    <svg id="toggleIcon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 transition-transform duration-300">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </button>
+</div>
+
+<!-- About Us Section hidden by default -->
+<section id="aboutSection" class="max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden max-h-0 transition-[max-height] duration-700 ease-in-out" aria-hidden="true" aria-labelledby="aboutSectionTitle" tabindex="-1">
+  <div class="p-8 space-y-10">
+
+    <h2 id="aboutSectionTitle" class="text-3xl font-bold text-blue-900 text-center mb-6">Our Dedicated Team</h2>
+    <p class="text-gray-700 text-center max-w-3xl mx-auto mb-12 leading-relaxed">
+      We are a small, passionate community that creates websites specifical. Our team is made up of experts in marketing, development, design, and support, all united by a commitment to providing maximum customer satisfaction—without the unnecessary jargon.
+    </p>
+
+    <!-- Team grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12" role="list">
+
+      <!-- Member 1 -->
+      <article role="listitem" class="flex flex-col items-center text-center">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Photo Jean Dupont" class="w-32 h-32 rounded-full object-cover border-4 border-blue-900 shadow-md mb-4" />
+        <h3 class="text-xl font-semibold text-blue-900">Jean Dupont</h3>
+        <p class="text-sm italic text-gray-500 mb-1">Marketing Director</p>
+        <p class="text-xs text-gray-400 mb-3">Graduate of HEC Montréal</p>
+        <p class="text-gray-700 leading-relaxed">
+          Jean leads our marketing with over 10 years of experience. He ensures clear and tailored communication for each client.
+        </p>
+      </article>
+
+      <!-- Member 2 -->
+      <article role="listitem" class="flex flex-col items-center text-center">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Photo Sophie Martin" class="w-32 h-32 rounded-full object-cover border-4 border-blue-900 shadow-md mb-4" />
+        <h3 class="text-xl font-semibold text-blue-900">Sophie Martin</h3>
+        <p class="text-sm italic text-gray-500 mb-1">UI/UX Director</p>
+        <p class="text-xs text-gray-400 mb-3">Degree in Interaction Design</p>
+        <p class="text-gray-700 leading-relaxed">
+          Sophie designs intuitive, modern interfaces that place user experience at the heart of the project.
+        </p>
+      </article>
+
+      <!-- Member 3 -->
+      <article role="listitem" class="flex flex-col items-center text-center">
+        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Photo Marc Tremblay" class="w-32 h-32 rounded-full object-cover border-4 border-blue-900 shadow-md mb-4" />
+        <h3 class="text-xl font-semibold text-blue-900">Marc Tremblay</h3>
+        <p class="text-sm italic text-gray-500 mb-1">Senior Developer</p>
+        <p class="text-xs text-gray-400 mb-3">React & Node.js Expert</p>
+        <p class="text-gray-700 leading-relaxed">
+          Marc codes with precision and efficiency to deliver high-performing, maintainable websites.
+        </p>
+      </article>
+
+      <!-- Member 4 -->
+      <article role="listitem" class="flex flex-col items-center text-center">
+        <img src="junior.jpg" alt="Junior Developer" class="w-32 h-32 rounded-full object-cover border-4 border-blue-900 shadow-md mb-4" />
+        <h3 class="text-xl font-semibold text-blue-900">Toussaint Leo-vitch</h3>
+        <p class="text-sm italic text-gray-500 mb-1">Junior Developer</p>
+        <p class="text-xs text-gray-400 mb-3">Passionate about new technologies</p>
+        <p class="text-gray-700 leading-relaxed">
+          Leo brings freshness and innovation with his enthusiasm for the latest web trends.
+        </p>
+      </article>
+
+      <!-- Member 5 -->
+      <article role="listitem" class="flex flex-col items-center text-center">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Photo Clara Rousseau" class="w-32 h-32 rounded-full object-cover border-4 border-blue-900 shadow-md mb-4" />
+        <h3 class="text-xl font-semibold text-blue-900">Clara Rousseau</h3>
+        <p class="text-sm italic text-gray-500 mb-1">Project Manager</p>
+        <p class="text-xs text-gray-400 mb-3">Degree in Digital Project Management</p>
+        <p class="text-gray-700 leading-relaxed">
+          Clara coordinates each stage to ensure the success of your web projects.
+        </p>
+      </article>
+
+      <!-- Member 6 -->
+      <article role="listitem" class="flex flex-col items-center text-center">
+        <img src="https://randomuser.me/api/portraits/women/70.jpg" alt="Photo Laura Gagnon" class="w-32 h-32 rounded-full object-cover border-4 border-blue-900 shadow-md mb-4" />
+        <h3 class="text-xl font-semibold text-blue-900">Laura Gagnon</h3>
+        <p class="text-sm italic text-gray-500 mb-1">Customer Support Specialist</p>
+        <p class="text-xs text-gray-400 mb-3">Always here for you</p>
+        <p class="text-gray-700 leading-relaxed">
+          Laura provides fast, clear, and caring customer support to guide you every step of the way.
+        </p>
+      </article>
+
+    </div>
+
+    <!-- Technologies -->
+
+    <section class="mt-20 bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-2xl p-10 shadow-md" aria-labelledby="techTitle" role="region">
+      <h3 id="techTitle" class="text-3xl font-bold text-blue-800 mb-10 text-center">Modern Web Technologies Used</h3>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center" role="list">
+
+        <!-- Exemple de techno -->
+        <div role="listitem" class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+          <img src="https://cdn.simpleicons.org/html5/EF652A" alt="HTML5 Technology" class="w-12 h-12 mx-auto mb-3 object-contain" />
+          <p class="text-blue-800 font-semibold">HTML</p>
+        </div>
+
+        <div role="listitem" class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+          <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3 Technology" class="w-12 h-12 mx-auto mb-3 object-contain" />
+          <p class="text-blue-800 font-semibold">CSS</p>
+        </div>
+
+        <div role="listitem" class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+          <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript Technology" class="w-12 h-12 mx-auto mb-3 object-contain" />
+          <p class="text-blue-800 font-semibold">JavaScript</p>
+        </div>
+
+        <div role="listitem" class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+          <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React Framework" class="w-12 h-12 mx-auto mb-3 object-contain" />
+          <p class="text-blue-800 font-semibold">React</p>
+        </div>
+
+        <div role="listitem" class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+          <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS Framework" class="w-12 h-12 mx-auto mb-3 object-contain" />
+          <p class="text-blue-800 font-semibold">Tailwind</p>
+        </div>
+
+        <div role="listitem" class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+          <img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js Technology" class="w-12 h-12 mx-auto mb-3 object-contain" />
+          <p class="text-blue-800 font-semibold">Node.js</p>
+        </div>
+
+        <div role="listitem" class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+          <img src="https://cdn.simpleicons.org/firebase/FFCA28" alt="Firebase Technology" class="w-12 h-12 mx-auto mb-3 object-contain" />
+          <p class="text-blue-800 font-semibold">Firebase</p>
+        </div>
+
+        <div role="listitem" class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+          <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL Technology" class="w-12 h-12 mx-auto mb-3 object-contain" />
+          <p class="text-blue-800 font-semibold">SQL</p>
+        </div>
+
+        <div role="listitem" class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+          <img src="https://cdn.simpleicons.org/git/F05032" alt="Git Technology" class="w-12 h-12 mx-auto mb-3 object-contain" />
+          <p class="text-blue-800 font-semibold">Git</p>
+        </div>
+
+        <div role="listitem" class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+          <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub Platform" class="w-12 h-12 mx-auto mb-3 object-contain" />
+          <p class="text-blue-800 font-semibold">GitHub</p>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</section>
+
+
+
+     <!-- Commitment -->
+<section class="mt-16 max-w-3xl mx-auto text-center" aria-label="Our Commitment to Web Design Services in ">
+  <h3 class="text-2xl font-bold text-blue-900 mb-4">Our Commitment to Quality Web Design Services</h3>
+  <p class="text-gray-700 leading-relaxed text-lg px-4">
+    Every web design project is unique. We guide you simply, without jargon, with clear communication and attentive listening.  
+    Your satisfaction with our Canadian web design services is our top priority.
+  </p>
+</section>
+<footer class="bg-gray-900 text-white pt-16 pb-6 px-6" role="contentinfo" aria-label="Footer with contact info and quick links for Vitch Web Studio">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+
+    <!-- Column 1: Logo + Mission -->
+    <div>
+      <div class="text-2xl font-bold text-blue-400 mb-4">vitch web studio</div>
+      <p class="text-sm text-gray-300 leading-relaxed">
+        We help busy  owners to  get a professional website that attracts customers without the stress.
+      </p>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <nav aria-label="Quick links">
+      <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-sm text-gray-300">
+        <li><a href="#" class="hover:text-white transition">Home</a></li>
+        <li><a href="#problem" class="hover:text-white transition">Your Problems</a></li>
+        <li><a href="#avis" class="hover:text-white transition">Testimonials</a></li>
+        <li><a href="#methode" class="hover:text-white transition">Method</a></li>
+        <li><a href="#tarifs" class="hover:text-white transition">Pricing</a></li>
+        <li><a href="#form" class="hover:text-white transition">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Column 3: Contact -->
+    <section aria-label="Contact information">
+      <h4 class="text-lg font-semibold text-white mb-4">Contact</h4>
+      <ul class="space-y-2 text-sm text-gray-300">
+        <li>Email : <a href="mailto:contact@tvitchwebstudio.it.com" class="hover:text-white" title="Envoyer un email">contact@tvitchwebstudio.it.com</a></li>
+        <li>Téléphone : <a href="tel:+1 (954) 234-0866" class="hover:text-white" title="Appeler le studio">+1 (954) 234-0866</a></li>
+        <li class="flex space-x-4 mt-2">
+          <a href="https://www.facebook.com/profile.php?id=61576833602231" class="hover:text-white" aria-label="Facebook page">Facebook</a>
+         
+        </li>
+        <li class="mt-4">
+          <a href="#form" class="text-blue-400 hover:underline">Need help? Contact us</a>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
+    © 2025 vitch web studio. All rights reserved.
+  </div>
+</footer>
+
+ <div id="modal"
+  class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden">
+  <div class="bg-white rounded-lg shadow-xl w-full max-w-md p-6 relative">
+
+    <!-- Bouton fermeture -->
+    <button onclick="closeModal()"
+      class="absolute top-4 right-4 text-gray-500 hover:text-black text-xl font-bold">
+      &times;
+    </button>
+<h2 class="text-2xl font-semibold text-gray-800 mb-4">
+  Book your free call
+</h2>
+
+    <form  action="https://formspree.io/f/xrbqvwaw" method="POST" class="space-y-4">
+      <input type="text" name="Nom" required
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        placeholder="Your name" />
+
+      <input type="email" name="Email" required
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        placeholder="Your email" />
+
+      <input type="tel" name="Téléphone"
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        placeholder="Your phone number (optionnel)" />
+
+      <textarea name="Message" rows="4" required
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        placeholder="Tell us more about your project..."></textarea>
+
+      <button type="submit"
+        class="w-full bg-black hover:bg-gray-900 text-white py-2 px-4 rounded-md font-semibold transition">
+        Book a call
+      </button>
+    </form>
+  </div>
+</div>
+<!-- Modal des plans -->
+<div id="planModal"
+  class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden transition-opacity duration-300">
+  <div class="bg-white rounded-xl shadow-2xl w-full max-w-lg p-8 relative border border-gray-100">
+
+    <!-- Bouton fermeture -->
+    <button onclick="closePlanModal()"
+      class="absolute top-4 right-4 text-gray-400 hover:text-black text-2xl font-bold">
+      &times;
+    </button>
+
+    <!-- Titre -->
+    <h2 class="text-2xl font-bold text-gray-900 mb-2">Perfect, let's finalize</h2>
+
+
+    <!-- Affichage du plan -->
+   <p class="text-gray-600 mb-6">
+  You have chosen: <span id="planName" class="font-semibold text-black"></span>
+</p>
+
+
+    <!-- Formulaire -->
+     <form  action="https://formspree.io/f/xrbqvwaw" method="POST" class="space-y-4">
+      <input type="hidden" name="Plan choisi" id="planInput">
+
+      <input type="text" name="Nom" placeholder="Your name" required
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+
+      <input type="email" name="Email" placeholder="Votre email" required
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+        <div>
+  <label class="block text-sm text-gray-700 mb-1">WhatsApp number</label>
+  <input type="tel" name="WhatsApp"
+    placeholder="+1 514-123-4567"
+    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+</div>
+
+<script>
+  const openModalBtn = document.getElementById('openModal');
+  const closeModalBtn1 = document.getElementById('closeModal');
+  const modal = document.getElementById('checkoutModal');
+  const form = document.getElementById('orderForm');
+
+  openModalBtn.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        // Rediriger vers NowPayments
+        window.location.href = "https://nowpayments.io/payment/?iid=4767065968";
+      } else {
+        alert("Erreur lors de l'envoi du formulaire. Veuillez réessayer.");
+      }
+    }).catch(error => {
+      alert("Erreur de connexion.");
+    });
+  });
+</script>
+
+      <textarea name="Message" placeholder="tell us a word about your project..." rows="3"
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+
+      <button type="submit"
+        class="w-full bg-black hover:bg-gray-900 text-white py-3 rounded-md font-semibold text-lg transition">
+       I Finalize
+      </button>
+    </form>
+  </div>
+</div>
+<!-- Message après soumission -->
+<div id="confirmationMessage" class="hidden mt-6 text-center text-gray-700 text-lg">
+  🎉 Thank you for your request!<br>
+  We will contact you shortly by email.<br><br>
+  <strong>Would you like to continue the conversation on WhatsApp?</strong><br>
+  If you provided your number, we will send you a message within 24 hours.
+</div>
+
+
+<!-- === CHATBOT === -->
+<div id="chatbot-container"
+     class="fixed bottom-6 right-6 md:bottom-4 md:right-6 md:left-auto left-auto top-1/2 transform -translate-y-1/2 md:top-auto md:translate-y-0 flex items-end z-50 space-x-3 md:flex-row flex-col-reverse">
+  <img src="avatar.png" alt="Avatar"
+       id="avatar"
+       class="w-20 h-25  shadow-lg cursor-pointer object-cover bg-transparent" />
+  <div id="bubble"
+       class="bg-white rounded-2xl px-4 py-2 max-w-xs text-sm text-gray-800 shadow-lg opacity-0 pointer-events-none transition-opacity duration-500"></div>
+</div>
+
+<!-- === BOUTON EXPÉRIENCE === -->
+<div hidden class="fixed bottom-6 right-6 z-50">
+  <button id="experienceBtn"
+          class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition">
+    I bought ✨
+  </button>
+</div>
+
+
+<!-- === MODALE DE CONTACT === -->
+<div id="modalOverlay"
+     class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <div class="bg-white rounded-lg p-6 w-full max-w-md relative">
+   <button id="closeModal"
+        class="absolute top-3 right-3 text-gray-500 text-xl font-bold">&times;</button>
+<h2 class="text-lg font-semibold mb-4">Contact us</h2>
+<input id="email" type="email" placeholder="Your email"
+       class="w-full border p-2 rounded mb-3" />
+<textarea id="message" rows="4" placeholder="Your message"
+          class="w-full border p-2 rounded mb-3"></textarea>
+<button id="sendBtn"
+        class="bg-blue-600 text-white px-4 py-2 rounded w-full hover:bg-blue-700 transition">Send</button>
+
+  </div>
+</div>
+
+<!-- Scripts -->
+
+<script src="script.js"></script>
+ <script>
+    const commentsList = document.getElementById("commentsList");
+const commentInput = document.getElementById("commentInput");
+const successMessage = document.getElementById("successMessage");
+
+let allComments = [
+  { text: "Service très fluide et agréable !", minutesAgo: 6 },
+  { text: "Notre site est devenu un vrai outil de vente.", minutesAgo: 5 },
+  { text: "Les réservations automatiques sont un gain de temps énorme.", minutesAgo: 4 },
+  { text: "Support client réactif et professionnel.", minutesAgo: 3 },
+  { text: "Très satisfait du résultat final !", minutesAgo: 2 },
+  { text: "Le site est vraiment bien pensé !", minutesAgo: 1 },
+];
+
+const loopedComments = [
+  "Clear and intuitive interface, well done.",
+  "We saved time and gained clients.",
+  "The team understood our needs well.",
+  "A quickly profitable investment.",
+  "Flawless mobile navigation.",
+  "Our clients love the new version.",
+  "Very good strategic support.",
+  "I was able to focus on my work.",
+  "Every detail was thoughtfully designed.",
+  "The user experience is great.",
+  "We receive more bookings since the redesign.",
+  "The back office is very user-friendly.",
+  "I gained local visibility.",
+  "The brand image is much better perceived.",
+  "Deadlines were perfectly met.",
+  "The site loads very quickly.",
+  "No unpleasant surprises.",
+  "I recommend 100%.",
+  "The design is clean and professional.",
+  "The team was attentive from the start.",
+];
+
+let loopIndex = 0;
+
+function timeAgo(minutes) {
+  if (minutes === 0) return "just now";
+  if (minutes === 1) return "1 minute ago";
+  return `${minutes} minutes ago`;
+}
+
+
+function renderComments() {
+  commentsList.innerHTML = "";
+  const recent = allComments.slice(-6).reverse();
+  recent.forEach((comment) => {
+    const el = document.createElement("div");
+    el.className =
+      "snap-start flex-shrink-0 w-80 bg-blue-50 p-6 rounded-lg shadow-md md:w-auto fade-ini";
+    el.innerHTML = `
+      <p class="italic text-gray-700 mb-4">“${comment.text}”</p>
+      <div class="text-sm text-gray-500">${timeAgo(comment.minutesAgo)}</div>
+    `;
+    commentsList.appendChild(el);
+  });
+}
+
+function submitComment() {
+  const value = commentInput.value.trim();
+  if (!value) return;
+  allComments.push({ text: value, minutesAgo: 0 });
+  commentInput.value = "";
+  successMessage.classList.remove("hidden");
+  renderComments();
+  setTimeout(() => {
+    successMessage.classList.add("hidden");
+  }, 3000);
+}
+
+// Ajouter automatiquement un commentaire toutes les 5s
+setInterval(() => {
+  const newText = loopedComments[loopIndex % loopedComments.length];
+  allComments.push({ text: newText, minutesAgo: 0 });
+  loopIndex++;
+  renderComments();
+}, 5000);
+
+// Mise à jour des temps écoulés
+setInterval(() => {
+  allComments.forEach(comment => comment.minutesAgo++);
+  renderComments();
+}, 60000);
+
+// Initialisation
+renderComments();
+
+  </script>
+
+  <script>
+    const bubble = document.getElementById('bubble');
+    const avatar = document.getElementById('avatar');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const closeModalBtn = document.getElementById('closeModal');
+    const sendBtn = document.getElementById('sendBtn');
+    const experienceBtn = document.getElementById('experienceBtn');
+
+    const displayDuration = 4000; // Temps d'affichage de chaque message (ms)
+    const hideDuration = 9000;    // Temps caché entre les messages (ms)
+    let currentIndex = 0;
+    let messagesToShow = [];
+
+    // Stockage de visite
+    const visits = parseInt(localStorage.getItem('visits') || '0') + 1;
+    localStorage.setItem('visits', visits);
+
+    const hasClickedExperience = localStorage.getItem('hasClickedExperience') === 'true';
+    const sentMessageThisSession = sessionStorage.getItem('sentMessageThisSession') === 'true';
+
+    // Messages personnalisés
+    const messageSets = {
+      1: [
+  "Welcome 👋",
+  "It's your first visit here.",
+  "Need a website ?"
+],
+2: [
+  "Hello again 👋",
+  "You seem interested in our services 😄",
+  "You can click on me if you want to chat!"
+],
+3: [
+  "Hey, it’s you again 😏",
+  "3rd visit! Want to talk about your project?",
+  "I’m here to help."
+],
+moreThan3: [
+  "You've visited us several times! 👀",
+  "Got a project in mind? I'm available to talk.",
+  "Click on me if you want to send me a message ✉️"
+],
+afterClick: [
+  "Good to see you again 😄",
+  "How was your experience with us?"
+],
+afterMessage: [
+  "Got anything else to add?"
+]
+};
+
+
+    function determineMessageSet() {
+      if (sentMessageThisSession) return messageSets.afterMessage;
+      if (hasClickedExperience) return messageSets.afterClick;
+      if (visits === 1) return messageSets[1];
+      if (visits === 2) return messageSets[2];
+      if (visits === 3) return messageSets[3];
+      return messageSets.moreThan3;
+    }
+
+    function cycleMessages() {
+      const message = messagesToShow[currentIndex];
+      bubble.textContent = message;
+      bubble.classList.remove('opacity-0', 'pointer-events-none');
+      bubble.classList.add('opacity-100');
+
+      setTimeout(() => {
+        bubble.classList.remove('opacity-100');
+        bubble.classList.add('opacity-0', 'pointer-events-none');
+        currentIndex = (currentIndex + 1) % messagesToShow.length;
+        setTimeout(cycleMessages, hideDuration);
+      }, displayDuration);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      messagesToShow = determineMessageSet();
+      cycleMessages();
+    });
+
+    experienceBtn.addEventListener('click', () => {
+      localStorage.setItem('hasClickedExperience', 'true');
+      alert("Merci ! On s'en souviendra 😊");
+    });
+
+    avatar.addEventListener('click', () => {
+      modalOverlay.classList.remove('hidden');
+    });
+
+    bubble.addEventListener('click', () => {
+      modalOverlay.classList.remove('hidden');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modalOverlay.classList.add('hidden');
+    });
+
+    sendBtn.addEventListener('click', () => {
+      const email = document.getElementById('email').value;
+      const msg = document.getElementById('message').value;
+      if (!email || !msg) {
+      alert("Please fill in both fields.");
+        return;
+      }
+
+      console.log("Message envoyé :", { email, msg });
+
+      // Marqueur temporaire pour la session uniquement
+      sessionStorage.setItem('sentMessageThisSession', 'true');
+
+      // Mise à jour immédiate de la boucle de messages
+      messagesToShow = messageSets.afterMessage;
+      currentIndex = 0;
+
+      modalOverlay.classList.add('hidden');
+      alert("Merci pour ton message !");
+    });
+  </script>
+</body>
+</html>

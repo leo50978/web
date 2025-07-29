@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Title optimisé -->
+ <title>Vitch Web Studio | Création de site web pour restaurant au Canada</title>
+
+
+  <!-- Meta description SEO -->
+  <meta name="description" content="Vitch Web Studio crée des sites web professionnels pour restaurants au Canada. Design moderne, responsive et optimisé SEO. Découvrez nos services adaptés à la restauration.">
+
+  <!-- Schema JSON-LD (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Vitch Web Studio",
+    "url": "https://www.votresite.com",
+    "logo": "https://www.votresite.com/logo.png",
+    "image": "https://www.votresite.com/studio.jpg",
+    "description": "Agence web spécialisée dans la création de sites internet pour restaurants au Canada.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CA"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Canada"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "contact@votresite.com"
+    }
+  }
+  </script>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Styles personnalisés -->
+  <style>
+    /* Tes styles ici */
+    html { scroll-behavior: smooth; }
+    .active-link {
+      font-weight: bold;
+      color: #2563eb;
+    }
+    .transition-max {
+      transition: max-height 0.4s ease-in-out;
+      overflow: hidden;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    html, body {
+  overflow-x: hidden;
+}
+  .scrollbar-hide {
+      scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+ 
+    .fade-ini {
+      animation: fadeIn 0.6s ease-out;
+   }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .luit{
+        background-color: blue;
+    }
+  </style>
+</head>
+
+<body class="relative bg-white text-gray-900 font-sans">
+  <!-- Navbar -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow z-50">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Main navigation">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0 text-xl font-bold text-blue-600">
+        <a href="#accueil" class="nav-link hover:text-blue-600 transition-colors">Vitch Web Studio</a>
+      </div>
+         <div class="hidden md:flex space-x-6 items-center" role="menubar" aria-label="Navigation principale">
+      <a href="#accueil" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" role="menuitem">Accueil</a>
+      <a href="#solution" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" role="menuitem">Solution</a>
+      <a href="#realisations" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" role="menuitem">Réalisations</a>
+      <a href="#tarifs" class="nav-link text-gray-700 hover:text-blue-600 transition-colors" role="menuitem">Tarifs</a>
+
+      <div class="relative group" role="none">
+        <button aria-haspopup="true" aria-expanded="false" aria-controls="submenu-plus" class="text-gray-700 hover:text-blue-600 transition-colors" id="btn-plus" role="menuitem">
+          Plus ▾
+        </button>
+        <div id="submenu-plus" class="absolute hidden group-hover:block bg-white shadow mt-2 p-2 rounded z-10 whitespace-nowrap" role="menu" aria-label="Sous-menu Plus">
+          <a href="#pourqui" class="block px-4 py-2 hover:bg-blue-50" role="menuitem">Pour qui ?</a>
+          <a href="#tarifs" class="block px-4 py-2 hover:bg-blue-50" role="menuitem">Tarifs</a>
+          <a href="#avis" class="block px-4 py-2 hover:bg-blue-50" role="menuitem">Avis</a>
+          <a href="#methode" class="block px-4 py-2 hover:bg-blue-50" role="menuitem">Méthode</a>
+        </div>
+      </div>
+      
+      <script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const btnPlus = document.getElementById('btn-plus');
+  const submenuPlus = document.getElementById('submenu-plus');
+
+  // Fonction pour ouvrir le sous-menu
+  function openSubmenu() {
+    submenuPlus.style.display = 'block';
+    btnPlus.setAttribute('aria-expanded', 'true');
+  }
+
+  // Fonction pour fermer le sous-menu
+  function closeSubmenu() {
+    submenuPlus.style.display = 'none';
+    btnPlus.setAttribute('aria-expanded', 'false');
+  }
+
+  // Ouvrir au clic
+  btnPlus.addEventListener('click', (e) => {
+    e.preventDefault();
+    const expanded = btnPlus.getAttribute('aria-expanded') === 'true';
+    if (expanded) {
+      closeSubmenu();
+    } else {
+      openSubmenu();
+    }
+  });
+
+  // Fermer le menu si clic en dehors
+  document.addEventListener('click', (e) => {
+    if (!btnPlus.contains(e.target) && !submenuPlus.contains(e.target)) {
+      closeSubmenu();
+    }
+  });
+
+  // Gestion clavier (Echap ferme le menu)
+  btnPlus.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+      closeSubmenu();
+      btnPlus.focus();
+    }
+  });
+});
+
+</script>
+
+     <a href="#contact" onclick="openModal()" class="ml-4 px-3 py-1.5 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-sm font-medium whitespace-nowrap">
+  15-Minute Free 
+</a>
+</div>
+
+<button id="mobile-menu-btn" aria-label="Open mobile menu" class="md:hidden text-gray-700 focus:outline-none">
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
+</div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden max-h-0 transition-max bg-white px-4 overflow-hidden" role="menu" aria-label="Menu mobile">
+  <a href="#accueil" class="block py-2 text-gray-700" role="menuitem">Accueil</a>
+  <a href="#solution" class="block py-2 text-gray-700" role="menuitem">Solution</a>
+  <a href="#realisations" class="block py-2 text-gray-700" role="menuitem">Réalisations</a>
+  <a href="#form" class="block py-2 text-gray-700" role="menuitem">Contact</a>
+  <a href="#pourqui" class="block py-2 text-gray-700" role="menuitem">Pour qui ?</a>
+  <a href="#tarifs" class="block py-2 text-gray-700" role="menuitem">Tarifs</a>
+  <a href="#avis" class="block py-2 text-gray-700" role="menuitem">Avis</a>
+  <a href="#methode" class="block py-2 text-gray-700" role="menuitem">Méthode</a>
+</div>
+
+
+
+</header>
+
+
+<!-- Contenu principal -->
+<main class="pt-20 space-y-32">
+
+  <!-- Accueil -->
+<section id="hero-default" id="accueil" class="relative overflow-hidden" aria-label="Accueil - Présentation des services de création de site web pour restaurants">
+  <div class="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row md:items-center md:justify-between">
+    
+    <!-- Texte -->
+    <div class="md:w-1/2 fade-in mb-10 md:mb-0">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
+        Tu as un resto ! Pas de temps ? <br>
+        <span class="text-indigo-600">Je crée ton site pendant que tu cuisines.</span>
+      </h1>
+      <p class="text-base sm:text-lg text-gray-700 mb-8">
+        Un site clé en main, professionnel, optimisé pour Google, qui attire les bons clients pendant que tu gères le service.
+      </p>
+      <a href="#methode" class="inline-block bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition" aria-label="Découvre comment fonctionne la méthode de création de site web">
+        Découvre comment
+      </a>
+    </div>
+
+    <!-- Image -->
+    <div class="md:w-1/2 fade-in">
+      <img src="img1.png" alt="Exemple de site web pour restaurant" class="rounded-lg shadow-lg w-full h-auto max-w-full" loading="lazy" />
+    </div>
+
+  </div>
+</section>
+
+<!-- Pour qui -->
+<section id="pourqui"  class="py-16 px-4" aria-label="Pour qui est ce service de création de site web ?">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-blue-700">Est-ce que c’est pour toi ?</h2>
+    <p class="text-lg md:text-xl text-gray-600 mb-12">Tu te reconnais dans l’une de ces situations ? Alors on est là pour toi.</p>
+    <div class="grid gap-8 md:grid-cols-3">
+      <article class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 text-center fade-in" tabindex="0" aria-label="Tu viens d’ouvrir ton restaurant ?">
+        <img src="https://img.icons8.com/ios-filled/100/1E3A8A/restaurant.png" alt="Icône restaurant" class="w-16 h-16 mx-auto mb-4" loading="lazy" />
+        <h3 class="text-xl font-semibold">Tu viens d’ouvrir ton resto ?</h3>
+
+      </article>
+      <article class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 text-center fade-in" tabindex="0" aria-label="Ton site est bricolé ou dépassé ?">
+        <img src="https://img.icons8.com/ios-filled/100/1E3A8A/maintenance.png" alt="Icône maintenance" class="w-16 h-16 mx-auto mb-4" loading="lazy" />
+        <h3 class="text-xl font-semibold">Ton site est bricolé ou dépassé ?</h3>
+      </article>
+      <article class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 text-center fade-in" tabindex="0" aria-label="Tu n’as jamais eu de site web ?">
+        <img src="https://img.icons8.com/ios-filled/100/1E3A8A/internet.png" alt="Icône internet" class="w-16 h-16 mx-auto mb-4" loading="lazy" />
+        <h3 class="text-xl font-semibold">Tu n’as jamais eu de site ?</h3>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+  <section id="problem" class="max-w-6xl mx-auto px-6 py-20 bg-white" aria-labelledby="problem-title">
+  <h2 id="problem-title" class="text-4xl sm:text-5xl font-bold text-center text-blue-700 leading-tight mb-16">
+    Et si on faisait les choses bien, sans t’épuiser ?
+  </h2>
+
+  <!-- Liste des frustrations pro -->
+  <ul class="space-y-6 max-w-2xl mx-auto mb-20" role="list" aria-label="Liste des frustrations fréquentes des restaurateurs">
+    <li class="flex items-start space-x-4" role="listitem">
+      <svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12" y2="16" />
+      </svg>
+      <span class="text-gray-700 text-lg">Ton menu PDF ne s’affiche pas sur mobile</span>
+    </li>
+    <li class="flex items-start space-x-4" role="listitem">
+      <svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+        <!-- Ici tu remets l'icône complète -->
+      </svg>
+      <span class="text-gray-700 text-lg">Ton resto est introuvable sur Google Maps</span>
+    </li>
+    <li class="flex items-start space-x-4" role="listitem">
+      <svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+        <!-- Idem icône -->
+      </svg>
+      <span class="text-gray-700 text-lg">Ton “site Wix” ne t’apporte aucun client</span>
+    </li>
+    <li class="flex items-start space-x-4" role="listitem">
+      <svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+        <!-- Icône -->
+      </svg>
+      <span class="text-gray-700 text-lg">Tu repousses ce projet depuis des mois</span>
+    </li>
+    <li class="flex items-start space-x-4" role="listitem">
+      <svg class="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+        <!-- Icône -->
+      </svg>
+      <span class="text-gray-700 text-lg">Tu veux une solution pro, sans y passer des nuits</span>
+    </li>
+  </ul>
+
+  <!-- Comparatif pro -->
+  <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 mb-20" role="list" aria-label="Comparaison entre faire soi-même et faire appel à un professionnel">
+    <div class="flex items-center p-6 bg-blue-50 rounded-lg border border-gray-200 shadow-sm" role="listitem">
+      <svg class="w-8 h-8 text-gray-400 flex-shrink-0 mr-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"
+        viewBox="0 0 24 24"><path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      <p class="text-gray-700 font-medium">DIY : trop de stress, zéro résultat</p>
+    </div>
+    <div class="flex items-center p-6 bg-green-50 rounded-lg border border-green-200 shadow-sm" role="listitem">
+      <svg class="w-8 h-8 text-green-600 flex-shrink-0 mr-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"
+        viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" /></svg>
+      <p class="text-green-800 font-semibold">Avec nous : site pro, clair, livré clé en main</p>
+    </div>
+  </div>
+
+  <!-- Témoignage -->
+  <figure style="border-left: 2px solid rgb(29, 29, 221);" class="max-w-3xl mx-auto text-center" aria-label="Témoignage client">
+    <blockquote class="text-xl text-gray-700 font-medium italic">
+      “Notre site n’avait jamais généré autant de réservations. Simple, fluide, efficace.”
+    </blockquote>
+    <figcaption class="mt-4 text-blue-700 font-semibold not-italic">
+      Julie – Le Bistrot du Coin
+    </figcaption>
+  </figure>
+</section>
+
+<section id="solution" class="max-w-5xl mx-auto px-6 py-16 text-center" aria-labelledby="solution-title">
+  <h2 id="solution-title" class="text-4xl font-extrabold mb-4 text-blue-700">
+    On s’occupe de ton site de A à Z
+  </h2>
+  <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+    Site pro, rapide, beau, SEO local, connecté Google Maps & réseaux sociaux.
+  </p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12" role="list" aria-label="Principales fonctionnalités de notre service">
+    <div class="flex flex-col items-center space-y-4 px-4" role="listitem">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h10a4 4 0 004-4v-6a4 4 0 00-4-4H7a4 4 0 00-4 4v6z" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 9h18" />
+      </svg>
+      <h3 class="font-semibold text-xl text-blue-700">Design responsive & sécurisé SSL</h3>
+    </div>
+    <div class="flex flex-col items-center space-y-4 px-4" role="listitem">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+      </svg>
+      <h3 class="font-semibold text-xl text-blue-700">Interface simple pour modifier menu</h3>
+    </div>
+    <div class="flex flex-col items-center space-y-4 px-4" role="listitem">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 14h10a2 2 0 002-2v-5H5v5a2 2 0 002 2z" />
+      </svg>
+      <h3 class="font-semibold text-xl text-blue-700">Réservations en ligne faciles</h3>
+    </div>
+  </div>
+  <button class="mt-4 inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-md transition">
+    <a href="#methode" class="block">Découvre comment ça marche</a>
+  </button>
+</section>
+
+<section class="max-w-5xl mx-auto px-6 py-16 text-center" aria-labelledby="restauration-title">
+  <h2 id="restauration-title" class="text-4xl font-extrabold mb-10 text-blue-700">
+    Un site pensé pour la restauration.
+  </h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-4xl mx-auto mb-12" role="list" aria-label="Fonctionnalités spécifiques pour les restaurants">
+    <div class="flex flex-col items-center space-y-4 px-4" role="listitem">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+      </svg>
+      <p class="font-semibold text-lg text-blue-700">Menu interactif, modifiable en 1 clic</p>
+    </div>
+    <div class="flex flex-col items-center space-y-4 px-4" role="listitem">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-3-3h-2v5zM2 9h5v2a3 3 0 003 3h2V9H2zM12 4v16" />
+      </svg>
+      <p class="font-semibold text-lg text-blue-700">Intégration Google Maps, Facebook, Instagram</p>
+    </div>
+    <div class="flex flex-col items-center space-y-4 px-4" role="listitem">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 14h10a2 2 0 002-2v-5H5v5a2 2 0 002 2z" />
+      </svg>
+      <p class="font-semibold text-lg text-blue-700">Réservations simples & rapides</p>
+    </div>
+    <div class="flex flex-col items-center space-y-4 px-4" role="listitem">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v-1a4 4 0 014-4h8a4 4 0 014 4v1M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 11a4 4 0 110-8 4 4 0 010 8z" />
+      </svg>
+      <p class="font-semibold text-lg text-blue-700">Galerie photos ambiance resto</p>
+    </div>
+    <div class="flex flex-col items-center space-y-4 px-4" role="listitem">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <p class="font-semibold text-lg text-blue-700">Site rapide, sécurisé, responsive.</p>
+    </div>
+  </div>
+
+  <button class="mt-6 bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-md transition">
+    <a href="#methode" class="block">Découvre comment ça marche</a>
+  </button>
+</section>
+
+<section id="realisations" class="max-w-6xl mx-auto px-6 py-16" itemscope itemtype="http://schema.org/ItemList">
+  <h2 class="text-4xl font-extrabold mb-12 text-blue-700 text-center">Nos dernières créations.</h2>
+
+  <!-- Carrousel horizontal mobile + grille desktop -->
+  <div
+    class="flex space-x-6 overflow-x-auto scroll-pl-6 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-3 md:gap-8 md:space-x-0 md:overflow-visible md:scroll-pl-0"
+    tabindex="0"
+    role="list"
+    aria-label="Galerie des dernières créations"
+  >
+    <!-- Item 1 -->
+    <article
+      class="relative snap-start flex-shrink-0 w-72 rounded-lg overflow-hidden shadow-lg cursor-pointer group md:flex md:flex-col md:w-auto"
+      role="listitem"
+      tabindex="0"
+      itemscope
+      itemtype="http://schema.org/CreativeWork"
+      itemprop="itemListElement"
+    >
+      <img
+        src="template.png"
+        alt="Template site web pour restaurant avec augmentation de 30 % des réservations"
+        class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+        itemprop="image"
+      />
+      <div
+        class="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity md:group-hover:flex"
+        aria-hidden="true"
+      >
+        <button
+          type="button"
+          class="text-white font-semibold text-lg px-4 py-2 border border-white rounded select-none"
+          onclick="openFullscreen(this)"
+          aria-label="Voir le template de site web restaurant avec +30 % réservations en plein écran"
+        >
+          Voir le template
+        </button>
+      </div>
+      <p class="mt-3 text-center font-semibold text-blue-700 md:mt-4" itemprop="description">
+        +30 % réservations
+      </p>
+    </article>
+
+    <!-- Item 2 -->
+    <article
+      class="relative snap-start flex-shrink-0 w-72 rounded-lg overflow-hidden shadow-lg cursor-pointer group md:flex md:flex-col md:w-auto"
+      role="listitem"
+      tabindex="0"
+      itemscope
+      itemtype="http://schema.org/CreativeWork"
+      itemprop="itemListElement"
+    >
+      <img
+        src="template2.png"
+        alt="Template site web restaurant avec +25 % visites"
+        class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+        itemprop="image"
+      />
+      <div
+        class="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity md:group-hover:flex"
+        aria-hidden="true"
+      >
+        <button
+          type="button"
+          class="text-white font-semibold text-lg px-4 py-2 border border-white rounded select-none"
+          onclick="openFullscreen(this)"
+          aria-label="Voir le template de site web restaurant avec +25 % visites en plein écran"
+        >
+          Voir le template
+        </button>
+      </div>
+      <p class="mt-3 text-center font-semibold text-blue-700 md:mt-4" itemprop="description">
+        +25 % visites
+      </p>
+    </article>
+
+    <!-- Item 3 -->
+    <article
+      class="relative snap-start flex-shrink-0 w-72 rounded-lg overflow-hidden shadow-lg cursor-pointer group md:flex md:flex-col md:w-auto"
+      role="listitem"
+      tabindex="0"
+      itemscope
+      itemtype="http://schema.org/CreativeWork"
+      itemprop="itemListElement"
+    >
+      <img
+        src="template3.png"
+        alt="Template site web restaurant avec +40 % commandes en ligne"
+        class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+        itemprop="image"
+      />
+      <div
+        class="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity md:group-hover:flex"
+        aria-hidden="true"
+      >
+        <button
+          type="button"
+          class="text-white font-semibold text-lg px-4 py-2 border border-white rounded select-none"
+          onclick="openFullscreen(this)"
+          aria-label="Voir le template de site web restaurant avec +40 % commandes en ligne en plein écran"
+        >
+          Voir le template
+        </button>
+      </div>
+      <p class="mt-3 text-center font-semibold text-blue-700 md:mt-4" itemprop="description">
+        +40 % commandes en ligne
+      </p>
+    </article>
+
+    <!-- Item 4 -->
+    <article
+      class="relative snap-start flex-shrink-0 w-72 rounded-lg overflow-hidden shadow-lg cursor-pointer group md:flex md:flex-col md:w-auto"
+      role="listitem"
+      tabindex="0"
+      itemscope
+      itemtype="http://schema.org/CreativeWork"
+      itemprop="itemListElement"
+    >
+      <img
+        src="template4.png"
+        alt="Template site web restaurant avec +50 % fidélisation"
+        class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+        itemprop="image"
+      />
+      <div
+        class="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity md:group-hover:flex"
+        aria-hidden="true"
+      >
+        <button
+          type="button"
+          class="text-white font-semibold text-lg px-4 py-2 border border-white rounded select-none"
+          onclick="openFullscreen(this)"
+          aria-label="Voir le template de site web restaurant avec +50 % fidélisation en plein écran"
+        >
+          Voir le template
+        </button>
+      </div>
+      <p class="mt-3 text-center font-semibold text-blue-700 md:mt-4" itemprop="description">
+        +50 % fidélisation
+      </p>
+    </article>
+
+    <!-- Item 5 -->
+    <article
+      class="relative snap-start flex-shrink-0 w-72 rounded-lg overflow-hidden shadow-lg cursor-pointer group md:flex md:flex-col md:w-auto"
+      role="listitem"
+      tabindex="0"
+      itemscope
+      itemtype="http://schema.org/CreativeWork"
+      itemprop="itemListElement"
+    >
+      <img
+        src="template5.png"
+        alt="Template site web restaurant avec +35 % trafic mobile"
+        class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+        itemprop="image"
+      />
+      <div
+        class="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity md:group-hover:flex"
+        aria-hidden="true"
+      >
+        <button
+          type="button"
+          class="text-white font-semibold text-lg px-4 py-2 border border-white rounded select-none"
+          onclick="openFullscreen(this)"
+          aria-label="Voir le template de site web restaurant avec +35 % trafic mobile en plein écran"
+        >
+          Voir le template
+        </button>
+      </div>
+      <p class="mt-3 text-center font-semibold text-blue-700 md:mt-4" itemprop="description">
+        +35 % trafic mobile
+      </p>
+    </article>
+
+    <!-- Item 6 -->
+    <article
+      class="relative snap-start flex-shrink-0 w-72 rounded-lg overflow-hidden shadow-lg cursor-pointer group md:flex md:flex-col md:w-auto"
+      role="listitem"
+      tabindex="0"
+      itemscope
+      itemtype="http://schema.org/CreativeWork"
+      itemprop="itemListElement"
+    >
+      <img
+        src="template6.png"
+        alt="Template site web restaurant avec +45 % réservations"
+        class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+        itemprop="image"
+      />
+      <div
+        class="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity md:group-hover:flex"
+        aria-hidden="true"
+      >
+        <button
+          type="button"
+          class="text-white font-semibold text-lg px-4 py-2 border border-white rounded select-none"
+          onclick="openFullscreen(this)"
+          aria-label="Voir le template de site web restaurant avec +45 % réservations en plein écran"
+        >
+          Voir le template
+        </button>
+      </div>
+      <p class="mt-3 text-center font-semibold text-blue-700 md:mt-4" itemprop="description">
+        +45 % réservations
+      </p>
+    </article>
+  </div>
+</section>
+
+
+   <section id="avis" class="max-w-6xl mx-auto px-6 py-16" aria-labelledby="avis-title">
+  <h2 id="avis-title" class="text-3xl sm:text-4xl font-extrabold text-center text-blue-700 mb-12">
+    Laissez un commentaire ici
+  </h2>
+
+  <!-- Formulaire -->
+  <div class="bg-blue-50 p-6 rounded-lg shadow-md mb-10 max-w-3xl mx-auto" role="form" aria-label="Formulaire de commentaire">
+    <label for="commentInput" class="sr-only">Votre commentaire</label>
+    <textarea id="commentInput" rows="3"
+      placeholder="Écrivez votre commentaire ici..."
+      class="w-full p-4 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 resize-none"
+      aria-required="true"></textarea>
+    <button onclick="submitComment()"
+      class="mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition"
+      aria-label="Envoyer le commentaire">
+      Envoyer le commentaire
+    </button>
+    <div id="successMessage"
+      class="hidden mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded"
+      role="status" aria-live="polite">
+      ✅ Votre commentaire a été soumis avec succès.
+    </div>
+  </div>
+
+  <!-- Commentaires dynamiques -->
+  <div id="commentsList"
+    class="flex space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-3 md:gap-8 md:space-x-0 md:overflow-visible"
+    aria-live="polite" aria-label="Liste des avis des clients">
+    <!-- Les commentaires dynamiques iront ici -->
+  </div>
+</section>
+
+<!-- Section 1 : Étapes + FAQ + CTA -->
+<section id="methode" class="max-w-6xl mx-auto px-6 py-16" aria-labelledby="methode-title">
+  <h2 id="methode-title" class="text-3xl sm:text-4xl font-extrabold text-center text-blue-800 mb-12">
+    Zéro stress, 3 étapes simples pendant que tu cuisines.
+  </h2>
+
+  <!-- Timeline (Étapes) -->
+  <div class="flex overflow-x-auto space-x-6 snap-x snap-mandatory scrollbar-hide pb-6 md:flex md:justify-between md:space-x-0 md:overflow-visible" aria-label="Processus de création en 3 étapes">
+    <article class="flex-shrink-0 w-72 snap-start bg-blue-50 p-6 rounded-lg shadow-md md:w-1/3 md:mx-2" itemscope itemtype="https://schema.org/HowToStep">
+      <h3 class="text-xl font-bold text-blue-800 mb-2" itemprop="name">Appel découverte (15 min)</h3>
+      <p class="text-gray-700" itemprop="text">On comprend ton besoin, ton univers, tes attentes.</p>
+    </article>
+    <article class="flex-shrink-0 w-72 snap-start bg-blue-50 p-6 rounded-lg shadow-md md:w-1/3 md:mx-2" itemscope itemtype="https://schema.org/HowToStep">
+      <h3 class="text-xl font-bold text-blue-800 mb-2" itemprop="name">Maquette & démo</h3>
+      <p class="text-gray-700" itemprop="text">On crée une version test. Tu valides ou ajustes.</p>
+    </article>
+    <article class="flex-shrink-0 w-72 snap-start bg-blue-50 p-6 rounded-lg shadow-md md:w-1/3 md:mx-2" itemscope itemtype="https://schema.org/HowToStep">
+      <h3 class="text-xl font-bold text-blue-800 mb-2" itemprop="name">Lancement</h3>
+      <p class="text-gray-700" itemprop="text">Tu cuisines, on s’occupe du reste. Mise en ligne rapide.</p>
+    </article>
+  </div>
+
+  <!-- FAQ -->
+  <section class="mt-16 max-w-3xl mx-auto space-y-8" aria-labelledby="faq-title">
+    <h3 id="faq-title" class="sr-only">Foire aux questions sur la création de site web</h3>
+
+    <div itemscope itemtype="https://schema.org/Question">
+      <h4 class="text-lg font-semibold text-blue-800 mb-2" itemprop="name">Combien de temps prend la création du site ?</h4>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p class="text-gray-700" itemprop="text">Selon le plan choisi, entre 1 et 3 semaines. Nous te guidons à chaque étape pour que tout soit clair et efficace.</p>
+      </div>
+    </div>
+
+    <div itemscope itemtype="https://schema.org/Question">
+      <h4 class="text-lg font-semibold text-blue-800 mb-2" itemprop="name">Puis-je modifier mon menu ou mes horaires facilement ?</h4>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p class="text-gray-700" itemprop="text">Oui, grâce à une interface intuitive, tu peux modifier ton menu, horaires et infos sans aucune compétence technique.</p>
+      </div>
+    </div>
+
+    <div itemscope itemtype="https://schema.org/Question">
+      <h4 class="text-lg font-semibold text-blue-800 mb-2" itemprop="name">Quels sont les coûts cachés ou abonnements ?</h4>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p class="text-gray-700" itemprop="text">Nos tarifs sont transparents, sans abonnement obligatoire. Tu peux choisir un plan adapté à ton budget, avec ou sans suivi.</p>
+      </div>
+    </div>
+
+    <div itemscope itemtype="https://schema.org/Question">
+      <h4 class="text-lg font-semibold text-blue-800 mb-2" itemprop="name">Que se passe-t-il après le lancement ?</h4>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p class="text-gray-700" itemprop="text">Tu profites d’un site optimisé et sécurisé. Selon ton plan, nous proposons un accompagnement continu ou un support ponctuel.</p>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+   <!-- CTA -->
+<div class="mt-16 text-center" aria-labelledby="cta-appel-gratuit">
+  <h3 id="cta-appel-gratuit" class="sr-only">Appel gratuit de découverte</h3>
+  <a onclick="openModal()" role="button" aria-label="Réserver un appel de découverte gratuit"
+     class="inline-block bg-blue-800 text-white font-semibold px-8 py-3 rounded-lg shadow hover:bg-blue-900 transition">
+    Réserve ton appel gratuit
+  </a>
+</div>
+</section>
+
+<!-- Section 2 : Plans -->
+<section id="tarifs" class="max-w-7xl mx-auto px-6 py-20" aria-labelledby="tarifs-title">
+  <h2 id="tarifs-title" class="text-4xl font-extrabold text-center text-blue-900 mb-14">
+    Choisis le plan qui correspond à ton resto.
+  </h2>
+
+  <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-3" itemscope itemtype="https://schema.org/OfferCatalog">
+
+    <!-- Plan Essentiel -->
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col justify-between hover:shadow-xl transition-shadow duration-300" itemscope itemtype="https://schema.org/Offer">
+      <meta itemprop="name" content="Plan Essentiel">
+      <div>
+        <h3 class="text-2xl font-semibold text-blue-900 mb-4" itemprop="name">Essentiel</h3>
+        <p class="text-4xl font-extrabold text-blue-800 mb-6" itemprop="price">799<span class="text-lg font-normal"> $ CAD</span></p>
+        <meta itemprop="priceCurrency" content="CAD" />
+        <h4 class="text-lg font-semibold text-gray-700 mb-2">Contenu</h4>
+        <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6" itemprop="description">
+          <li>Site simple avec menu interactif</li>
+          <li>Intégration Google Maps</li>
+          <li>SEO local optimisé</li>
+        </ul>
+        <h4 class="text-lg font-semibold text-gray-700 mb-2">Bonus</h4>
+        <p class="text-gray-700 mb-6">Accompagnement basique : support email, FAQ en ligne, conseils pratiques.</p>
+        <h4 class="text-lg font-semibold text-gray-700 mb-4">Durée</h4>
+        <p class="text-gray-700 mb-8">1 semaine</p>
+      </div>
+      <button onclick="openPlanModal('Essentiel')" class="w-full bg-blue-800 text-white py-3 rounded-lg font-semibold hover:bg-blue-900 transition">
+        Choisir ce plan
+      </button>
+    </div>
+
+    <!-- Plan Confort -->
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col justify-between border-4 border-blue-800 hover:shadow-xl transition-shadow duration-300" itemscope itemtype="https://schema.org/Offer">
+      <meta itemprop="name" content="Plan Confort">
+      <div>
+        <h3 class="text-2xl font-semibold text-blue-900 mb-4" itemprop="name">Confort</h3>
+        <p class="text-4xl font-extrabold text-blue-800 mb-6" itemprop="price">1299<span class="text-lg font-normal"> $ CAD</span></p>
+        <meta itemprop="priceCurrency" content="CAD" />
+        <h4 class="text-lg font-semibold text-gray-700 mb-2">Contenu</h4>
+        <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6" itemprop="description">
+          <li>Tout l’Essentiel inclus</li>
+          <li>Réservations en ligne</li>
+          <li>Réseaux sociaux intégrés</li>
+          <li>SEO avancé</li>
+        </ul>
+        <h4 class="text-lg font-semibold text-gray-700 mb-2">Bonus</h4>
+        <p class="text-gray-700 mb-6">Support prioritaire, mises à jour incluses.</p>
+        <h4 class="text-lg font-semibold text-gray-700 mb-4">Durée</h4>
+        <p class="text-gray-700 mb-8">2 semaines</p>
+      </div>
+      <button onclick="openPlanModal('Confort')" class="w-full bg-blue-800 text-white py-3 rounded-lg font-semibold hover:bg-blue-900 transition">
+        Choisir ce plan
+      </button>
+    </div>
+
+    <!-- Plan Premium -->
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col justify-between hover:shadow-xl transition-shadow duration-300" itemscope itemtype="https://schema.org/Offer">
+      <meta itemprop="name" content="Plan Premium">
+      <div>
+        <h3 class="text-2xl font-semibold text-blue-900 mb-4" itemprop="name">Premium</h3>
+        <p class="text-4xl font-extrabold text-blue-800 mb-6" itemprop="price">1799<span class="text-lg font-normal"> $ CAD</span></p>
+        <meta itemprop="priceCurrency" content="CAD" />
+        <h4 class="text-lg font-semibold text-gray-700 mb-2">Contenu</h4>
+        <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6" itemprop="description">
+          <li>Tout le Confort inclus</li>
+          <li>Hébergement premium</li>
+          <li>Sécurité renforcée</li>
+          <li>Suivi personnalisé</li>
+        </ul>
+        <h4 class="text-lg font-semibold text-gray-700 mb-2">Bonus</h4>
+        <p class="text-gray-700 mb-6">Optimisation continue et assistance dédiée.</p>
+        <h4 class="text-lg font-semibold text-gray-700 mb-4">Durée</h4>
+        <p class="text-gray-700 mb-8">3 semaines</p>
+      </div>
+      <button onclick="openPlanModal('Premium')" class="w-full bg-blue-800 text-white py-3 rounded-lg font-semibold hover:bg-blue-900 transition">
+        Choisir ce plan
+      </button>
+    </div>
+  </div>
+
+  <p class="mt-12 text-center text-gray-600 italic text-sm max-w-3xl mx-auto">
+    Paiement en plusieurs fois possible. Sans engagement à long terme.
+  </p>
+</section>
+
+<!-- SECTION OFFRE SPÉCIALE -->
+<section id="offre-speciale" class="py-20 px-6 sm:px-10 bg-white relative overflow-hidden" aria-labelledby="offre-title">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 id="offre-title" class="text-4xl sm:text-5xl font-extrabold text-blue-600">Offre Spéciale : Site Web Restaurant à 699$</h2>
+    <p class="mt-4 text-gray-600 text-lg">Seulement <strong>15 clients acceptés par semaine</strong>. Profitez d’un site web complet, optimisé pour les restaurants.</p>
+
+    <!-- Barre de progression -->
+    <div class="mt-8 w-full bg-gray-200 rounded-full h-6 overflow-hidden relative max-w-2xl mx-auto" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="15" aria-label="Places restantes pour l'offre spéciale">
+      <div id="progress-bar" class="bg-blue-500 h-full rounded-full transition-all duration-700 ease-in-out" style="width: 33.33%"></div>
+      <div id="progress-text" class="absolute inset-0 flex items-center justify-center text-sm font-semibold text-gray-700">5 / 15 clients</div>
+    </div>
+
+    <!-- Détails de l'offre -->
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-4xl mx-auto" itemscope itemtype="https://schema.org/Product">
+      <meta itemprop="name" content="Site Web Restaurant à 699$">
+      <meta itemprop="offers" content="https://example.com/acheter-site-restaurant">
+      <div class="bg-blue-50 p-6 rounded-lg shadow-md" itemprop="description">
+        <h3 class="text-xl font-semibold mb-4 text-blue-700">Ce qui est inclus :</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>✅ Site 100% responsive</li>
+          <li>✅ Intégration du menu digital</li>
+          <li>✅ Réservation en ligne</li>
+          <li>✅ Référencement local (SEO)</li>
+          <li>✅ Page contact & réseaux sociaux</li>
+          <li>✅ Google Maps intégrée</li>
+          <li>✅ Livraison sous 7 jours</li>
+        </ul>
+      </div>
+      <div class="bg-blue-50 p-6 rounded-lg shadow-md flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-blue-700">Tarif unique :</h3>
+          <p class="text-4xl font-bold text-blue-600" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="priceCurrency" content="CAD">$</span><span itemprop="price">699</span>
+            <span class="text-lg text-gray-600">CAD</span>
+          </p>
+          <p class="mt-2 text-gray-500 text-sm">Paiement en une fois, sans frais cachés.</p>
+        </div>
+        <button id="cta-button" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-blue-700 transition disabled:opacity-50" aria-label="Réserver l'offre spéciale">
+          Réserver maintenant
+        </button>
+        <button id="late-interest-button" onclick="openModal()" class="mt-4 hidden bg-gray-600 text-white px-6 py-3 rounded-md text-base font-medium hover:bg-gray-700 transition">
+          Je veux une place quand même
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const section = document.getElementById("offre-speciale");
+      const progressBar = document.getElementById("progress-bar");
+      const progressText = document.getElementById("progress-text");
+      const ctaButton = document.getElementById("cta-button");
+      const lateButton = document.getElementById("late-interest-button");
+
+      const maxClients = 15;
+      let currentClients = parseInt(localStorage.getItem('fakeClientCount')) || 5;
+
+      function updateProgressBar() {
+        const percentage = (currentClients / maxClients) * 100;
+        progressBar.style.width = percentage + '%';
+
+        if (currentClients >= maxClients) {
+          progressText.textContent = `Offre complète pour cette semaine`;
+          progressBar.classList.remove("bg-blue-500");
+          progressBar.classList.add("bg-gray-400");
+          ctaButton.disabled = true;
+          ctaButton.textContent = "Offre complète";
+          if (lateButton) lateButton.classList.remove("hidden");
+        } else {
+          progressText.textContent = `${currentClients} / ${maxClients} clients`;
+        }
+      }
+
+      updateProgressBar();
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && currentClients < maxClients) {
+              currentClients++;
+              localStorage.setItem('fakeClientCount', currentClients);
+              updateProgressBar();
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      observer.observe(section);
+    });
+  </script>
+
+<!-- Section 3 : Formulaire de contact -->
+<section class="max-w-4xl mx-auto px-6 py-16" id="form" aria-labelledby="contact-heading">
+  <h2 id="contact-heading" class="text-3xl sm:text-4xl font-extrabold text-center text-blue-700 mb-10">
+    Parle-moi de ton projet de création de site web pour restaurant au Canada, sans engagement.
+  </h2>
+
+  <form class="space-y-6 bg-blue-50 p-8 rounded-lg shadow-md" role="form" aria-label="Formulaire de contact">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <label for="prenom" class="block text-sm font-medium text-gray-700 mb-1">Prénom</label>
+        <input id="prenom" name="prenom" type="text" required autocomplete="given-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+      </div>
+      <div>
+        <label for="nom" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+        <input id="nom" name="nom" type="text" required autocomplete="family-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+      </div>
+      <div>
+        <label for="resto" class="block text-sm font-medium text-gray-700 mb-1">Nom du resto</label>
+        <input id="resto" name="resto" type="text" autocomplete="organization" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <input id="email" name="email" type="email" required autocomplete="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+      </div>
+      <div>
+        <label for="telephone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+        <input id="telephone" name="telephone" type="tel" autocomplete="tel" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+      </div>
+    </div>
+
+    <div>
+      <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+      <textarea id="message" name="message" rows="4" autocomplete="off" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none"></textarea>
+    </div>
+
+    <div class="pt-4">
+      <button type="submit" class="w-full md:w-auto bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-800 transition">
+        Être rappelé·e
+      </button>
+    </div>
+
+    <p class="text-sm text-center text-gray-500 mt-4">
+      Tes données sont sécurisées et ne seront jamais partagées.
+    </p>
+  </form>
+</section>
+<main class="max-w-7xl mx-auto px-6 md:px-12 py-16">
+
+  <!--   Bouton toggle About Us -->
+  <div class="flex justify-center mb-8">
+    <button id="toggleAboutBtn" aria-expanded="false" aria-controls="aboutSection" 
+      class="inline-flex items-center gap-2 text-blue-900 font-semibold text-xl border border-blue-900 rounded-md px-5 py-3 hover:bg-blue-100 transition focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2">
+      À propos de notre agence web
+      <svg id="toggleIcon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 transition-transform duration-300">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Section About Us -->
+  <section id="aboutSection" class="max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden max-h-0 transition-[max-height] duration-700 ease-in-out" aria-hidden="true">
+    <div class="p-8 space-y-10">
+
+      <h2 class="text-3xl font-bold text-blue-900 text-center mb-6">
+        Une équipe spécialisée dans la création de sites web pour restaurants au Canada
+      </h2>
+
+      <p class="text-gray-700 text-center max-w-3xl mx-auto mb-12 leading-relaxed">
+        Nous sommes une petite communauté passionnée qui crée des sites web performants et sur mesure pour les restaurants au Canada. Notre équipe réunit des experts en marketing, développement, design et support.
+      </p>
+
+      <!-- Equipe -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+
+        <!-- Exemple de membre (le même pour tous avec alt amélioré) -->
+        <article class="flex flex-col items-center text-center">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jean Dupont - Directeur Marketing chez notre agence web" class="w-32 h-32 rounded-full object-cover border-4 border-blue-900 shadow-md mb-4" />
+          <h3 class="text-xl font-semibold text-blue-900">Jean Dupont</h3>
+          <p class="text-sm italic text-gray-500 mb-1">Directeur Marketing</p>
+          <p class="text-xs text-gray-400 mb-3">Diplômé HEC Montréal</p>
+          <p class="text-gray-700 leading-relaxed">
+            Jean dirige notre marketing avec plus de 10 ans d’expérience. Il veille à la communication claire et adaptée pour chaque client.
+          </p>
+        </article>
+
+        <article class="flex flex-col items-center text-center">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie Martin - Directrice UI/UX" class="w-32 h-32 rounded-full object-cover border-4 border-blue-900 shadow-md mb-4" />
+          <h3 class="text-xl font-semibold text-blue-900">Sophie Martin</h3>
+          <p class="text-sm italic text-gray-500 mb-1">Directrice UI/UX</p>
+          <p class="text-xs text-gray-400 mb-3">Diplômée en design d’interaction</p>
+          <p class="text-gray-700 leading-relaxed">
+            Sophie conçoit des interfaces intuitives et modernes qui mettent l’expérience utilisateur au cœur du projet.
+          </p>
+        </article>
+
+        <article class="flex flex-col items-center text-center">
+          <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Marc Tremblay - Développeur senior en React et Node.js" class="w-32 h-32 rounded-full object-cover border-4 border-blue-900 shadow-md mb-4" />
+          <h3 class="text-xl font-semibold text-blue-900">Marc Tremblay</h3>
+          <p class="text-sm italic text-gray-500 mb-1">Développeur Senior</p>
+          <p class="text-xs text-gray-400 mb-3">Expert React & Node.js</p>
+          <p class="text-gray-700 leading-relaxed">
+            Marc code avec rigueur et efficacité pour garantir des sites performants et maintenables.
+          </p>
+        </article>
+
+        <article class="flex flex-col items-center text-center">
+          <img src="junior.jpg" alt="Toussaint Leo-vitch - Développeur junior passionné" class="w-32 h-32 rounded-full object-cover border-4 border-blue-900 shadow-md mb-4" />
+          <h3 class="text-xl font-semibold text-blue-900">Toussaint Leo-vitch</h3>
+          <p class="text-sm italic text-gray-500 mb-1">Développeur Junior</p>
+          <p class="text-xs text-gray-400 mb-3">Passionné par les nouvelles technologies</p>
+          <p class="text-gray-700 leading-relaxed">
+            Leo apporte fraîcheur et innovation avec son enthousiasme pour les dernières tendances web.
+          </p>
+        </article>
+
+        <article class="flex flex-col items-center text-center">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Clara Rousseau - Chef de projet digital" class="w-32 h-32 rounded-full object-cover border-4 border-blue-900 shadow-md mb-4" />
+          <h3 class="text-xl font-semibold text-blue-900">Clara Rousseau</h3>
+          <p class="text-sm italic text-gray-500 mb-1">Chef de Projet</p>
+          <p class="text-xs text-gray-400 mb-3">Diplômée en gestion de projets digitaux</p>
+          <p class="text-gray-700 leading-relaxed">
+            Clara coordonne chaque étape pour garantir la réussite de vos projets web.
+          </p>
+        </article>
+
+        <article class="flex flex-col items-center text-center">
+          <img src="https://randomuser.me/api/portraits/women/70.jpg" alt="Laura Gagnon - Support client" class="w-32 h-32 rounded-full object-cover border-4 border-blue-900 shadow-md mb-4" />
+          <h3 class="text-xl font-semibold text-blue-900">Laura Gagnon</h3>
+          <p class="text-sm italic text-gray-500 mb-1">Spécialiste Support Client</p>
+          <p class="text-xs text-gray-400 mb-3">Toujours à votre écoute</p>
+          <p class="text-gray-700 leading-relaxed">
+            Laura assure un support client rapide, clair et bienveillant, pour vous accompagner à chaque étape.
+          </p>
+        </article>
+
+      </div>
+
+      <!-- Technologies -->
+  <!-- Technologies -->
+<section class="mt-20 bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-2xl p-10 shadow-md">
+  <h3 class="text-3xl font-bold text-blue-800 mb-10 text-center">Technologies web modernes utilisées</h3>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+    
+    <!-- Exemple de techno -->
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/html5/EF652A" alt="Technologie HTML5" class="w-12 h-12 mx-auto mb-3 object-contain">
+      <p class="text-blue-800 font-semibold">HTML</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/css3/1572B6" alt="Technologie CSS3" class="w-12 h-12 mx-auto mb-3 object-contain">
+      <p class="text-blue-800 font-semibold">CSS</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" class="w-12 h-12 mx-auto mb-3 object-contain">
+      <p class="text-blue-800 font-semibold">JavaScript</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/react/61DAFB" alt="Framework React" class="w-12 h-12 mx-auto mb-3 object-contain">
+      <p class="text-blue-800 font-semibold">React</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" class="w-12 h-12 mx-auto mb-3 object-contain">
+      <p class="text-blue-800 font-semibold">Tailwind</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js" class="w-12 h-12 mx-auto mb-3 object-contain">
+      <p class="text-blue-800 font-semibold">Node.js</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/firebase/FFCA28" alt="Firebase" class="w-12 h-12 mx-auto mb-3 object-contain">
+      <p class="text-blue-800 font-semibold">Firebase</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL" class="w-12 h-12 mx-auto mb-3 object-contain">
+      <p class="text-blue-800 font-semibold">SQL</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" class="w-12 h-12 mx-auto mb-3 object-contain">
+      <p class="text-blue-800 font-semibold">Git</p>
+    </div>
+
+    <div class="bg-white p-5 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transform transition">
+      <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="w-12 h-12 mx-auto mb-3 object-contain">
+      <p class="text-blue-800 font-semibold">GitHub</p>
+    </div>
+
+  </div>
+</section>
+
+
+      <!-- Engagement -->
+      <section class="mt-16 max-w-3xl mx-auto text-center">
+        <h3 class="text-2xl font-bold text-blue-900 mb-4">Notre engagement envers les restaurateurs</h3>
+        <p class="text-gray-700 leading-relaxed text-lg px-4">
+          Chaque projet est unique. Nous vous accompagnons simplement, sans jargon, avec une communication claire et une écoute attentive.  
+          Votre satisfaction est notre priorité absolue.
+        </p>
+      </section>
+
+    </div>
+  </section>
+</main>
+
+<footer class="bg-gray-900 text-white pt-16 pb-6 px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+
+    <!-- Colonne 1 : Logo + mission -->
+    <div>
+      <div class="text-2xl font-bold text-blue-400 mb-4">
+        <a href="/" title="Accueil de Vitch Web Studio - Création de sites pour restaurants">vitch web studio</a>
+      </div>
+      <p class="text-sm text-gray-300 leading-relaxed">
+        Nous aidons les restaurateurs canadiens débordés à obtenir un site professionnel qui attire des clients — sans stress.
+      </p>
+    </div>
+
+    <!-- Colonne 2 : Liens rapides -->
+    <nav aria-label="Liens rapides">
+      <h4 class="text-lg font-semibold text-white mb-4">Liens rapides</h4>
+      <ul class="space-y-2 text-sm text-gray-300">
+        <li><a href="/" class="hover:text-white transition" title="Retour à la page d'accueil">Accueil</a></li>
+        <li><a href="#problem" class="hover:text-white transition" title="Les problèmes rencontrés par les restaurateurs">Vos problèmes</a></li>
+        <li><a href="#avis" class="hover:text-white transition" title="Avis de nos clients restaurateurs">Avis</a></li>
+        <li><a href="#methode" class="hover:text-white transition" title="Notre méthode de création de site web">Méthode</a></li>
+        <li><a href="#tarifs" class="hover:text-white transition" title="Nos tarifs pour les sites de restaurants">Tarifs</a></li>
+        <li><a href="#form" class="hover:text-white transition" title="Formulaire de contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Colonne 3 : Contact -->
+    <div>
+      <h4 class="text-lg font-semibold text-white mb-4">Contact</h4>
+      <ul class="space-y-2 text-sm text-gray-300">
+        <li>Email : <a href="mailto:contact@tvitchwebstudio.it.com" class="hover:text-white" title="Envoyer un email">contact@tvitchwebstudio.it.com</a></li>
+        <li>Téléphone : <a href="tel:+1 (954) 234-0866" class="hover:text-white" title="Appeler le studio">+1 (954) 234-0866</a></li>
+        <li class="flex space-x-4 mt-2">
+          <a href="https://www.facebook.com/profile.php?id=61576833602231" class="hover:text-white" rel="noopener" title="Notre page Facebook">Facebook</a>
+        </li>
+        <li class="mt-4">
+          <a href="#form" class="text-blue-400 hover:underline" title="Contacte-nous pour discuter de ton projet">Besoin d’aide ? Contacte-nous</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bas de page -->
+  <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
+    © 2025 Vitch Web Studio. Tous droits réservés. Création de sites pour restaurants au Canada.
+  </div>
+</footer>
+
+ <div id="modal"
+  class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden">
+  <div class="bg-white rounded-lg shadow-xl w-full max-w-md p-6 relative">
+
+    <!-- Bouton fermeture -->
+    <button onclick="closeModal()"
+      class="absolute top-4 right-4 text-gray-500 hover:text-black text-xl font-bold">
+      &times;
+    </button>
+
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+      Réservez votre appel gratuit
+    </h2>
+
+    <form  action="https://formspree.io/f/xrbqvwaw" method="POST" class="space-y-4">
+      <input type="text" name="Nom" required
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        placeholder="Votre nom" />
+
+      <input type="email" name="Email" required
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        placeholder="Votre email" />
+
+      <input type="tel" name="Téléphone"
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        placeholder="Téléphone (optionnel)" />
+
+      <textarea name="Message" rows="4" required
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        placeholder="Parlez-moi de votre projet..."></textarea>
+
+      <button type="submit"
+        class="w-full bg-black hover:bg-gray-900 text-white py-2 px-4 rounded-md font-semibold transition">
+        Réserver l'appel
+      </button>
+    </form>
+  </div>
+</div>
+<!-- Modal des plans -->
+<div id="planModal"
+  class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden transition-opacity duration-300">
+  <div class="bg-white rounded-xl shadow-2xl w-full max-w-lg p-8 relative border border-gray-100">
+
+    <!-- Bouton fermeture -->
+    <button onclick="closePlanModal()"
+      class="absolute top-4 right-4 text-gray-400 hover:text-black text-2xl font-bold">
+      &times;
+    </button>
+
+    <!-- Titre -->
+    <h2 class="text-2xl font-bold text-gray-900 mb-2">Parfait, on finalise </h2>
+
+    <!-- Affichage du plan -->
+    <p class="text-gray-600 mb-6">
+      Vous avez choisi : <span id="planName" class="font-semibold text-black"></span>
+    </p>
+
+    <!-- Formulaire -->
+     <form  action="https://formspree.io/f/xrbqvwaw" method="POST" class="space-y-4">
+      <input type="hidden" name="Plan choisi" id="planInput">
+
+      <input type="text" name="Nom" placeholder="Votre nom" required
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+
+      <input type="email" name="Email" placeholder="Votre email" required
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+        <div>
+  <label class="block text-sm text-gray-700 mb-1">Numéro WhatsApp</label>
+  <input type="tel" name="WhatsApp"
+    placeholder="+1 514-123-4567"
+    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+</div>
+
+
+      <textarea name="Message" placeholder="Un mot sur votre projet..." rows="3"
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+
+      <button type="submit"
+        class="w-full bg-black hover:bg-gray-900 text-white py-3 rounded-md font-semibold text-lg transition">
+        Finaliser ma demande
+      </button>
+    </form>
+  </div>
+</div>
+<!-- Message après soumission -->
+<div id="confirmationMessage" class="hidden mt-6 text-center text-gray-700 text-lg">
+  🎉 Merci pour votre demande !<br>
+  Nous vous contacterons très rapidement par email.<br><br>
+  <strong>Souhaitez-vous continuer la conversation sur WhatsApp ?</strong><br>
+  Si vous avez entré votre numéro, nous vous enverrons un message sous 24h.
+</div>
+
+<!-- === CHATBOT === -->
+<div id="chatbot-container"
+     class="fixed bottom-6 right-6 md:bottom-4 md:right-6 md:left-auto left-auto top-1/2 transform -translate-y-1/2 md:top-auto md:translate-y-0 flex items-end z-50 space-x-3 md:flex-row flex-col-reverse">
+  <img src="avatar.png" alt="Avatar"
+       id="avatar"
+       class="w-20 h-25  shadow-lg cursor-pointer object-cover bg-transparent" />
+  <div id="bubble"
+       class="bg-white rounded-2xl px-4 py-2 max-w-xs text-sm text-gray-800 shadow-lg opacity-0 pointer-events-none transition-opacity duration-500"></div>
+</div>
+
+<!-- === BOUTON EXPÉRIENCE === -->
+<div hidden class="fixed bottom-6 right-6 z-50">
+  <button id="experienceBtn"
+          class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition">
+    J’ai acheté ✨
+  </button>
+</div>
+
+<!-- === MODALE DE CONTACT === -->
+<div id="modalOverlay"
+     class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <div class="bg-white rounded-lg p-6 w-full max-w-md relative">
+    <button id="closeModal"
+            class="absolute top-3 right-3 text-gray-500 text-xl font-bold">&times;</button>
+    <h2 class="text-lg font-semibold mb-4">Contacte-nous</h2>
+    <input id="email" type="email" placeholder="Ton email"
+           class="w-full border p-2 rounded mb-3" />
+    <textarea id="message" rows="4" placeholder="Ton message"
+              class="w-full border p-2 rounded mb-3"></textarea>
+    <button id="sendBtn"
+            class="bg-blue-600 text-white px-4 py-2 rounded w-full hover:bg-blue-700 transition">Envoyer</button>
+  </div>
+</div>
+
+  <!-- Modal -->
+  <div id="modalOverlay2" class="fixed inset-0 z-50 bg-blue-900 bg-opacity-70 flex items-center justify-center hidden">
+    <div role="dialog" aria-labelledby="modalTitle" class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full p-8 animate-fadeIn">
+      <h2 id="modalTitle" class="text-3xl font-bold text-blue-800 mb-4 text-center">Bienvenue !</h2>
+      <p class="text-gray-600 mb-8 text-center text-lg">Quel type de restaurant possédez-vous ?</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                  <button onclick="selectCategory('halal')" class="category-card">Rien de tout ça</button>
+        <button onclick="selectCategory('petit')" class="category-card">Petit restaurant</button>
+        <button onclick="selectCategory('grand')" class="category-card">Grand restaurant</button>
+        <button onclick="selectCategory('foodtruck')" class="category-card">Food truck</button>
+    <button onclick="selectCategory('cafe')" class="category-card">Café / Bistro</button>
+        <button onclick="selectCategory('patisserie')" class="category-card">Pâtisserie / Boulangerie</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Script -->
+ 
+
+
+<script src="script.js"></script>
+ <script>
+    const commentsList = document.getElementById("commentsList");
+const commentInput = document.getElementById("commentInput");
+const successMessage = document.getElementById("successMessage");
+
+let allComments = [
+  { text: "Service très fluide et agréable !", minutesAgo: 6 },
+  { text: "Notre site est devenu un vrai outil de vente.", minutesAgo: 5 },
+  { text: "Les réservations automatiques sont un gain de temps énorme.", minutesAgo: 4 },
+  { text: "Support client réactif et professionnel.", minutesAgo: 3 },
+  { text: "Très satisfait du résultat final !", minutesAgo: 2 },
+  { text: "Le site est vraiment bien pensé !", minutesAgo: 1 },
+];
+
+const loopedComments = [
+  "Interface claire et intuitive, bravo.",
+  "On a gagné du temps et des clients.",
+  "L’équipe a bien compris nos besoins.",
+  "Un investissement vite rentabilisé.",
+  "Navigation mobile impeccable.",
+  "Nos clients adorent la nouvelle version.",
+  "Très bon accompagnement stratégique.",
+  "J’ai pu me concentrer sur mon métier.",
+  "Chaque détail a été pensé.",
+  "L’expérience utilisateur est top.",
+  "On reçoit plus de réservations depuis la refonte.",
+  "Le back-office est très simple d’usage.",
+  "J’ai gagné en visibilité en local.",
+  "L’image de marque est bien mieux perçue.",
+  "Les délais ont été parfaitement respectés.",
+  "Le site se charge très rapidement.",
+  "Aucune mauvaise surprise.",
+  "Je recommande à 100 %.",
+  "Le design est propre et professionnel.",
+  "L’équipe a été à l’écoute dès le début.",
+];
+let loopIndex = 0;
+
+function timeAgo(minutes) {
+  if (minutes === 0) return "à l’instant";
+  if (minutes === 1) return "il y a 1 minute";
+  return `il y a ${minutes} minutes`;
+}
+
+function renderComments() {
+  commentsList.innerHTML = "";
+  const recent = allComments.slice(-6).reverse();
+  recent.forEach((comment) => {
+    const el = document.createElement("div");
+    el.className =
+      "snap-start flex-shrink-0 w-80 bg-blue-50 p-6 rounded-lg shadow-md md:w-auto fade-ini";
+    el.innerHTML = `
+      <p class="italic text-gray-700 mb-4">“${comment.text}”</p>
+      <div class="text-sm text-gray-500">${timeAgo(comment.minutesAgo)}</div>
+    `;
+    commentsList.appendChild(el);
+  });
+}
+
+function submitComment() {
+  const value = commentInput.value.trim();
+  if (!value) return;
+  allComments.push({ text: value, minutesAgo: 0 });
+  commentInput.value = "";
+  successMessage.classList.remove("hidden");
+  renderComments();
+  setTimeout(() => {
+    successMessage.classList.add("hidden");
+  }, 3000);
+}
+
+// Ajouter automatiquement un commentaire toutes les 5s
+setInterval(() => {
+  const newText = loopedComments[loopIndex % loopedComments.length];
+  allComments.push({ text: newText, minutesAgo: 0 });
+  loopIndex++;
+  renderComments();
+}, 5000);
+
+// Mise à jour des temps écoulés
+setInterval(() => {
+  allComments.forEach(comment => comment.minutesAgo++);
+  renderComments();
+}, 60000);
+
+// Initialisation
+renderComments();
+
+  </script>
+
+  <script>
+    const bubble = document.getElementById('bubble');
+    const avatar = document.getElementById('avatar');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const closeModalBtn = document.getElementById('closeModal');
+    const sendBtn = document.getElementById('sendBtn');
+    const experienceBtn = document.getElementById('experienceBtn');
+
+    const displayDuration = 4000; // Temps d'affichage de chaque message (ms)
+    const hideDuration = 9000;    // Temps caché entre les messages (ms)
+    let currentIndex = 0;
+    let messagesToShow = [];
+
+    // Stockage de visite
+    const visits = parseInt(localStorage.getItem('visits') || '0') + 1;
+    localStorage.setItem('visits', visits);
+
+    const hasClickedExperience = localStorage.getItem('hasClickedExperience') === 'true';
+    const sentMessageThisSession = sessionStorage.getItem('sentMessageThisSession') === 'true';
+
+    // Messages personnalisés
+    const messageSets = {
+      1: [
+        "Bienvenue 👋",
+        "C’est ta première visite ici.",
+        "Besoin d’un site web pour ton resto ?"
+      ],
+      2: [
+        "Re-bonjour 👋",
+        "Tu sembles t’intéresser à nos services 😄",
+        "Tu peux cliquer sur moi si tu veux discuter !"
+      ],
+      3: [
+        "Hé encore toi 😏",
+        "3e visite ! Tu veux qu’on parle de ton projet ?",
+        "Je suis là pour t’aider."
+      ],
+      moreThan3: [
+        "Ça fait plusieurs fois que tu nous rends visite ! 👀",
+        "Un projet en tête ? Je suis dispo pour en parler.",
+        "Clique sur moi si tu veux m’envoyer un message ✉️"
+      ],
+      afterClick: [
+        "Content de te revoir 😄",
+        "Comment s’est passée ton expérience avec nous ?"
+      ],
+      afterMessage: [
+        "T’as un autre truc à ajouter ?"
+      ]
+    };
+
+    function determineMessageSet() {
+      if (sentMessageThisSession) return messageSets.afterMessage;
+      if (hasClickedExperience) return messageSets.afterClick;
+      if (visits === 1) return messageSets[1];
+      if (visits === 2) return messageSets[2];
+      if (visits === 3) return messageSets[3];
+      return messageSets.moreThan3;
+    }
+
+    function cycleMessages() {
+      const message = messagesToShow[currentIndex];
+      bubble.textContent = message;
+      bubble.classList.remove('opacity-0', 'pointer-events-none');
+      bubble.classList.add('opacity-100');
+
+      setTimeout(() => {
+        bubble.classList.remove('opacity-100');
+        bubble.classList.add('opacity-0', 'pointer-events-none');
+        currentIndex = (currentIndex + 1) % messagesToShow.length;
+        setTimeout(cycleMessages, hideDuration);
+      }, displayDuration);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      messagesToShow = determineMessageSet();
+      cycleMessages();
+    });
+
+    experienceBtn.addEventListener('click', () => {
+      localStorage.setItem('hasClickedExperience', 'true');
+      alert("Merci ! On s'en souviendra 😊");
+    });
+
+    avatar.addEventListener('click', () => {
+      modalOverlay.classList.remove('hidden');
+    });
+
+    bubble.addEventListener('click', () => {
+      modalOverlay.classList.remove('hidden');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modalOverlay.classList.add('hidden');
+    });
+
+    sendBtn.addEventListener('click', () => {
+      const email = document.getElementById('email').value;
+      const msg = document.getElementById('message').value;
+      if (!email || !msg) {
+        alert("Merci de remplir les deux champs.");
+        return;
+      }
+
+      console.log("Message envoyé :", { email, msg });
+
+      // Marqueur temporaire pour la session uniquement
+      sessionStorage.setItem('sentMessageThisSession', 'true');
+
+      // Mise à jour immédiate de la boucle de messages
+      messagesToShow = messageSets.afterMessage;
+      currentIndex = 0;
+
+      modalOverlay.classList.add('hidden');
+      alert("Merci pour ton message !");
+    });
+  </script>
+  <!-- 
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Vérifie si la redirection a déjà été faite
+    if (!localStorage.getItem("langRedirected")) {
+        const lang = navigator.language || navigator.userLanguage;
+        const langCode = lang.toLowerCase().substring(0, 2); // Ex: "fr", "en", "es"
+
+        // Sauvegarde que l'utilisateur a été redirigé une fois
+        localStorage.setItem("langRedirected", "true");
+
+        if (langCode === "fr") {
+            window.location.href = "index.html";
+        } else if (langCode === "en") {
+            window.location.href = "En.html";
+        } else {
+            // Pour toutes les autres langues : redirection vers anglais
+            window.location.href = "En.html";
+        }
+    }
+});
+</script>
+ -->
+
+</body>
+</html>

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Team 49 – Mini-Formation</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Animate.css CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    .card-shadow {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-white via-blue-50 to-purple-100 min-h-screen flex items-center justify-center p-6 text-gray-800">
+
+  <div class="w-full max-w-xl space-y-4">
+
+    <!-- Barre de progression -->
+    <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+      <div id="progressBar" class="h-full bg-blue-600 transition-all duration-500" style="width: 0%;"></div>
+    </div>
+
+    <!-- Carte principale -->
+    <div id="app" class="bg-white rounded-xl p-6 card-shadow animate__animated animate__fadeIn">
+
+      <!-- Étapes -->
+<div id="stepsWrapper" class="min-h-[200px] space-y-6">
+  <!-- Étape 0 -->
+<div 
+  data-step 
+  class="max-w-xl mx-auto bg-white shadow-lg border-l-4 border-blue-600 rounded-xl p-6 mt-10 animate__animated animate__fadeInUp"
+>
+  <h2 class="text-2xl font-semibold text-blue-600 mb-3">🌟 Team 49 – Fè Lajan Ak Telefòn Ou</h2>
+  
+  <p class="text-gray-700 text-base mb-4">
+    📱 Yon Fòmasyon Senp, Pro, Eficas pou Vin Ambassadeur.
+  </p>
+
+  <p class="text-gray-800 font-semibold mb-2">📚 Structure Fòmasyon an :</p>
+  
+  <ul class="space-y-2 text-gray-700 text-base pl-1">
+    <li>✅ Byenvini</li>
+    <li>🔍 kijan pou chèche Kliyan</li>
+    <li>💬 ki Mesaj pou voye</li>
+    <li>💰 Koman w touche </li>
+    <li>🧰 Zouti Pou reyisi </li>
+    <li>🌍 Bonus Mondyal</li>
+    <li>🤝 Bonus Sistèm Ekip</li>
+  </ul>
+</div>
+
+<!-- Étape 1 -->
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-600 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-green-600 mb-4 flex items-center gap-2">
+    ✅ <span>MODIL 1 – Byenvini</span>
+  </h4>
+
+  <p class="text-gray-800 text-base leading-relaxed mb-4">
+    🎯 <span class="font-semibold">Objektif premye modil la:</span> Motive w, kraze tout dout ou k genyen, fè w dekouvri vrè kapssitew.
+  </p>
+
+  <p class="text-gray-700 text-base leading-relaxed">
+    📱 Ou pa bezwen diplòm. Ou pa bezwen gon gro rezo. <span class="font-medium">Ou gen telefòn ? Ou deja gen outi pou travay.</span>
+  </p>
+</div>
+  <!-- Étape 2 -->
+<div 
+  data-step 
+  class="max-w-xl mx-auto bg-white shadow-lg border-l-4 border-blue-500 rounded-xl p-6 mt-8 animate__animated hidden"
+>
+  <h3 class="text-xl font-semibold text-blue-500 mb-3">📘 Sa ou pral aprann :</h3>
+
+  <ul class="list-disc list-inside text-gray-700 text-base space-y-1 mb-4">
+    <li>Jwenn biznis ki enteresan</li>
+    <li>Voye mesaj ki mache</li>
+    <li>Touche komisyon</li>
+    <li>Parèt serye san eksperyans</li>
+  </ul>
+
+  <p class="text-gray-800"><span class="font-semibold">🛠️ Zouti :</span> WhatsApp, Facebook, IG, TikTok, Google Maps</p>
+</div>
+
+
+  <div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-purple-600 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-purple-600 mb-4 flex items-center gap-2">
+    🚀 <span> Misyon ou kòm Anbasadè</span>
+  </h4>
+
+  <p class="text-gray-800 leading-relaxed mb-4">
+    W ap ede ti biznis, atis, ak pwofesyonèl jwenn plis kliyan gras ak yon <strong>sit entènèt pwofesyonèl</strong>. Ou fè lajan chak fwa ou pote yon kliyan.
+  </p>
+
+  <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+    <li>👂 Koute bezwen entreprise yo</li>
+    <li>💬 Pwopoze yon solisyon : sit entènèt rapid, bèl, fasil pou itilize</li>
+    <li>💰 Ou touche komisyon sou chak kliyan ki peye ak referans ou</li>
+  </ul>
+
+  <p class="text-gray-700">
+    ✅ Ou pa bezwen pill teknik, ou jis bezwen konvèsasyon ak motivasyon.
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-green-700 mb-4 flex items-center gap-2">
+    🔍 <span>MODIL 2 – RECHÈCH KLIYAN</span>
+  </h4>
+
+  <p class="text-gray-800 leading-relaxed mb-4">
+    🎯 <strong>Objektif :</strong> Jwenn biznis ki ka bezwen sèvis nou yo.
+  </p>
+
+  <p class="text-gray-800 mb-2">Ki kalite biznis ou ka chèche ?</p>
+
+  <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
+    <li>🍗 Restoran</li>
+    <li>💇🏽 Salon bote / bab</li>
+    <li>🛵 sèvis livrezon</li>
+    <li>📱 Magazen telefòn</li>
+    <li>👟 Boutik lokal</li>
+    <li>🎨 Atis ak kreyatè</li>
+  </ul>
+
+  <p class="text-gray-800 mt-4">
+    👉 Tout entreprise ki bezwen yon <strong>sit web</strong> oswa <strong>vizibilite sou Google</strong>
+  </p>
+</div>
+
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-blue-600 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-blue-600 mb-4 flex items-center gap-2">
+    🗣️ <span> Kijan pou w pale de sèvis la</span>
+  </h4>
+
+  <p class="text-gray-800 leading-relaxed mb-3">
+    Moun pa achte sit. Yo achte <strong>vizibilite, konfyans avek plis kliyan</strong>. Ou dwe esplike sa yo ap genyen, pa sa ou ap vann.
+  </p>
+
+  <p class="text-gray-700 mb-2"><strong>Exemple de pitch :</strong></p>
+
+  <blockquote class="border-l-4 border-blue-400 pl-4 italic text-gray-700">
+    “M gen yon ekip ki ka fè ou gen plis kliyan sou entènèt ak on bèl sit, pou moun pran w oserye. Ou pa bezwen peye anpil frè , yo travay vit.”<br>
+    mesaj sa k chanje nan tout lang , son egzamp li ye
+  </blockquote>
+
+  <p class="text-gray-700 mt-4">
+    ✅ <strong>Evite:</strong> Pa pale de "HTML", "hébergement", sa fè moun pè. Pale de rezilta. tankou kijan on site web k remonte figi on entreprise, ki benefice li gen ladanl
+  </p>
+</div>
+
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-600 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-green-600 mb-4 flex items-center gap-2">
+    🔍 <span>kijan pou Jwenn Kliyan Potansyèl</span>
+  </h4>
+
+  <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+    <li>Sou <strong>Facebook</strong>: gade biznis ki poste men pa gen bèl imaj, ki pa gen site web pèsonèl</li>
+    <li>Sou <strong>Instagram</strong>: ti biznis lokal ki vann men ki pa gen sit</li>
+    <li>Sou <strong>Google Maps</strong>: fè rechech antrepriz ki pa gen lyen sit oswa ki pa gen bon vizibilite</li>
+  </ul>
+
+  <p class="text-gray-800">
+    ✅ <strong>Astis:</strong> Chèche biznis ki deja ap vann sou rezo sosyal men ki ka vann plis ak plis konfyans ak on site web .
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-teal-600 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-teal-600 mb-4 flex items-center gap-2">
+    💬 <span> Kijan pou w kontakte moun</span>
+  </h4>
+
+  <p class="text-gray-800 mb-3 leading-relaxed">
+    Fè premye kontak la senp, natirèl. Pa komanse diskisyon an ak pri oswa “achte”. Fè moun nan santi ou ap ede l.
+  </p>
+
+  <p class="text-gray-700 mb-2"><strong>Modèl mesaj ou k voye :</strong></p>
+
+  <blockquote class="border-l-4 border-teal-400 pl-4 italic text-gray-700">
+    “Bonjou, mwen renmen sa w ap fè sou IG a. siw  panse ou ta bezwen plis kliyan oswa plis konfyans ak yon bèl sit senp? M ka mete w an kontak ak on ekip studio web , yo travay rapide epi yo professionel.”
+  </blockquote>
+
+  <p class="text-gray-700 mt-4">
+    ✅ Pa fè kopi/kolè. Ajiste mesaj la selon moun nan.
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-gray-700 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-gray-700 mb-4 flex items-center gap-2">
+    🧰 <span>Zouti ou ka itilize</span>
+  </h4>
+
+  <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+    <li>📱 WhatsApp Business pou voye mesaj rapid</li>
+    <li>📸 Canva pou kreye vizyèl</li>
+    <li>📍 Google Maps pou lokalize biznis</li>
+    <li>📲 TikTok / IG pou fè videyo ki montre solisyon</li>
+  </ul>
+
+  <p class="text-gray-800">
+    ✅ Tout moun gen telefòn. Ou pa bezwen lòt bagay.
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-purple-600 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-purple-600 mb-4 flex items-center gap-2">
+    📋 <span>Nòt ou dwe pran</span>
+  </h4>
+
+  <ul class="list-disc list-inside text-gray-700 space-y-2">
+    <li>🏷️ <strong>Nom biznis ke ou vize a </strong></li>
+    <li>🔗 <strong>Lyen oswa kontak cible ou an</strong></li>
+    <li>🛍️ <strong>Sa yo vann ki sevis yo propoze</strong></li>
+  </ul>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-600 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-green-600 mb-4 flex items-center gap-2">
+    💬 <span>MODIL 3 – kijan pou voye Mesaj la</span>
+  </h4>
+
+  <p class="text-gray-800 leading-relaxed mb-3">
+    🎯 <strong>tande byen:</strong> Ou pa vin "vann", ou jis vinn mete moun okouran.
+  </p>
+
+  <p class="text-gray-700 bg-gray-100 p-4 rounded-lg border border-gray-200">
+    📩 <strong>Script mesaj pou voye : </strong><br>
+    “Bonjou! Mwen wè ou gen yon restoran sou Facebook. <br>
+    Mwen ap travay ak yon ajans ki ede ti biznis mete biznis yo sou Google pou plis moun jwenn yo. <br>
+    Li gratis pou w tcheke li. Ou ka enskri ak non m pou w jwenn of espesyal. <br>
+    Mwen ka voye plis enfòmasyon si ou vle?”
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-blue-600 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-blue-600 mb-4 flex items-center gap-2">
+    📌 <span>Konsey pou parèt serye</span>
+  </h4>
+
+  <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+    <li>🖼️ Mete foto pwofil ki pwòp sou rezo w yo</li>
+    <li>🚫 Pa voye tankou spam (mesaj en masse (kopye /kole) ) sa pa ladan l </li>
+    <li>📣 Si yo reponn → mete ajans la okouran vit,</li>
+  </ul>
+
+  <p class="text-gray-600 italic">
+    ❗ Yo pa reponn? Pa dekouraje. 1 sou 10  antreprise byen cible ke ou kontakte ap tounen kliyan.
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-yellow-500 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-yellow-500 mb-4 flex items-center gap-2">
+    ✍🏽 <span>Egzèsis pou jodi a</span>
+  </h4>
+
+  <p class="text-gray-800 leading-relaxed">
+    🎯 <strong>Challenge:</strong> Voye mesaj la a bay  <strong>3 biznis</strong> jodi a. pa blye adapte lang lan ak lang met antreprise ou cible a pale a 
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-green-700 mb-4 flex items-center gap-2">
+    💰 <span>MODIL 4 – Komisyon Dynamik</span>
+  </h4>
+
+  <p class="text-gray-800 leading-relaxed mb-4">
+    🎯 <strong>Objektif:</strong> Fè w konprann kijan ou touche ak kijan kob ou kapab grandi.
+  </p>
+
+  <div class="space-y-2 text-gray-700">
+    <p>🪙 <strong>nou gen of minimum:</strong><br>
+    $249 pou pi piti sevis ke nou propoze → ou touche <strong>$49 si client w lan pran sevis sa </strong> li pou (food truck,ti antrepriz, ti restoran)</p>
+
+    <p>🪙 <strong>Of Standard nou yo:</strong><br>
+    $399 → $79<br>
+    $599 → $99<br>
+    $899+ → $149+</p>
+  </div>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-blue-700 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-blue-700 mb-4 flex items-center gap-2">
+    📊 <span>Egzanp Komisyon – Tablo</span>
+  </h4>
+
+  <div class="overflow-x-auto">
+    <table class="w-full text-left border border-gray-200 text-sm text-gray-700">
+      <thead class="bg-gray-100 font-semibold">
+        <tr>
+          <th class="px-3 py-2 border">Of Kliyan</th>
+          <th class="px-3 py-2 border">Pri Sèvis</th>
+          <th class="px-3 py-2 border">Komisyon Ou</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="px-3 py-2 border">Mini (food truck)</td>
+          <td class="px-3 py-2 border">$249</td>
+          <td class="px-3 py-2 border">$49</td>
+        </tr>
+        <tr>
+          <td class="px-3 py-2 border">Amateur</td>
+          <td class="px-3 py-2 border">$399</td>
+          <td class="px-3 py-2 border">$79</td>
+        </tr>
+        <tr>
+          <td class="px-3 py-2 border">Standard</td>
+          <td class="px-3 py-2 border">$599</td>
+          <td class="px-3 py-2 border">$99</td>
+        </tr>
+        <tr>
+          <td class="px-3 py-2 border">Premium / Spésyal</td>
+          <td class="px-3 py-2 border">$899+</td>
+          <td class="px-3 py-2 border">$149+</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-green-700 mb-4 flex items-center gap-2">
+    🧠 <span>MODIL 5 – Adaptasyon Of ak Komisyon</span>
+  </h4>
+
+  <p class="text-gray-800 leading-relaxed mb-4">
+    🧠 <strong>Ou pa chwazi of la.</strong> Ajans lan adapte of selon bezwen kliyan an.
+  </p>
+
+  <div class="space-y-2 text-gray-700">
+    <p>🏁 <strong>Ou touche lè:</strong></p>
+    <ul class="list-disc list-inside ml-4">
+      <li>Ou voye bon kontak</li>
+      <li>Kliyan an achte</li>
+      <li>Ajans la valide</li>
+      <li>Ou resevwa komisyon w</li>
+    </ul>
+
+    <p class="mt-4">📢 Gen moun ki touche <strong>$49</strong>... gen lòt ki touche plis pase <strong>$149</strong>. Sa depan de efò ou.</p>
+  </div>
+</div>
+
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-green-700 mb-4 flex items-center gap-2">
+    🧰 <span>ZOUTI KAP PEMET OU REYISI</span>
+  </h4>
+
+  <p class="text-gray-800 leading-relaxed">
+    🎯 <strong>Objektif :</strong> kijan pou w parèt pro menm si w poko janm fè travay sa.
+  </p>
+</div>
+
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed mb-4">
+    📸 <strong>Imaj ou ka voye :</strong>
+  </p>
+
+  <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
+    <li>Modèl sit wèb pou restoran</li>
+    <li>Flyer ki montre fich Google</li>
+  </ul>
+</div>
+
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed">
+    📝 <strong>Script si yo mande plis enfòmasyon :</strong><br>
+    Ajans lan kreye sit wèb ak fich Google pou ti biznis, pou plis moun jwenn ou sou telefòn yo.<br>
+    Si ou enterese, map mete w an kontak ak ekip la.
+  </p>
+</div>
+
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed mb-4">
+    🗃️ <strong>Kijan pou òganize w :</strong>
+  </p>
+
+  <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
+    <li>Fè lis kliyan pou w voye mesaj la (cible)</li>
+    <li>Suiv repons yo sou WhatsApp</li>
+    <li>Voye detay yo bay ajans lan si gen enterè</li>
+  </ul>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-green-700 mb-4 flex items-center gap-2">
+    🌍 <span>BONUS MODULE – OU GEN MOND LAN NAN MEN W</span>
+  </h4>
+
+  <p class="text-gray-800 leading-relaxed">
+    🎯 <strong>Objektif :</strong> Wè pi lwen pase peyi w.
+  </p>
+</div>
+
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed mb-4">
+    🌐 Ou pa limite a yon peyi.<br>
+    Facebook, TikTok, IG, Google Maps mache nan tout mond lan.
+  </p>
+</div>
+
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed space-y-2">
+    📊 Gen <strong>400+ milyon</strong> ti biznis sou latè<br>
+    Plis pase <strong>50%</strong> pa gen sit web pro<br>
+    <strong>80%</strong> pèdi kliyan sou Google<br>
+    <strong>sou</strong> 1000 biznis ou kontakte = 10 kliyan kanmèm = 💵 komisyon <strong>$500–$1000+</strong>
+  </p>
+</div>
+
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed">
+    🔁 <strong>Relansing</strong> – Voye mesaj plizyè fwa<br>
+    Moun pa reponn premye fwa? Relanse yo sou 3-4 jou.
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed">
+    🎯 <strong>Challenge :</strong><br>
+    Chwazi yon peyi ou pa konnen  (ex. belgik) , voye 20 mesaj bay 20 antreprise jodi a.
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed">
+    🔥 <strong>Nivo Avanse :</strong><br>
+    Aprann fè Facebook Ads avèk <strong>$5</strong> → atenn 1000 moun. kote wap jwenn 10 klyan kanmem
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-green-700 mb-4 flex items-center gap-2">
+    🧠 <span>BONUS MODULE – OU PA POUKONT OU</span>
+  </h4>
+
+  <p class="text-gray-800 leading-relaxed">
+    🎯 <strong>Objektif :</strong> Travay entelijan, pa fè gaspiyaj.
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed mb-2">
+    👥 <strong>ajans lan gen  plizyè ambassadeurs.</strong><br>
+    Ou pa poukont ou → se <strong>pa konpetisyon</strong> → se <strong>kolaborasyon</strong> se pou sa li enpotan pou w konnen ki antrepriz ki kontakte deja
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed mb-4">
+    🛠️ <strong>Sistèm Anti-Doublon :</strong>
+  </p>
+
+  <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
+    <li>Avan ou voye, verifye sou app web ajans lan ap baw la si biznis ou pral kontakte a pa kontakte deja.</li>
+    <li>Si li deja kontakte → evite voye  mesaj pou granmesi</li>
+    <li>Si li pa la → ajoute l apres w finn kontakte l pou lot ambassadeurs yo wè kel kontakte deja</li>
+  </ul>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed mb-2">
+    📌 <strong>kissa pou ajoute sou app la? </strong>
+  </p>
+
+  <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
+    <li>Non biznis lan</li>
+    <li>deskripsyon l (ex: salon, food truck, elatriye)</li>
+  </ul>
+
+  <p class="text-gray-800 leading-relaxed mt-2">
+    Sa pèmèt tout ekip la mache pi byen.<br>
+    Se pa on “ti job Facebook”, se yon gran <strong>ajans maketing dijital</strong> ke ou fè pati de li kounya.
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-green-700 mb-4 flex items-center gap-2">
+    ✅ <span>FIN FÒMASYON</span>
+  </h4>
+
+  <p class="text-gray-800 leading-relaxed space-y-2">
+    Ou gen zouti w. Ou konnen kijan pou chèche, voye, touche.<br>
+    Ou pa “moun k ap chèche travay anko”.<br>
+    <strong>Ou se Ambassadeur.</strong> Ou gen <strong>kontwòl sou revni w, mezi travay ou ap mezi rekompans ou .</strong>
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <h4 class="text-lg font-bold text-green-700 mb-4 flex items-center gap-2">
+    🔷 <span>A PWOPÒ DE NOU</span>
+  </h4>
+
+  <p class="text-gray-800 leading-relaxed">
+    Nou se yon <strong>antrepriz ayisyano-ameriken</strong> ki espesyalize nan kreyasyon <strong>sit entènèt pou restoran</strong> ak ti biznis lokal.
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed">
+    Nou te kreye <strong>Team 49</strong>, yon ajans maketing ki bati yon <strong>sistèm kote tout moun ka genyen</strong> – kliyan yo jwenn vizibilite, e ou jwenn komisyon w.
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed">
+    Vizyon nou se ede plizyè Ayisyen devlope yon sous revni serye, ak respè, pandan y ap sèvi kominote biznis la avèk solisyon dijital ki efikas.
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed">
+    ⚠️ <strong>Plas yo limite.</strong> Nou chwazi travay ak moun ki motive, serye, ki vle aprann epi touche pou bon jan efò yo.
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed">
+    👥 <strong>Sistèm envitasyon :</strong><br>
+    Si ou envite yon lòt moun vin tounen ambassadeur, ou kapab touche yon <strong>komisyon sou chak kliyan</strong> li fè achte sèvis la.
+  </p>
+
+  <p class="text-gray-800 mt-2">
+    Se yon fason pou nou grandi ansanm, nan solidarite, san jalouzi.
+  </p>
+</div>
+<div data-step class="hidden max-w-xl mx-auto bg-white border-l-4 border-green-700 shadow rounded-xl p-6 mt-10">
+  <p class="text-gray-800 leading-relaxed">
+    travay ou a pa yon “ti job” sou entènèt. Se yon <strong>opòtinite biznis serye</strong> kote ou fè pati<strong>  de on ajans maketing serye</strong> k ap grandi chak jou.
+  </p>
+
+  <p class="text-gray-800 mt-2">
+    Wòl ou enpòtan, e revni w depann de angajman w.
+  </p><br><br>
+    <p class="text-gray-800 mt-2">
+    fomasyon an fini la ou k klike sou avan pou rekomanse siw vle byen konprann<br> "pa blye travay ou gen valè, pa gaspiye tanw , chak tan w gaspiye se on lajan w pedi".<br>
+    <strong> komanse travay kounya</strong>
+  </p>
+</div>
+
+      <!-- Boutons d’action -->
+      <div class="flex justify-center gap-4 my-6">
+        <button id="understandBtn" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
+          ✅ m konprann 
+        </button>
+        <button id="notUnderstandBtn" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+          ❌ m pa konprann
+        </button>
+      </div>
+
+      <!-- Navigation -->
+      <div class="flex justify-between items-center">
+        <button id="prevBtn" class="text-blue-600 font-semibold hover:underline" disabled>
+          ◀️ avan
+        </button>
+        <button id="nextBtn" class="bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50" disabled>
+          ▶️ aprè
+        </button>
+      </div>
+    </div>
+    
+<script>
+  let audioCtx;
+
+  function initAudio() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+  }
+
+  // 💡 Fonction de base pour jouer un son
+  function playSound({ frequency = 440, type = 'sine', duration = 0.1, volume = 0.1 } = {}) {
+    initAudio();
+    const oscillator = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
+
+    oscillator.type = type;
+    oscillator.frequency.setValueAtTime(frequency, audioCtx.currentTime);
+    gainNode.gain.setValueAtTime(volume, audioCtx.currentTime);
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+
+    oscillator.start();
+    oscillator.stop(audioCtx.currentTime + duration);
+  }
+
+  // ✅ "Je comprends" – Réussite motivante
+  function playSuccessTone() {
+    initAudio();
+    const now = audioCtx.currentTime;
+    const o = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+
+    o.type = 'triangle';
+    o.frequency.setValueAtTime(880, now);
+    o.frequency.exponentialRampToValueAtTime(1320, now + 0.08);
+
+    g.gain.setValueAtTime(0.0001, now);
+    g.gain.exponentialRampToValueAtTime(0.2, now + 0.01);
+    g.gain.exponentialRampToValueAtTime(0.0001, now + 0.3);
+
+    o.connect(g);
+    g.connect(audioCtx.destination);
+    o.start(now);
+    o.stop(now + 0.3);
+  }
+
+  // ❌ "Je ne comprends pas" – Ping d’alerte
+  function playSoftError() {
+    playSound({
+      frequency: 320,
+      type: 'sine',
+      duration: 0.2,
+      volume: 0.09
+    });
+  }
+
+  // ▶️ "Suivant" – montée douce, avancer
+  function playNextTone() {
+    initAudio();
+    const now = audioCtx.currentTime;
+    const o = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+
+    o.type = 'sine';
+    o.frequency.setValueAtTime(660, now);
+    o.frequency.linearRampToValueAtTime(880, now + 0.15);
+
+    g.gain.setValueAtTime(0.0001, now);
+    g.gain.linearRampToValueAtTime(0.15, now + 0.05);
+    g.gain.linearRampToValueAtTime(0.0001, now + 0.25);
+
+    o.connect(g);
+    g.connect(audioCtx.destination);
+    o.start(now);
+    o.stop(now + 0.25);
+  }
+
+  // ◀️ "Précédent" – descente rapide, retour
+  function playPrevTone() {
+    initAudio();
+    const now = audioCtx.currentTime;
+    const o = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+
+    o.type = 'sine';
+    o.frequency.setValueAtTime(880, now);
+    o.frequency.linearRampToValueAtTime(660, now + 0.15);
+
+    g.gain.setValueAtTime(0.0001, now);
+    g.gain.linearRampToValueAtTime(0.15, now + 0.05);
+    g.gain.linearRampToValueAtTime(0.0001, now + 0.25);
+
+    o.connect(g);
+    g.connect(audioCtx.destination);
+    o.start(now);
+    o.stop(now + 0.25);
+  }
+
+  // ⚙️ Démarre l’audio au 1er clic
+  document.addEventListener("click", () => {
+    initAudio();
+  }, { once: true });
+
+  // 🎯 Liens aux boutons
+  const btnUnderstand = document.getElementById("understandBtn");
+  const btnNotUnderstand = document.getElementById("notUnderstandBtn");
+  const btnNext = document.getElementById("nextBtn");
+  const btnPrev = document.getElementById("prevBtn");
+
+  if (btnUnderstand) {
+    btnUnderstand.addEventListener("click", () => {
+      playSuccessTone();
+      btnNext.disabled = false;
+    });
+  }
+
+  if (btnNotUnderstand) {
+    btnNotUnderstand.addEventListener("click", () => {
+      playSoftError();
+    });
+  }
+
+  if (btnNext) {
+    btnNext.addEventListener("click", () => {
+      if (!btnNext.disabled) {
+        playNextTone();
+        // change d’étape ici
+      }
+    });
+  }
+
+  if (btnPrev) {
+    btnPrev.addEventListener("click", () => {
+      if (!btnPrev.disabled) {
+        playPrevTone();
+        // revenir à l’étape précédente ici
+      }
+    });
+  }
+</script>
+    <!-- Modale -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+      <div class="bg-white rounded-xl p-6 w-full max-w-md animate__animated animate__zoomIn">
+        <h2 class="text-xl font-semibold mb-4">Tu ne comprends pas ?</h2>
+        <textarea id="feedbackInput" class="w-full border rounded p-3 mb-4" rows="4" placeholder="Écris-nous ce que tu ne comprends pas..."></textarea>
+        <div class="flex justify-end gap-4">
+          <button id="closeModal" class="text-gray-600 hover:underline">Annuler</button>
+          <a id="whatsappLink" href="#" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded">
+            Contacte-nous sur WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const stepItems = document.querySelectorAll('[data-step]');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const understandBtn = document.getElementById('understandBtn');
+    const notUnderstandBtn = document.getElementById('notUnderstandBtn');
+    const progressBar = document.getElementById('progressBar');
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('closeModal');
+    const whatsappLink = document.getElementById('whatsappLink');
+    const feedbackInput = document.getElementById('feedbackInput');
+
+    let currentStep = 0;
+    let hasUnderstood = false;
+
+    function updateView() {
+      stepItems.forEach((el, idx) => {
+        el.classList.toggle('hidden', idx !== currentStep);
+      });
+
+      prevBtn.disabled = currentStep === 0;
+      nextBtn.disabled = !hasUnderstood;
+
+      const percent = ((currentStep + 1) / stepItems.length) * 100;
+      progressBar.style.width = percent + '%';
+    }
+
+    understandBtn.addEventListener('click', () => {
+      hasUnderstood = true;
+      nextBtn.disabled = false;
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentStep < stepItems.length - 1 && hasUnderstood) {
+        currentStep++;
+        hasUnderstood = false;
+        updateView();
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentStep > 0) {
+        currentStep--;
+        hasUnderstood = false;
+        updateView();
+      }
+    });
+
+    notUnderstandBtn.addEventListener('click', () => {
+      modal.classList.remove('hidden');
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      feedbackInput.value = '';
+    });
+
+    whatsappLink.addEventListener('click', () => {
+      const message = encodeURIComponent(feedbackInput.value.trim());
+      if (message) {
+        whatsappLink.href = `https://wa.me/33600000000?text=${message}`;
+      }
+    });
+
+    updateView();
+  </script>
+</body>
+</html>

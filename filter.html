@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestion des entreprises</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen p-6 flex items-center justify-center">
+
+  <div class="max-w-2xl w-full bg-white shadow rounded-lg p-6 space-y-6">
+    <h1 class="text-2xl font-bold text-center">Gestion des entreprises</h1>
+
+    <!-- 🔍 Recherche d'entreprises -->
+    <div>
+      <label for="search" class="block mb-2 font-medium text-gray-700">Rechercher une entreprise :</label>
+      <input type="text" id="search" placeholder="Nom de l'entreprise"
+             class="w-full p-2 border border-gray-300 rounded mb-2">
+      <button id="search-btn" class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Rechercher</button>
+      <p id="search-result" class="mt-2 text-sm"></p>
+    </div>
+
+    <hr class="border-gray-300">
+
+    <!-- ➕ Formulaire d'ajout -->
+    <div>
+      <h2 class="text-lg font-semibold mb-2">Ajouter une nouvelle entreprise</h2>
+      <form id="add-form" class="space-y-4">
+        <div>
+          <label for="nom" class="block font-medium">Nom de l'entreprise :</label>
+          <input type="text" id="nom" class="w-full p-2 border border-gray-300 rounded" required>
+        </div>
+        <div>
+          <label for="type" class="block font-medium">Type d'entreprise :</label>
+          <select id="type" class="w-full p-2 border border-gray-300 rounded" required>
+            <option value="">-- Sélectionnez un type --</option>
+            <option>Restauration rapide</option>
+            <option>Supermarché</option>
+            <option>Coiffure</option>
+            <option>Banque</option>
+            <option>Pharmacie</option>
+            <option>Librairie</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div>
+          <label for="ville" class="block font-medium">Ville :</label>
+          <input type="text" id="ville" class="w-full p-2 border border-gray-300 rounded" required>
+        </div>
+        <div>
+          <label for="contact" class="block font-medium">Contact :</label>
+          <input type="text" id="contact" class="w-full p-2 border border-gray-300 rounded" required>
+        </div>
+        <button type="submit" class="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Ajouter</button>
+      </form>
+      <p id="add-message" class="mt-2 text-sm"></p>
+    </div>
+  </div>
+
+  <script>
+    // Configuration Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyC8un803MtKHPHyZh5WZgQ5mj2jrxPN8Rw",
+      authDomain: "team49-36834.firebaseapp.com",
+      projectId: "team49-36834",
+      storageBucket: "team49-36834.firebasestorage.app",
+      messagingSenderId: "941478408440",
+      appId: "1:941478408440:web:442f2fc3581e370a950b0d"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // Références DOM
+    const searchInput = document.getElementById('search');
+    const searchBtn = document.getElementById('search-btn');
+    const searchResult = document.getElementById('search-result');
+
+    const addForm = document.getElementById('add-form');
+    const nomInput = document.getElementById('nom');
+    const typeInput = document.getElementById('type');
+    const villeInput = document.getElementById('ville');
+    const contactInput = document.getElementById('contact');
+    const addMessage = document.getElementById('add-message');
+
+    // 🔍 Recherche d'entreprise
+    searchBtn.addEventListener('click', async () => {
+      const nom = searchInput.value.trim();
+      searchResult.textContent = '';
+      if (!nom) return;
+
+      try {
+        const docRef = db.collection('entreprises').doc(nom);
+        const doc = await docRef.get();
+
+        if (doc.exists) {
+          const data = doc.data();
+          searchResult.innerHTML = `
+            ✅ <strong>${data.nom}</strong> est enregistrée.<br>
+            📍 Ville : ${data.ville}<br>
+            📞 Contact : ${data.contact}<br>
+            🏷️ Type : ${data.type}
+          `;
+          searchResult.className = "mt-2 text-green-700 text-sm";
+        } else {
+          searchResult.textContent = "❌ Aucune entreprise trouvée avec ce nom.";
+          searchResult.className = "mt-2 text-red-600 text-sm";
+        }
+      } catch (error) {
+        searchResult.textContent = "Erreur lors de la recherche.";
+        searchResult.className = "mt-2 text-red-600 text-sm";
+      }
+    });
+
+    // ➕ Ajout d'une entreprise
+    addForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nom = nomInput.value.trim();
+      const type = typeInput.value;
+      const ville = villeInput.value.trim();
+      const contact = contactInput.value.trim();
+      addMessage.textContent = "";
+
+      if (!nom || !type || !ville || !contact) {
+        addMessage.textContent = "Merci de remplir tous les champs.";
+        addMessage.className = "text-red-600";
+        return;
+      }
+
+      try {
+        const docRef = db.collection('entreprises').doc(nom);
+        const doc = await docRef.get();
+
+        if (doc.exists) {
+          addMessage.textContent = "❗ Cette entreprise est déjà enregistrée.";
+          addMessage.className = "text-yellow-600";
+          return;
+        }
+
+        await docRef.set({
+          nom,
+          type,
+          ville,
+          contact,
+          dateAjout: firebase.firestore.FieldValue.serverTimestamp()
+        });
+
+        addMessage.textContent = "✅ Entreprise ajoutée avec succès.";
+        addMessage.className = "text-green-600";
+        addForm.reset();
+      } catch (error) {
+        addMessage.textContent = "❌ Une erreur est survenue.";
+        addMessage.className = "text-red-600";
+      }
+    });
+  </script>
+</body>
+</html>

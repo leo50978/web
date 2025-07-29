@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Web Professionnel à 500 Gdes | Offre Spéciale</title>
+    <meta name="description" content="Profitez de notre offre spéciale : site vitrine complet à 500 Gdes seulement pour votre entreprise. Création rapide et professionnelle.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#F59E0B',
+                        dark: '#1F2937',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <style>
+        /* Custom CSS */
+        .hero-bg {
+            background: rgb(29, 104, 173);
+        }
+        
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            color: #3B82F6;
+        }
+        
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-dark">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-laptop-code text-2xl text-primary mr-2"></i>
+                <span class="font-bold text-xl">Vitch web studio</span>
+            </div>
+            <button id="menuBtn" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <div id="menu" class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-primary">Qui sommes-nous</a>
+                <a href="#offer" class="hover:text-primary">Notre offre</a>
+                <a href="#why" class="hover:text-primary">Pourquoi nous</a>
+                <a href="#process" class="hover:text-primary">Processus</a>
+                <a href="#faq" class="hover:text-primary">FAQ</a>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <a href="#about" class="block py-2 hover:text-primary">Qui sommes-nous</a>
+            <a href="#offer" class="block py-2 hover:text-primary">Notre offre</a>
+            <a href="#why" class="block py-2 hover:text-primary">Pourquoi nous</a>
+            <a href="#process" class="block py-2 hover:text-primary">Processus</a>
+            <a href="#faq" class="block py-2 hover:text-primary">FAQ</a>
+        </div>
+    </nav>
+
+    <!-- Bloc 1 - Hero -->
+    <section class="hero-bg text-white py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeIn">Tu veux un site web pour ton entreprise ?</h1>
+                    <p class="text-xl mb-6">Profite de notre offre spéciale : site vitrine complet à <span class="font-bold text-accent">500 Gdes</span> seulement</p>
+                    <p class="text-sm italic mb-8"> Offre valable uniquement pour la première création</p>
+                    <a href="https://wa.me/50935601379?text=Je%20veux%20mon%20site%20à%20500%20Gdes" class="bg-green-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full inline-flex items-center transition duration-300 transform hover:scale-105">
+                        <i class="fab fa-whatsapp mr-2"></i> Je veux mon site à 500 Gdes
+                    </a>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="template1.jpeg" alt="Site web professionnel" class="rounded-lg shadow-2xl border-4 border-white max-w-full h-auto animate__animated animate__fadeIn">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloc 2 - Qui sommes-nous -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Nous créons des sites web modernes, rapides et professionnels</h2>
+            
+            <div class="flex flex-col md:flex-row mb-12">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <p class="text-lg mb-6">Adaptés à toutes les entreprises, peu importe ton secteur ou ton budget.</p>
+                    <p class="mb-6">Nous comprenons que chaque entreprise est unique, c'est pourquoi nous proposons des solutions sur mesure pour répondre à vos besoins spécifiques.</p>
+                    <div class="bg-primary text-white p-4 rounded-lg">
+                        <p class="font-bold mb-2"><i class="fas fa-lightbulb mr-2"></i> Saviez-vous ?</p>
+                        <p>Plus de 70% des clients recherchent une entreprise en ligne avant de prendre contact. Un site web professionnel augmente considérablement votre crédibilité.</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-6">Types de sites proposés :</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="feature-card bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <div class="feature-icon text-secondary text-2xl mb-2">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <h4 class="font-bold">Boutique / commerce local</h4>
+                        </div>
+                        <div class="feature-card bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <div class="feature-icon text-secondary text-2xl mb-2">
+                                <i class="fas fa-cut"></i>
+                            </div>
+                            <h4 class="font-bold">Salon de coiffure / esthétique</h4>
+                        </div>
+                        <div class="feature-card bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <div class="feature-icon text-secondary text-2xl mb-2">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h4 class="font-bold">Restaurant ou snack</h4>
+                        </div>
+                        <div class="feature-card bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <div class="feature-icon text-secondary text-2xl mb-2">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h4 class="font-bold">Artiste / créateur / influenceur</h4>
+                        </div>
+                        <div class="feature-card bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <div class="feature-icon text-secondary text-2xl mb-2">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <h4 class="font-bold">Consultant / coach / formation</h4>
+                        </div>
+                        <div class="feature-card bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <div class="feature-icon text-secondary text-2xl mb-2">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h4 class="font-bold">Association ou projet personnel</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloc 3 - Offre à 500 Gdes -->
+    <section id="offer" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Notre offre spéciale à <span class="text-primary">500 Gdes</span></h2>
+            <p class="text-center text-lg mb-12">Tout ce dont vous avez besoin pour démarrer en ligne</p>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-primary">
+                        <h3 class="text-2xl font-bold mb-4">Ce que l'offre inclut :</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mr-2 mt-1"></i>
+                                <span>Une page vitrine professionnelle</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mr-2 mt-1"></i>
+                                <span>Présentation de ton activité / services</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mr-2 mt-1"></i>
+                                <span>Design moderne (adapté téléphone & ordi)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mr-2 mt-1"></i>
+                                <span>Bouton WhatsApp ou formulaire de contact</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mr-2 mt-1"></i>
+                                <span>Livraison rapide (24h à 72h)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mr-2 mt-1"></i>
+                                <span>Hébergement inclus pendant 1 mois</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-accent">
+                        <h3 class="text-2xl font-bold mb-4">Conditions :</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle text-accent mr-2 mt-1"></i>
+                                <span>Offre valable uniquement pour la première création</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle text-accent mr-2 mt-1"></i>
+                                <span>Modification ou extension possible par la suite (tarif normal)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle text-accent mr-2 mt-1"></i>
+                                <span>Nom de domaine non inclus (nous pouvons vous conseiller)</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-8 bg-gray-100 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">Exemple de site vitrine :</h4>
+                            <p>Une page accueil avec :</p>
+                            <ul class="list-disc list-inside mt-2">
+                                <li>Bannière avec votre logo/slogan</li>
+                                <li>Section "À propos"</li>
+                                <li>Présentation de vos services/produits</li>
+                                <li>Coordonnées et carte</li>
+                                <li>Bouton d'appel à l'action</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://wa.me/50935601379?text=Je%20veux%20mon%20site%20à%20500%20Gdes" class="bg-primary hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full inline-flex items-center transition duration-300 transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-2"></i> Commander maintenant
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloc 4 - Pourquoi nous faire confiance -->
+    <section id="why" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Pourquoi nous faire confiance ?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-gray-50 p-6 rounded-lg text-center border border-gray-200">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Travail sérieux & sécurisé</h3>
+                    <p>Vos données sont protégées et nous respectons les meilleures pratiques de développement.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center border border-gray-200">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Livraison rapide</h3>
+                    <p>Votre site sera prêt en 24h à 72h après validation du contenu.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center border border-gray-200">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Assistance après livraison</h3>
+                    <p>Nous restons disponibles pour répondre à vos questions après la mise en ligne.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center border border-gray-200">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Service humain et local</h3>
+                    <p>Un contact direct, sans intermédiaire, avec des professionnels près de chez vous.</p>
+                </div>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-center mb-8">Ce que nos clients disent :</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-primary">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-3">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Jean D.</h4>
+                            <p class="text-sm text-gray-600">Restaurateur</p>
+                        </div>
+                    </div>
+                    <p class="italic">"J'ai eu mon site en 2 jours, simple et efficace. Maintenant mes clients peuvent voir le menu avant de venir."</p>
+                    <div class="mt-3 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-primary">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-3">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Marie L.</h4>
+                            <p class="text-sm text-gray-600">Coiffeuse</p>
+                        </div>
+                    </div>
+                    <p class="italic">"Je recommande, ils m'ont tout expliqué clairement. Mon salon a maintenant une belle présence en ligne."</p>
+                    <div class="mt-3 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloc 5 - Processus de commande -->
+    <section id="process" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Processus de commande</h2>
+            
+            <div class="flex flex-col md:flex-row justify-between mb-12">
+                <div class="md:w-1/3 mb-8 md:mb-0 px-4">
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center h-full">
+                        <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+                        <h3 class="font-bold text-xl mb-3">Contact initial</h3>
+                        <p>Tu nous dis le type de site que tu veux via WhatsApp ou notre formulaire. Nous discutons de tes besoins et attentes.</p>
+                    </div>
+                </div>
+                <div class="md:w-1/3 mb-8 md:mb-0 px-4">
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center h-full">
+                        <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+                        <h3 class="font-bold text-xl mb-3">Validation maquette</h3>
+                        <p>Nous te proposons une première maquette dans les 24h. Tu peux demander des modifications si nécessaire.</p>
+                    </div>
+                </div>
+                <div class="md:w-1/3 px-4">
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center h-full">
+                        <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+                        <h3 class="font-bold text-xl mb-3">Livraison finale</h3>
+                        <p>Une fois que tu valides, nous finalisons et te livrons ton site rapidement. Formation incluse pour le gérer toi-même.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto">
+                <h3 class="font-bold text-xl mb-4 text-center">Simple et sans complication</h3>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-4 md:mb-0">
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mr-2 mt-1"></i>
+                                <span>Pas besoin de carte bancaire</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mr-2 mt-1"></i>
+                                <span>Paiement sécurisé à la livraison</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mr-2 mt-1"></i>
+                                <span>Accompagnement personnalisé</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 text-center">
+                        <a href="https://wa.me/50935601379?text=Je%20veux%20mon%20site%20à%20500%20Gdes" class="bg-primary hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full inline-flex items-center transition duration-300">
+                            <i class="fab fa-whatsapp mr-2"></i> Démarrer mon projet
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloc 6 - FAQ -->
+    <section id="faq" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Questions fréquentes</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="faq-item bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-lg mb-2 flex items-center">
+                        <i class="fas fa-question-circle text-primary mr-2"></i>
+                        Et si je n'ai pas encore de texte ou de photos ?
+                    </h3>
+                    <p>Pas de souci, nous pouvons commencer avec du contenu temporaire que vous pourrez modifier ultérieurement. Nous pouvons également vous aider à rédiger des textes de base (service supplémentaire).</p>
+                </div>
+                <div class="faq-item bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-lg mb-2 flex items-center">
+                        <i class="fas fa-question-circle text-primary mr-2"></i>
+                        Est-ce que je peux modifier le site plus tard ?
+                    </h3>
+                    <p>Oui, des modifications sont possibles après la livraison. Le tarif dépend de la complexité des changements. Nous proposons des forfaits de maintenance adaptés à vos besoins.</p>
+                </div>
+                <div class="faq-item bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-lg mb-2 flex items-center">
+                        <i class="fas fa-question-circle text-primary mr-2"></i>
+                        Est-ce que je peux avoir un site plus complet ?
+                    </h3>
+                    <p>Oui, tu peux demander un site multi-page, e-commerce, etc. Nous établirons un devis personnalisé en fonction de tes besoins spécifiques.</p>
+                </div>
+                <div class="faq-item bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-lg mb-2 flex items-center">
+                        <i class="fas fa-question-circle text-primary mr-2"></i>
+                        Comment se passe le paiement ?
+                    </h3>
+                    <p>Le paiement s'effectue à la livraison, après votre validation finale. Nous acceptons les transferts d'argent et les paiements mobiles. Aucun paiement anticipé n'est requis.</p>
+                </div>
+                <div class="faq-item bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-lg mb-2 flex items-center">
+                        <i class="fas fa-question-circle text-primary mr-2"></i>
+                        Faut-il payer un hébergement ?
+                    </h3>
+                    <p>L'hébergement est inclus pendant 1 mois. Ensuite, vous pouvez choisir de continuer avec nous (à partir de 10 Gdes/mois) ou transférer vers un autre hébergeur.</p>
+                </div>
+                <div class="faq-item bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-lg mb-2 flex items-center">
+                        <i class="fas fa-question-circle text-primary mr-2"></i>
+                        Et si je ne suis pas satisfait ?
+                    </h3>
+                    <p>Nous travaillons jusqu'à ce que vous soyez entièrement satisfait. Si le résultat ne correspond pas à vos attentes malgré nos corrections, nous vous remboursons intégralement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloc 7 - Appel final à l'action -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Profite vite de l'offre à 500 Gdes</h2>
+            <p class="text-xl mb-8"> Réserve ton site aujourd'hui → places limitées</p>
+            <p class="text-lg font-bold mb-8 bg-white text-primary py-2 px-4 rounded-full inline-block">Seulement 10 sites disponibles à ce tarif !</p>
+            
+            <a href="https://wa.me/50935601379?text=Je%20veux%20mon%20site%20à%20500%20Gdes" class=" bg-green-500 text-white font-bold py-4 px-10 rounded-full inline-flex items-center text-lg transition duration-300 transform hover:scale-105">
+                <i class="fab fa-whatsapp mr-3 text-2xl"></i> Je veux mon site à 500 Gdes
+            </a>
+            
+            <div class="mt-8 flex justify-center">
+                <div class="bg-white text-primary p-3 rounded-full animate-pulse-slow">
+                    <i class="fas fa-exclamation-circle text-xl"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloc 8 - Portfolio (optionnel) -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Nos réalisations</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="template1.jpeg" alt="Site restaurant" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Le Bon Goût</h3>
+                        <p class="text-gray-600 mb-4">Restaurant traditionnel</p>
+                        <a href="#" class="text-primary hover:underline">Voir le site <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="template2.jpeg" alt="Site coiffure" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Photographe</h3>
+                        <p class="text-gray-600 mb-4">Salon Photographie</p>
+
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="template3.jpeg" alt="Site artiste" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Art by Maria</h3>
+                        <p class="text-gray-600 mb-4">Portfolio d'artiste</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-laptop-code text-2xl text-primary mr-2"></i>
+                        <span class="font-bold text-xl">Vitch web studio</span>
+                    </div>
+                    <p class="mt-2 text-gray-400">Des sites web professionnels à prix accessible</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white text-xl">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/50935601379" class="text-gray-400 hover:text-white text-xl">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-6 pt-6 text-center text-gray-400 text-sm">
+                <p>© 2023-2025 Vitch web studio. Tous droits réservés.</p>
+                <p class="mt-2">Offre valable dans la limite des stocks disponibles. Prix en Gourdes haïtiennes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/50935601379?text=Je%20veux%20mon%20site%20à%20500%20Gdes" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition duration-300 z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Animation with Anime.js
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hero section animation
+            anime({
+                targets: '.hero-bg h1, .hero-bg p',
+                translateY: [20, 0],
+                opacity: [0, 1],
+                duration: 1000,
+                delay: anime.stagger(100),
+                easing: 'easeOutExpo'
+            });
+            
+            // Feature cards animation
+            anime({
+                targets: '.feature-card',
+                translateY: [30, 0],
+                opacity: [0, 1],
+                duration: 800,
+                delay: anime.stagger(100, {start: 300}),
+                easing: 'easeOutExpo'
+            });
+            
+            // FAQ items animation
+            anime({
+                targets: '.faq-item',
+                translateY: [20, 0],
+                opacity: [0, 1],
+                duration: 800,
+                delay: anime.stagger(100),
+                easing: 'easeOutExpo',
+                scrollTrigger: {
+                    trigger: '#faq',
+                    start: 'top 80%',
+                }
+            });
+        });
+        
+        // Simple scroll trigger for animations
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top + scrollPosition;
+                if (scrollPosition > elementPosition - windowHeight + 100) {
+                    element.classList.add('animated');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

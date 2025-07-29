@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulaire Projet Resto</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .form-step {
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hidden-section {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(100%);
+    }
+
+    .visible-section {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(0);
+      position: relative;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Header avec barre de progression -->
+  <header class="sticky top-0 bg-white shadow z-20">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center space-x-4">
+      <h1 class="text-xl font-semibold text-blue-700">Formulaire Projet Resto</h1>
+      <div class="flex-grow bg-gray-200 rounded-full h-2 overflow-hidden">
+        <div id="progress-bar" class="bg-blue-600 h-2 rounded-full w-0 transition-all duration-300 ease-in-out"></div>
+      </div>
+      <span id="progress-text" class="ml-3 text-sm font-medium text-gray-600">Étape 1 / 1</span>
+    </div>
+  </header>
+
+  <!-- Conteneur principal -->
+  <main class="flex-grow bg-white mt-0 relative overflow-hidden">
+
+    <form id="multi-step-form" class="relative w-full h-screen overflow-hidden" id="form-container" action="https://formspree.io/f/xrbqvwaw" method="POST">
+
+      <!-- Étape 1 -->
+      <div class="form-step visible-section h-screen flex flex-col justify-center items-center space-y-8 text-center p-6">
+        <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Quel est le nom de ton restaurant ?</h2>
+        <input
+          type="text"
+          name="nom_resto"
+          placeholder="Ex : Le Bistrot du Coin"
+          class="w-full max-w-md border border-gray-300 rounded-lg p-4 text-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          required
+        />
+      </div>
+      <!-- SECTION 1 – Ton resto en quelques clics -->
+
+<!-- Question 1 -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-8 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Comment s'appelle ton restaurant ?</h2>
+  <input
+    type="text"
+    name="nom_resto"
+    placeholder="Ex : Le Bistrot du Coin"
+    class="w-full max-w-md border border-gray-300 rounded-lg p-4 text-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+    required
+  />
+</div>
+
+<!-- Question 2 -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">As-tu déjà une présence en ligne ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="presence_en_ligne" value="site_web" class="h-5 w-5 text-blue-600 rounded" />
+      <span>J’ai déjà un site web</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="presence_en_ligne" value="reseaux_sociaux" class="h-5 w-5 text-blue-600 rounded" />
+      <span>J’ai une page Facebook, Google ou Instagram</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="presence_en_ligne" value="aucune" class="h-5 w-5 text-blue-600 rounded" />
+      <span>Non, je pars de zéro</span>
+    </label>
+  </div>
+</div>
+
+<!-- Question 3 -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Quelle est la spécialité de ta cuisine ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="specialite" value="traditionnelle" class="h-5 w-5 text-blue-600 rounded" />
+      <span>Traditionnelle</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="specialite" value="moderne" class="h-5 w-5 text-blue-600 rounded" />
+      <span>Moderne / fusion</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="specialite" value="locale" class="h-5 w-5 text-blue-600 rounded" />
+      <span>Locale / terroir</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="specialite" value="street_food" class="h-5 w-5 text-blue-600 rounded" />
+      <span>Street food / rapide</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="specialite" value="gastronomique" class="h-5 w-5 text-blue-600 rounded" />
+      <span>Gastronomique</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="specialite" value="autre" class="h-5 w-5 text-blue-600 rounded" />
+      <input type="text" name="specialite_autre" placeholder="Autre..." class="ml-2 border border-gray-300 rounded p-2 w-1/2" />
+    </label>
+  </div>
+</div>
+
+<!-- Question 4 -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Quelle ambiance retrouve-t-on chez toi ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="ambiance" value="familiale" class="h-5 w-5 text-blue-600 rounded" />
+      <span>Chaleureuse et familiale</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="ambiance" value="moderne" class="h-5 w-5 text-blue-600 rounded" />
+      <span>Moderne et épurée</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="ambiance" value="rustique" class="h-5 w-5 text-blue-600 rounded" />
+      <span>Rustique / bois / vintage</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="ambiance" value="chic" class="h-5 w-5 text-blue-600 rounded" />
+      <span>Chic et raffiné</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="ambiance" value="decontractee" class="h-5 w-5 text-blue-600 rounded" />
+      <span>Décontractée et jeune</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="ambiance" value="autre" class="h-5 w-5 text-blue-600 rounded" />
+      <input type="text" name="ambiance_autre" placeholder="Autre..." class="ml-2 border border-gray-300 rounded p-2 w-1/2" />
+    </label>
+  </div>
+</div>
+
+<!-- Question 5 -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Où se trouve ton restaurant ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label class="flex items-center space-x-3">
+      <input type="radio" name="region" value="quebec" class="h-5 w-5 text-blue-600" />
+      <span>Québec</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="radio" name="region" value="ontario" class="h-5 w-5 text-blue-600" />
+      <span>Ontario</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="radio" name="region" value="autre" class="h-5 w-5 text-blue-600" />
+      <input type="text" name="region_autre" placeholder="Autre..." class="ml-2 border border-gray-300 rounded p-2 w-1/2" />
+    </label>
+  </div>
+</div>
+
+<!-- Question 6 -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Tu accueilles surtout :</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="clientele" value="familles" class="h-5 w-5 text-blue-600 rounded" />
+      <span>Familles</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="clientele" value="jeunes_actifs" class="h-5 w-5 text-blue-600 rounded" />
+      <span>Jeunes actifs</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="clientele" value="touristes" class="h-5 w-5 text-blue-600 rounded" />
+      <span>Touristes</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="clientele" value="professionnels" class="h-5 w-5 text-blue-600 rounded" />
+      <span>Professionnels le midi</span>
+    </label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="clientele" value="autre" class="h-5 w-5 text-blue-600 rounded" />
+      <input type="text" name="clientele_autre" placeholder="Autre..." class="ml-2 border border-gray-300 rounded p-2 w-1/2" />
+    </label>
+  </div>
+</div>
+<!-- Question 7 -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Qu’est-ce que les visiteurs doivent pouvoir faire en priorité ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label><input type="checkbox" name="priorites[]" value="decouvrir" class="h-5 w-5 text-blue-600 rounded" /> Découvrir le resto et l’ambiance</label>
+    <label><input type="checkbox" name="priorites[]" value="menu" class="h-5 w-5 text-blue-600 rounded" /> Voir le menu</label>
+    <label><input type="checkbox" name="priorites[]" value="reserver" class="h-5 w-5 text-blue-600 rounded" /> Réserver une table facilement</label>
+    <label><input type="checkbox" name="priorites[]" value="evenements" class="h-5 w-5 text-blue-600 rounded" /> Voir les offres ou événements</label>
+    <label><input type="checkbox" name="priorites[]" value="reseaux" class="h-5 w-5 text-blue-600 rounded" /> Suivre Instagram / Facebook</label>
+    <label><input type="checkbox" name="priorites[]" value="commande" class="h-5 w-5 text-blue-600 rounded" /> Commander à emporter ou se faire livrer</label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="priorites[]" value="autre" class="h-5 w-5 text-blue-600 rounded" />
+      <input type="text" name="priorites_autre" placeholder="Autre..." class="ml-2 border border-gray-300 rounded p-2 w-1/2" />
+    </label>
+  </div>
+</div>
+
+<!-- Question 8 -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Tu veux pouvoir modifier le site toi-même ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label><input type="radio" name="edition_site" value="menu_horaires" class="h-5 w-5 text-blue-600" /> Oui, pour changer le menu ou les horaires</label>
+    <label><input type="radio" name="edition_site" value="gestion_resa" class="h-5 w-5 text-blue-600" /> Oui, pour gérer réservations ou événements</label>
+    <label><input type="radio" name="edition_site" value="externalise" class="h-5 w-5 text-blue-600" /> Non, je préfère que vous gériez tout</label>
+    <label><input type="radio" name="edition_site" value="indecis" class="h-5 w-5 text-blue-600" /> Je ne sais pas encore</label>
+  </div>
+</div>
+
+<!-- Question 9 -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Et sur téléphone ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label><input type="radio" name="mobile_priorite" value="prioritaire" class="h-5 w-5 text-blue-600" /> Le site doit être top sur mobile, c’est prioritaire</label>
+    <label><input type="radio" name="mobile_priorite" value="adapte" class="h-5 w-5 text-blue-600" /> Qu’il soit adapté suffit</label>
+    <label><input type="radio" name="mobile_priorite" value="peu_importe" class="h-5 w-5 text-blue-600" /> Peu importe</label>
+  </div>
+</div>
+
+<!-- Question 10 -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Tu veux qu’on te trouve facilement sur Google ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label><input type="radio" name="visibilite_google" value="important" class="h-5 w-5 text-blue-600" /> Oui, c’est important</label>
+    <label><input type="radio" name="visibilite_google" value="secondaire" class="h-5 w-5 text-blue-600" /> Pas une priorité</label>
+    <label><input type="radio" name="visibilite_google" value="explication" class="h-5 w-5 text-blue-600" /> Je ne sais pas, tu peux m’expliquer ?</label>
+  </div>
+</div>
+
+<!-- Question 11 -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Le site doit être visible en quelle(s) langue(s) ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label><input type="checkbox" name="langues[]" value="fr" class="h-5 w-5 text-blue-600 rounded" /> Français</label>
+    <label><input type="checkbox" name="langues[]" value="en" class="h-5 w-5 text-blue-600 rounded" /> Anglais</label>
+    <label><input type="checkbox" name="langues[]" value="bilingue" class="h-5 w-5 text-blue-600 rounded" /> Les deux (bilingue)</label>
+  </div>
+</div>
+
+<!-- Question 12 -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">À quelle fréquence penses-tu mettre à jour ton site ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label><input type="radio" name="frequence_maj" value="rarement" class="h-5 w-5 text-blue-600" /> Rarement (1-2 fois par an)</label>
+    <label><input type="radio" name="frequence_maj" value="regulierement" class="h-5 w-5 text-blue-600" /> Régulièrement (menus, événements, promos…)</label>
+    <label><input type="radio" name="frequence_maj" value="indecis" class="h-5 w-5 text-blue-600" /> Je ne sais pas encore</label>
+  </div>
+</div>
+<!-- Question 13 -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Tu préfères quel style visuel ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label><input type="checkbox" name="style_visuel[]" value="epure" class="h-5 w-5 text-blue-600" /> Simple et épuré</label>
+    <label><input type="checkbox" name="style_visuel[]" value="illustre" class="h-5 w-5 text-blue-600" /> Illustré et créatif</label>
+    <label><input type="checkbox" name="style_visuel[]" value="photos" class="h-5 w-5 text-blue-600" /> Plein de belles photos du resto</label>
+    <label><input type="checkbox" name="style_visuel[]" value="sobre" class="h-5 w-5 text-blue-600" /> Plutôt sobre, basé sur le texte</label>
+    <label><input type="checkbox" name="style_visuel[]" value="conseils" class="h-5 w-5 text-blue-600" /> À discuter, j’ai besoin de conseils</label>
+  </div>
+</div>
+
+<!-- Question 14 -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Et pour les couleurs ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label><input type="checkbox" name="couleurs[]" value="chaudes" class="h-5 w-5 text-blue-600" /> Chaudes (rouge, orange, jaune)</label>
+    <label><input type="checkbox" name="couleurs[]" value="froides" class="h-5 w-5 text-blue-600" /> Froides (bleu, vert, violet)</label>
+    <label><input type="checkbox" name="couleurs[]" value="pastel" class="h-5 w-5 text-blue-600" /> Pastel / doux</label>
+    <label><input type="checkbox" name="couleurs[]" value="noir_blanc" class="h-5 w-5 text-blue-600" /> Noir et blanc</label>
+    <label><input type="checkbox" name="couleurs[]" value="confiance" class="h-5 w-5 text-blue-600" /> Je te fais confiance</label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="couleurs[]" value="autre" class="h-5 w-5 text-blue-600" />
+      <input type="text" name="couleurs_autre" placeholder="Autre…" class="ml-2 border border-gray-300 rounded p-2 w-1/2" />
+    </label>
+  </div>
+</div>
+
+<!-- Question 15 -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Tu as des exemples de sites que tu aimes ?</h2>
+  <p class="text-gray-600 text-sm mb-2">(Facultatif – lien ou nom du site)</p>
+  <input type="text" name="exemples_sites" placeholder="https://exemple.com" class="w-full max-w-md border border-gray-300 rounded p-3 text-center" />
+</div>
+
+<!-- Question 16 – Fonctionnalités à intégrer -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Que veux-tu sur ton site ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label><input type="checkbox" name="fonctionnalites[]" value="reservation" class="h-5 w-5 text-blue-600" /> Réservation en ligne</label>
+    <label><input type="checkbox" name="fonctionnalites[]" value="menu_interactif" class="h-5 w-5 text-blue-600" /> Menu interactif (avec photos & prix)</label>
+    <label><input type="checkbox" name="fonctionnalites[]" value="reseaux_sociaux" class="h-5 w-5 text-blue-600" /> Connexion avec Instagram / Facebook</label>
+    <label><input type="checkbox" name="fonctionnalites[]" value="galerie" class="h-5 w-5 text-blue-600" /> Galerie photo ou vidéo</label>
+    <label><input type="checkbox" name="fonctionnalites[]" value="blog" class="h-5 w-5 text-blue-600" /> Blog ou actualités</label>
+    <label><input type="checkbox" name="fonctionnalites[]" value="commande" class="h-5 w-5 text-blue-600" /> Commande en ligne (livraison ou à emporter)</label>
+    <label><input type="checkbox" name="fonctionnalites[]" value="google_maps" class="h-5 w-5 text-blue-600" /> Carte Google Maps</label>
+    <label><input type="checkbox" name="fonctionnalites[]" value="contact" class="h-5 w-5 text-blue-600" /> Formulaire de contact</label>
+    <label><input type="checkbox" name="fonctionnalites[]" value="newsletter" class="h-5 w-5 text-blue-600" /> Inscription à une newsletter</label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="fonctionnalites[]" value="autre" class="h-5 w-5 text-blue-600" />
+      <input type="text" name="fonctionnalites_autre" placeholder="Autre…" class="ml-2 border border-gray-300 rounded p-2 w-1/2" />
+    </label>
+  </div>
+</div>
+
+<!-- Question 17 – Budget -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Quel est ton budget ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label><input type="radio" name="budget" value="abordable" class="h-5 w-5 text-blue-600" /> Solution simple et abordable</label>
+    <label><input type="radio" name="budget" value="qualite_prix" class="h-5 w-5 text-blue-600" /> Bon rapport qualité/prix</label>
+    <label><input type="radio" name="budget" value="haut_de_gamme" class="h-5 w-5 text-blue-600" /> Site clé en main haut de gamme</label>
+    <label><input type="radio" name="budget" value="discuter" class="h-5 w-5 text-blue-600" /> Je préfère en discuter</label>
+  </div>
+</div>
+
+<!-- Question 18 – Délai -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Tu es pressé(e) ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label><input type="radio" name="delai" value="moins_1_mois" class="h-5 w-5 text-blue-600" /> Moins d’un mois</label>
+    <label><input type="radio" name="delai" value="1_3_mois" class="h-5 w-5 text-blue-600" /> 1 à 3 mois</label>
+    <label><input type="radio" name="delai" value="plus_3_mois" class="h-5 w-5 text-blue-600" /> Plus de 3 mois</label>
+    <label><input type="radio" name="delai" value="flexible" class="h-5 w-5 text-blue-600" /> Flexible</label>
+  </div>
+</div>
+
+<!-- Question 19 – Matériel déjà dispo -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Tu as déjà un logo, un site ou des visuels ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label><input type="radio" name="materiel" value="oui" class="h-5 w-5 text-blue-600" /> Oui, je peux te les envoyer</label>
+    <label><input type="radio" name="materiel" value="non" class="h-5 w-5 text-blue-600" /> Non, j’ai besoin d’aide</label>
+    <label><input type="radio" name="materiel" value="mixte" class="h-5 w-5 text-blue-600" /> Un peu de tout / à discuter</label>
+  </div>
+</div>
+<!-- Question 20 – Mode de contact préféré -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Tu préfères qu’on échange comment ?</h2>
+  <div class="flex flex-col items-start space-y-4 w-full max-w-md">
+    <label><input type="checkbox" name="contact[]" value="email" class="h-5 w-5 text-blue-600" /> Email</label>
+    <label><input type="checkbox" name="contact[]" value="telephone" class="h-5 w-5 text-blue-600" /> Téléphone</label>
+    <label><input type="checkbox" name="contact[]" value="visio" class="h-5 w-5 text-blue-600" /> Visioconférence (Zoom, Meet…)</label>
+    <label><input type="checkbox" name="contact[]" value="messagerie" class="h-5 w-5 text-blue-600" /> WhatsApp / Messenger</label>
+    <label class="flex items-center space-x-3">
+      <input type="checkbox" name="contact[]" value="autre" class="h-5 w-5 text-blue-600" />
+      <input type="text" name="contact_autre" placeholder="Autre…" class="ml-2 border border-gray-300 rounded p-2 w-1/2" />
+    </label>
+  </div>
+</div>
+
+<!-- Question 21 – Mot libre -->
+<div class="form-step h-screen flex flex-col justify-center items-center space-y-6 text-center p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">Tu veux ajouter un mot, une envie ou une idée ?</h2>
+  <textarea name="commentaire" rows="5" placeholder="Dis-moi tout…" class="w-full max-w-md border border-gray-300 rounded p-4 resize-none"></textarea>
+</div>
+
+<!-- BONUS – Envoi rapide -->
+<div class="form-step h-screen flex flex-col justify-center items-center text-center space-y-4 p-6">
+  <h2 class="text-2xl md:text-3xl font-semibold text-blue-800">⚡ Pas le temps ?</h2>
+  <p class="text-gray-600 max-w-md">Tu peux aussi m’envoyer un vocal, une photo de ton menu ou un message rapide ici :</p>
+  <a href="https://wa.me/1234567890" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">📲 WhatsApp</a>
+  <!-- Remplace le lien ci-dessus par Messenger ou un autre canal si besoin -->
+</div>
+
+
+      <!-- Étapes suivantes seront ajoutées ici -->
+
+     <!-- Navigation -->
+<div class="absolute bottom-0 left-0 w-full px-6 py-4 bg-white border-t flex justify-between items-center z-10">
+  <button type="button" id="prev-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-2 px-4 rounded disabled:opacity-50" disabled>
+    Précédent
+  </button>
+
+
+
+  <div class="flex space-x-2">
+    <button type="button" id="next-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+      Suivant
+    </button>
+
+    <button type="submit" id="submit-btn" disabled class="bg-gray-300 text-gray-500 font-semibold py-2 px-4 rounded cursor-not-allowed">
+      Envoyer
+    </button>
+  </div>
+</div>
+
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-500 text-sm py-4">
+    &copy; 2025 Projet Resto. Tous droits réservés.
+  </footer>
+<!-- Firebase SDKs (CDN) -->
+
+<script>
+ document.addEventListener('DOMContentLoaded', () => {
+  const steps = Array.from(document.querySelectorAll('.form-step'));
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const submitBtn = document.getElementById('submit-btn');
+  const progressText = document.getElementById('progress-text');
+  const progressBar = document.getElementById('progress-bar');
+  let currentStep = 0;
+
+  function updateStepUI() {
+    steps.forEach(step => {
+      step.classList.add('hidden-section');
+      step.classList.remove('visible-section');
+    });
+    steps[currentStep].classList.remove('hidden-section');
+    steps[currentStep].classList.add('visible-section');
+
+    prevBtn.disabled = currentStep === 0;
+    nextBtn.disabled = currentStep === steps.length - 1;
+
+    // Mettre à jour le bouton "Envoyer"
+    if (currentStep === steps.length - 1) {
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('bg-gray-300', 'text-gray-500', 'cursor-not-allowed');
+      submitBtn.classList.add('bg-blue-600', 'hover:bg-blue-700', 'text-white', 'cursor-pointer');
+    } else {
+      submitBtn.disabled = true;
+      submitBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700', 'text-white', 'cursor-pointer');
+      submitBtn.classList.add('bg-gray-300', 'text-gray-500', 'cursor-not-allowed');
+    }
+
+    const percent = ((currentStep + 1) / steps.length) * 100;
+    progressText.textContent = `Étape ${currentStep + 1} / ${steps.length}`;
+    progressBar.style.width = `${percent}%`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentStep > 0) {
+      currentStep--;
+      updateStepUI();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentStep < steps.length - 1) {
+      currentStep++;
+      updateStepUI();
+    }
+  });
+
+  // L'envoi est géré par le bouton de type submit qui appelle handleSubmit
+  const form = document.getElementById('form-container');
+  form.addEventListener('submit', handleSubmit);
+
+  updateStepUI();
+});
+
+</script>
+
+
+</body>
+</html>
